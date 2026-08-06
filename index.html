@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Три версии календаря</title>
+<title>Календарь Сюцай</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;font:400 16px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;
@@ -13,50 +13,72 @@ body{margin:0;font:400 16px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","
 .wrap{max-width:520px;margin:0 auto}
 h1{font-size:23px;font-weight:650;margin:0 0 6px;letter-spacing:-.3px}
 .lead{font-size:14.5px;color:#7d7462;margin:0 0 22px;line-height:1.5}
+h2{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#9a907e;
+  margin:26px 0 10px;font-weight:600}
 a.v{display:block;text-decoration:none;color:inherit;border-radius:20px;padding:18px;
   margin:0 0 12px;border:1px solid rgba(140,124,96,.2);background:#fffdf7;
   box-shadow:0 1px 3px rgba(90,74,45,.06)}
 a.v .top{display:flex;align-items:center;gap:12px;margin:0 0 8px}
 a.v .n{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;
-  justify-content:center;font-weight:640;font-size:16px;color:#fff;flex:none}
+  justify-content:center;font-weight:640;font-size:17px;color:#fff;flex:none}
+a.my .n{background:#1c1f25;color:#e0b66e}
+a.people .n{background:#204a7a}
 a.v1 .n{background:#2e6f63}
 a.v2 .n{background:#1c1f25;color:#e0b66e}
 a.v3 .n{background:#204a7a}
 a.v b{font-size:17px;font-weight:620;letter-spacing:-.1px}
 a.v p{margin:0;font-size:14px;color:#6f6759;line-height:1.5}
 a.v .tags{margin:10px 0 0;font-size:12.5px;color:#9a907e}
+a.old{padding:14px 16px;background:transparent;border-style:dashed}
+a.old b{font-size:15px}
+a.old p{font-size:13px}
 .note{font-size:12.5px;color:#9a907e;line-height:1.6;margin:22px 0 0}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>Три версии</h1>
-  <p class="lead">Открой каждую, посмотри, какая ближе. Дальше нажми «Поделиться» и
-    «На экран Домой» — она станет обычной иконкой без строки браузера.</p>
+  <h1>Календарь Сюцай</h1>
+  <p class="lead">Два приложения: одно про твой день, второе про людей вокруг. Открой,
+    нажми «Поделиться» и «На экран Домой» — станет иконкой без строки браузера.</p>
 
-  <a class="v v1" href="v1/">
+  <h2>Основные</h2>
+
+  <a class="v my" href="my/">
+    <div class="top"><div class="n">◉</div><b>Мой день</b></div>
+    <p>Личный день и общий фон, месяц сеткой, подбор дня под задачу, горизонт на шесть
+      недель и дневник: отмечаешь, как прошёл день, приложение показывает, какие числа
+      работают именно у тебя. В профиле переключается, чей день считаем.</p>
+    <div class="tags">сегодня · месяц · подбор · горизонт · дневник</div>
+  </a>
+
+  <a class="v people" href="people/">
+    <div class="top"><div class="n">◍</div><b>Люди</b></div>
+    <p>Круг людей: у каждого своё число дня, карточка открывается целиком. Встреча —
+      выбираешь двоих и видишь дни, когда числа хороши у обоих, с объяснением, почему
+      выбраны именно они.</p>
+    <div class="tags">круг · встреча · добавление людей</div>
+  </a>
+
+  <h2>Первые версии</h2>
+
+  <a class="v v1 old" href="v1/">
     <div class="top"><div class="n">1</div><b>Календарь</b></div>
-    <p>То же, что на сайте, но как приложение: сегодня, месяц сеткой, год, профиль.
-      Тап по любому дню открывает его целиком.</p>
-    <div class="tags">тёплый песок · базовая версия</div>
+    <p>Первый вариант: сегодня, месяц, год, профиль. Светлый.</p>
   </a>
 
-  <a class="v v2" href="v2/">
+  <a class="v v2 old" href="v2/">
     <div class="top"><div class="n">2</div><b>План дня</b></div>
-    <p>Календарь плюс инструменты: подбор дня под задачу, лента на шесть недель
-      и дневник с оценкой дня — приложение считает, какие числа работают у тебя.</p>
-    <div class="tags">тёмная тема · планирование</div>
+    <p>Тёмный, с подбором дня и дневником. Из него вырос «Мой день».</p>
   </a>
 
-  <a class="v v3" href="v3/">
+  <a class="v v3 old" href="v3/">
     <div class="top"><div class="n">3</div><b>Круг</b></div>
-    <p>Люди: свои числа и числа тех, кого добавишь. Дни, когда числа хороши у двоих сразу,
-      и выгрузка отметок в календарь телефона.</p>
-    <div class="tags">светлая тема · люди и интеграции</div>
+    <p>Люди и встречи, плюс выгрузка в календарь телефона. Из него вырос «Люди».</p>
   </a>
 
-  <p class="note">Все три считают числа прямо в телефоне, интернет нужен только чтобы
-    открыть страницу в первый раз. Заметки и список людей хранятся в самом телефоне.</p>
+  <p class="note">Всё считается на устройстве, интернет нужен только чтобы открыть
+    страницу. Записи дневника и список людей хранятся в самом телефоне и никуда
+    не уходят.</p>
 </div>
 </body>
 </html>
