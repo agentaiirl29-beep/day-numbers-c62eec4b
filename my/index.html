@@ -55,6 +55,16 @@ p.txt+p.txt{margin-top:9px}
 .chip.gold{background:rgba(224,182,110,.16);color:#e0b66e}
 
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 12px}
+.tmr{display:flex;align-items:center;gap:12px;background:#1c1f25;
+  border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:13px 14px;margin:0 0 12px;
+  cursor:pointer}
+.tmr .t{flex:1;min-width:0}
+.tmr .t b{display:block;font-size:14px;font-weight:580}
+.tmr .t span{display:block;font-size:12.5px;color:#8d8778;margin-top:2px}
+.tmr .n{width:38px;height:38px;border-radius:13px;flex:none;display:flex;align-items:center;
+  justify-content:center;font-size:18px;font-weight:620;background:rgba(255,255,255,.07);color:#cfcabe}
+.tmr .n.eff{background:rgba(110,170,255,.14);color:#8fbaff}
+.tmr .n.zero{background:rgba(230,120,95,.14);color:#e6785f}
 .mini-card{background:#1c1f25;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:13px}
 .mini-card .lab{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#8d8778}
 .mini-card .v{font-size:30px;font-weight:600;line-height:1.1;margin:3px 0 2px}
@@ -238,6 +248,9 @@ input{width:100%;background:#14161a;border:1px solid rgba(255,255,255,.1);color:
       <button class="btn ghost" onclick="saveDay()">Сохранить</button>
       <p class="txt dim" id="d-saved" style="font-size:12.5px;margin-top:9px"></p>
     </div>
+    <div class="tmr" id="d-tmr" onclick="openTomorrow()">
+      <div class="t"><b id="tmr-h"></b><span id="tmr-s"></span></div>
+      <div class="n" id="tmr-n"></div></div>
     <button class="btn ghost" onclick="openDay(TY,TM,TD)">Открыть день целиком</button>
     <div class="foot" id="d-foot"></div>
   </section>
@@ -502,6 +515,7 @@ function renderDay(){
   document.getElementById("d-do").textContent=sp.length?sp[0].items[0]:"";
   document.getElementById("d-no").textContent=sm.length?sm[0].items[0]:"";
   document.getElementById("d-foot").textContent="Личный день "+pd+" · общий "+cd+" · месяц "+pm;
+  renderTomorrow();
   renderRate();
 }
 
@@ -713,6 +727,25 @@ function renderWho(){
        OWNERS[i].n+"</button>";
   document.getElementById("me-who").innerHTML=h;
 }
+
+/* Завтрашний день одной строкой: вечером понятно, к чему готовиться. */
+function tmrDate(){
+  var d=new Date(TY,TM-1,TD); d.setDate(d.getDate()+1);
+  return {y:d.getFullYear(), m:d.getMonth()+1, d:d.getDate()};
+}
+function openTomorrow(){ var t=tmrDate(); openDay(t.y,t.m,t.d); }
+function renderTomorrow(){
+  var t=tmrDate(), pd=PD(ME.bd,t.y,t.m,t.d), eff=isEff(t.y,t.m,t.d), zero=isZero(t.d);
+  document.getElementById("tmr-h").textContent="Завтра, "+t.d+" "+MNR[t.m-1];
+  var s=w1(pd).toLowerCase();
+  if(eff) s+=" · эффективный день";
+  if(zero) s+=" · день обнуления";
+  document.getElementById("tmr-s").textContent=s;
+  var n=document.getElementById("tmr-n");
+  n.textContent=pd;
+  n.className="n"+(zero?" zero":(eff?" eff":""));
+}
+
 function redrawAll(){
   renderWho(); renderDay(); renderMonth(); renderHits(); renderHor(); renderLog(); renderMe();
   document.getElementById("mebtn").textContent = ME.name==="Свой профиль" ? "Я" : ME.name;
