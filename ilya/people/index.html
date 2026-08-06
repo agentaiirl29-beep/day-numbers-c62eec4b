@@ -195,6 +195,44 @@ nav b.on em{opacity:1}
     <div id="m-res"></div>
   </section>
 
+  <!-- ЭКСПОРТ -->
+  <section id="s-exp">
+    <div class="card"><h2>Перенести в календарь телефона</h2>
+      <p class="txt dim" style="font-size:13.5px">
+        Файл со всеми эффективными днями и днями обнуления на выбранный срок. Открывается
+        в Apple Календаре или загружается в Google Календарь, дальше метки видны рядом
+        с обычными делами. Отметки идут на весь день и не занимают время.</p>
+      <label class="fl" for="e-who">Чьи дни переносим</label>
+      <select id="e-who"></select>
+      <label class="fl" for="e-range" style="margin-top:10px">На какой срок</label>
+      <select id="e-range">
+        <option value="90">на 3 месяца</option>
+        <option value="180" selected>на полгода</option>
+        <option value="365">на год</option>
+      </select>
+      <label class="fl" for="e-what" style="margin-top:10px">Что переносим</label>
+      <select id="e-what">
+        <option value="all" selected>эффективные дни и дни обнуления</option>
+        <option value="eff">только эффективные дни</option>
+        <option value="my">эффективные, обнуление и личные числа каждого дня</option>
+      </select>
+      <button class="btn" onclick="makeICS()">Создать файл календаря</button>
+      <p class="txt dim" id="e-note" style="font-size:12.5px;margin-top:9px"></p>
+    </div>
+    <div class="card"><h2>Поделиться днём</h2>
+      <p class="txt dim" style="font-size:13.5px">Короткий текст о сегодняшнем дне — можно
+        отправить себе или в чат.</p>
+      <button class="btn ghost" onclick="shareDay()">Отправить текст дня</button>
+    </div>
+    <div class="card"><h2>Как считается</h2>
+      <p class="txt">Личный день = личный месяц плюс число. Личный месяц = личный год плюс
+        номер месяца. Личный год = день рождения плюс месяц рождения плюс год, всё свёрнуто
+        до одной цифры. Общий день считается от самой даты и одинаков у всех.</p>
+      <p class="txt" style="margin-top:9px">Расчёт идёт в телефоне. Интернет не нужен,
+        данные никуда не уходят.</p>
+    </div>
+  </section>
+
   <!-- ДОБАВИТЬ -->
   <section id="s-add">
     <div class="card"><h2>Новый человек</h2>
@@ -207,19 +245,13 @@ nav b.on em{opacity:1}
       <button class="btn ghost" onclick="go('s-circle')">Назад</button>
     </div>
     <div class="card"><h2>Кто уже в круге</h2><div id="a-list"></div></div>
-    <div class="card"><h2>Как считается</h2>
-      <p class="txt">Личный день = личный месяц плюс число. Личный месяц = личный год плюс
-        номер месяца. Личный год = день рождения плюс месяц рождения плюс год, всё свёрнуто
-        до одной цифры. Общий день считается от самой даты и одинаков у всех.</p>
-      <p class="txt" style="margin-top:9px">Расчёт идёт в телефоне. Интернет не нужен,
-        данные никуда не уходят.</p>
-    </div>
   </section>
 </main>
 
 <nav>
   <b class="on" data-s="s-circle" onclick="go('s-circle')"><em>◍</em>Круг</b>
   <b data-s="s-meet" onclick="go('s-meet')"><em>⇄</em>Встреча</b>
+  <b data-s="s-exp" onclick="go('s-exp')"><em>↗</em>Экспорт</b>
   <b data-s="s-add" onclick="go('s-add')"><em>＋</em>Люди</b>
 </nav>
 </div>
@@ -322,7 +354,7 @@ function plain(t) {
 }
 
 
-var TITLES={"s-circle":"Круг","s-meet":"Встреча","s-add":"Люди"};
+var TITLES={"s-circle":"Круг","s-meet":"Встреча","s-exp":"Экспорт","s-add":"Люди"};
 var now=new Date();
 var TY=now.getFullYear(), TM=now.getMonth()+1, TD=now.getDate();
 var KEY="syucai_people_ilya";
@@ -531,7 +563,59 @@ function openPairDay(y,m,d){
   document.body.style.overflow="hidden";
 }
 
+/* ---------- Экспорт ---------- */
 function pad(n){ return (n<10?"0":"")+n; }
+function makeICS(){
+  var days=+document.getElementById("e-range").value;
+  var what=document.getElementById("e-what").value;
+  var d=new Date(TY,TM-1,TD), L=[
+    "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//syucai//calendar//RU","CALSCALE:GREGORIAN",
+    "X-WR-CALNAME:Дни Сюцай"+(people[+((document.getElementById("e-who")||{}).value||0)]?" · "+people[+document.getElementById("e-who").value].n:"")];
+  var cnt=0;
+  for(var n=0;n<days;n++){
+    var y=d.getFullYear(), m=d.getMonth()+1, dd=d.getDate();
+    var eff=isEff(y,m,dd), zer=isZero(dd), pd=PD(EBD(),y,m,dd), t=null;
+    if(eff) t="Эффективный день";
+    if(zer) t="День обнуления";
+    if(what==="eff" && !eff) t=null;
+    if(what==="my" && !t) t="Личное число "+pd;
+    if(!t){ d.setDate(d.getDate()+1); continue; }
+    if(what!=="eff") t+=" · личное "+pd;
+    var st=""+y+pad(m)+pad(dd), en=new Date(y,m-1,dd+1);
+    L.push("BEGIN:VEVENT");
+    L.push("UID:syucai-"+st+"@local");
+    L.push("DTSTART;VALUE=DATE:"+st);
+    L.push("DTEND;VALUE=DATE:"+en.getFullYear()+pad(en.getMonth()+1)+pad(en.getDate()));
+    L.push("SUMMARY:"+t);
+    L.push("DESCRIPTION:"+w1(pd)+". Общее число дня "+CD(y,m,dd)+".");
+    L.push("TRANSP:TRANSPARENT");
+    L.push("END:VEVENT");
+    cnt++;
+    d.setDate(d.getDate()+1);
+  }
+  L.push("END:VCALENDAR");
+  var blob=new Blob([L.join("\r\n")],{type:"text/calendar;charset=utf-8"});
+  var url=URL.createObjectURL(blob), a=document.createElement("a");
+  a.href=url; a.download="syucai.ics"; document.body.appendChild(a); a.click();
+  document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); },1500);
+  document.getElementById("e-note").textContent=
+    "Готово: "+cnt+" отметок. Открой скачанный файл — телефон предложит добавить их в календарь.";
+}
+function shareDay(){
+  var pd=PD(ME.bd,TY,TM,TD), cd=CD(TY,TM,TD);
+  var sp=sections(D.day[pd].in_plus), sm=sections(D.day[pd].in_minus);
+  var t=TD+" "+MNR[TM-1]+", "+WDF[wd(TY,TM,TD)]+"\n"+
+        "Личный день "+pd+" — "+word(pd)+"\n"+
+        "Общий день "+cd+" — "+word(cd)+"\n"+
+        (isEff(TY,TM,TD)?"Эффективный день\n":"")+(isZero(TD)?"День обнуления\n":"")+
+        "\nЧто даёт ресурс: "+(sp.length?sp[0].items[0]:"")+
+        "\n\nЧего избегать: "+(sm.length?sm[0].items[0]:"");
+  if(navigator.share){ navigator.share({text:t}).catch(function(){}); return; }
+  var a=document.createElement("textarea"); a.value=t; document.body.appendChild(a);
+  a.select(); try{ document.execCommand("copy"); }catch(e){}
+  document.body.removeChild(a); alert("Текст дня скопирован.");
+}
 
 
 /* Родной выбор даты отдаёт год-месяц-день; ручной ввод цифрами тоже принимаем. */
@@ -544,6 +628,21 @@ function parseBD(raw){
   var g=raw.replace(/\D/g,"");
   if(g.length===8) return {d:+g.slice(0,2), m:+g.slice(2,4), y:+g.slice(4)};
   return null;
+}
+
+
+/* Экспорт делаем по выбранному человеку из круга. */
+function EBD(){
+  var i=+((document.getElementById("e-who")||{}).value||0);
+  return (people[i]||{b:ME.bd}).b;
+}
+function renderExpWho(){
+  var s=document.getElementById("e-who");
+  if(!s) return;
+  var cur=s.value, h="";
+  for(var i=0;i<people.length;i++) h+='<option value="'+i+'">'+people[i].n+"</option>";
+  s.innerHTML=h;
+  if(cur && +cur<people.length) s.value=cur;
 }
 
 /* ---------- Люди ---------- */
@@ -572,7 +671,7 @@ function addPerson(){
   document.getElementById("a-name").value="";
   document.getElementById("a-bd").value="";
   e.textContent="Добавлен: "+n+".";
-  renderCircle(); renderPairbar(); renderAdd();
+  renderCircle(); renderPairbar(); renderAdd(); renderExpWho();
 }
 
 /* Два касания вместо одного: первое спрашивает, второе убирает. */
@@ -589,10 +688,10 @@ function delPerson(i){
   people.splice(i,1); savePeople();
   if(selA>=people.length) selA=0;
   if(selB>=people.length) selB=people.length>1?1:0;
-  renderCircle(); renderPairbar(); renderMeet(); renderAdd();
+  renderCircle(); renderPairbar(); renderMeet(); renderAdd(); renderExpWho();
 }
 
-renderCircle(); renderPairbar(); renderMeet(); renderAdd();
+renderCircle(); renderPairbar(); renderMeet(); renderAdd(); renderExpWho();
 
 /* Шторка закрывается свайпом вниз — так же, как в родных приложениях телефона. */
 (function(){
