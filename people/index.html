@@ -72,7 +72,7 @@ p.txt+p.txt{margin-top:9px}
 
 /* совпадения */
 .pairbar{display:flex;gap:8px;margin:0 0 12px;overflow-x:auto;padding-bottom:2px}
-.pb{flex:none;border:1px solid rgba(16,24,39,.12);background:#fff;border-radius:999px;padding:8px 13px;
+.pb{flex:none;border:1px solid rgba(16,24,39,.12);background:#fff;border-radius:999px;padding:10px 15px;
   font-size:13.5px;cursor:pointer;color:#26303f;font-family:inherit}
 .pb.on{background:#204a7a;border-color:#204a7a;color:#fff}
 .mt{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid rgba(16,24,39,.07);
@@ -145,7 +145,7 @@ ul.qs li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px
   max-width:520px;margin:0 auto;animation:up .22s cubic-bezier(.2,.8,.3,1)}
 @keyframes up{from{transform:translateY(24px);opacity:.6}to{transform:none;opacity:1}}
 .grab{width:38px;height:4px;border-radius:3px;background:rgba(16,24,39,.18);margin:6px auto 12px}
-.xbtn{border:0;background:rgba(16,24,39,.07);color:#4a5566;width:30px;height:30px;border-radius:50%;font-size:17px;line-height:1;cursor:pointer;font-family:inherit;flex:none}
+.xbtn{border:0;background:rgba(16,24,39,.07);color:#4a5566;width:36px;height:36px;border-radius:50%;font-size:19px;line-height:1;cursor:pointer;font-family:inherit;flex:none}
 .shead{display:flex;align-items:center;justify-content:space-between;margin:0 0 12px;padding:0 2px}
 .shead b{font-size:19px;font-weight:640}
 .shead span{font-size:13px;color:#6b7686}
@@ -160,6 +160,7 @@ nav b.on{color:#204a7a}
 nav b.on em{opacity:1}
 .foot{text-align:center;font-size:11.5px;color:#8a93a1;margin:18px 0 0;line-height:1.5}
 </style>
+<link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
 <div class="wrap">
@@ -375,7 +376,7 @@ function renderCircle(){
     h+='<div class="per" onclick="openPerson('+i+')">'+
        '<div class="av">'+initials(p.n)+"</div>"+
        '<div class="nm"><b>'+p.n+"</b><span>"+w1(pd).toLowerCase()+
-       " · месяц "+pm+" · год "+PY(p.b,TY)+"</span></div>"+
+       " · месяц "+pm+"</span></div>"+
        '<div class="pn">'+pd+"</div></div>";
   }
   document.getElementById("c-list").innerHTML=h;
@@ -544,7 +545,7 @@ function renderAdd(){
   for(var i=0;i<people.length;i++){
     var p=people[i], b=bparts(p.b);
     h+='<div class="kv"><b>'+p.n+"</b><span>"+b.d+" "+MNR[b.m-1]+" "+b.y+
-       (i>1?' <button class="pb" style="float:right;padding:3px 9px;font-size:12px" onclick="delPerson('+i+
+       (i>1?' <button class="pb" id="db'+i+'" style="float:right;padding:5px 11px;font-size:12px" onclick="askDel(event,'+i+
        ')">убрать</button>':"")+"</span></div>";
   }
   document.getElementById("a-list").innerHTML=h;
@@ -558,13 +559,25 @@ function addPerson(){
   if(!n){ e.textContent="Впиши имя."; return; }
   if(!m){ e.textContent="Нужны восемь цифр: день, месяц, год. Например 25062000."; return; }
   var dd=+m[1], mm=+m[2], yy=+m[3];
-  if(mm<1||mm>12||dd<1||dd>dim(yy,mm)){ e.textContent="Такой даты нет."; return; }
+  if(mm<1||mm>12||dd<1||dd>dim(yy,mm)||yy<1900||yy>TY){
+    e.textContent="Такой даты нет. Год — от 1900 до нынешнего."; return; }
   people.push({n:n, b:yy+"-"+pad(mm)+"-"+pad(dd)});
   savePeople();
   document.getElementById("a-name").value="";
   document.getElementById("a-bd").value="";
   e.textContent="Добавлен: "+n+".";
   renderCircle(); renderPairbar(); renderAdd();
+}
+
+/* Два касания вместо одного: первое спрашивает, второе убирает. */
+var delAsk=-1, delT=null;
+function askDel(ev,i){
+  ev.stopPropagation();
+  var b=document.getElementById("db"+i);
+  if(delAsk===i){ clearTimeout(delT); delAsk=-1; delPerson(i); return; }
+  if(delAsk>=0){ var o=document.getElementById("db"+delAsk); if(o) o.textContent="убрать"; }
+  clearTimeout(delT); delAsk=i; b.textContent="точно?";
+  delT=setTimeout(function(){ delAsk=-1; if(b) b.textContent="убрать"; },4000);
 }
 function delPerson(i){
   people.splice(i,1); savePeople();
@@ -574,6 +587,24 @@ function delPerson(i){
 }
 
 renderCircle(); renderPairbar(); renderMeet(); renderAdd();
+
+/* Шторка закрывается свайпом вниз — так же, как в родных приложениях телефона. */
+(function(){
+  var p=document.querySelector("#sheet .pan"), y0=null, top0=0;
+  if(!p) return;
+  p.addEventListener("touchstart",function(e){ y0=e.touches[0].clientY; top0=p.scrollTop; },{passive:true});
+  p.addEventListener("touchend",function(e){
+    if(y0===null) return;
+    var dy=e.changedTouches[0].clientY-y0;
+    if(dy>70 && top0<=0) closeSheet();
+    y0=null;
+  },{passive:true});
+})();
+
+/* Офлайн: после первого открытия приложение работает без интернета. */
+if("serviceWorker" in navigator) window.addEventListener("load",function(){
+  navigator.serviceWorker.register("sw.js").catch(function(){});
+});
 </script>
 </body>
 </html>

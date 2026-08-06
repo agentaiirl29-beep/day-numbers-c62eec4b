@@ -123,7 +123,7 @@ textarea{width:100%;background:#14161a;border:1px solid rgba(255,255,255,.1);col
   border-top:1px solid rgba(255,255,255,.1)}
 @keyframes up{from{transform:translateY(24px);opacity:.6}to{transform:none;opacity:1}}
 .grab{width:38px;height:4px;border-radius:3px;background:rgba(255,255,255,.2);margin:6px auto 12px}
-.xbtn{border:0;background:rgba(255,255,255,.09);color:#b9b3a4;width:30px;height:30px;border-radius:50%;font-size:17px;line-height:1;cursor:pointer;font-family:inherit;flex:none}
+.xbtn{border:0;background:rgba(255,255,255,.09);color:#b9b3a4;width:36px;height:36px;border-radius:50%;font-size:19px;line-height:1;cursor:pointer;font-family:inherit;flex:none}
 .shead{display:flex;align-items:center;justify-content:space-between;margin:0 0 12px;padding:0 2px}
 .shead b{font-size:19px;font-weight:620}
 .shead span{font-size:13px;color:#8d8778}
@@ -206,6 +206,7 @@ input{width:100%;background:#14161a;border:1px solid rgba(255,255,255,.1);color:
   border-radius:11px;padding:6px 11px;font:inherit;font-size:12.5px;cursor:pointer;flex:none}
 .foot{text-align:center;font-size:11.5px;color:#6f6a5d;margin:18px 0 0;line-height:1.5}
 </style>
+<link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
 <div class="wrap">
@@ -829,6 +830,24 @@ function digit(n){
 })();
 
 renderGoals(); redrawAll();
+
+/* Шторка закрывается свайпом вниз — так же, как в родных приложениях телефона. */
+(function(){
+  var p=document.querySelector("#sheet .pan"), y0=null, top0=0;
+  if(!p) return;
+  p.addEventListener("touchstart",function(e){ y0=e.touches[0].clientY; top0=p.scrollTop; },{passive:true});
+  p.addEventListener("touchend",function(e){
+    if(y0===null) return;
+    var dy=e.changedTouches[0].clientY-y0;
+    if(dy>70 && top0<=0) closeSheet();
+    y0=null;
+  },{passive:true});
+})();
+
+/* Офлайн: после первого открытия приложение работает без интернета. */
+if("serviceWorker" in navigator) window.addEventListener("load",function(){
+  navigator.serviceWorker.register("sw.js").catch(function(){});
+});
 </script>
 </body>
 </html>
