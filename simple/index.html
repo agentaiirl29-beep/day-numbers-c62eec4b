@@ -78,7 +78,9 @@ ul.qs li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px
 .nav button,.today{border:1px solid rgba(140,124,96,.25);background:#fffdf7;color:#4a463c;
   width:38px;height:38px;border-radius:12px;font-size:19px;line-height:1;cursor:pointer;
   display:flex;align-items:center;justify-content:center;padding:0;font-family:inherit}
-.today{width:auto;padding:0 13px;font-size:13px;white-space:nowrap}
+/* правило .nav button задаёт ширину 38 px и обрезало слово «сегодня» */
+.nav button.today,.today{width:auto;min-width:0;padding:0 12px;font-size:12.5px;white-space:nowrap}
+.mbar b{max-width:52%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
 .wdh{font-size:11px;color:#9a907e;text-align:center;padding:0 0 4px}
 .cell{background:#fffdf7;border:1px solid rgba(140,124,96,.16);border-radius:13px;
@@ -651,6 +653,18 @@ if(!localStorage.getItem(OKEY)){
     if(dy>70 && top0<=0) closeSheet();
     y0=null;
   },{passive:true});
+})();
+
+/* Дата считается при открытии. Если приложение пролежало открытым через полночь,
+   при возврате к нему пересчитываем день заново. Недописанную заметку не трогаем. */
+(function(){
+  function newDay(){ var n=new Date();
+    return n.getFullYear()!==TY || n.getMonth()+1!==TM || n.getDate()!==TD; }
+  function busy(){ var t=document.querySelector("textarea"); return !!(t && t.value.trim()); }
+  function check(){ if(newDay() && !busy()) location.reload(); }
+  document.addEventListener("visibilitychange",function(){ if(!document.hidden) check(); });
+  window.addEventListener("focus",check);
+  setInterval(check,60000);
 })();
 
 /* Офлайн: после первого открытия приложение работает без интернета. */
