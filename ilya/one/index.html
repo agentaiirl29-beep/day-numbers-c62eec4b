@@ -370,6 +370,10 @@ input{width:100%;background:var(--bg);border:1px solid var(--bd2);color:var(--tx
 #s-meet .cell.g0{background:var(--zero14);border-color:var(--zero30)}
 #s-meet .cell.g0 .d{color:var(--zero)}
 #s-meet .cell.now{outline:2px solid var(--tx2);outline-offset:1px}
+#s-meet .pairsel{display:flex;align-items:center;gap:10px;margin:0 0 8px}
+#s-meet .pairsel span{font-size:12.5px;color:var(--dim);width:50px;flex:none}
+#s-meet .pairsel select{flex:1;min-width:0;background:var(--card);color:var(--tx2);font:inherit;font-size:14px;
+  border:1px solid var(--bd2);border-radius:999px;padding:11px 13px}
 .foot{text-align:center;font-size:11.5px;color:var(--dim2);margin:18px 0 0;line-height:1.5}
 </style>
 <link rel="manifest" href="manifest.webmanifest">
@@ -1041,7 +1045,7 @@ function renderLogNav(){
 
 /* ---------- Люди: круг, встреча, экспорт ---------- */
 var KEY="syucai_people_one";
-var BASE=[{n:"Илья",b:"1983-03-16"},{n:"Андрей",b:"2000-06-25"}];
+var BASE=[{n:"Илья",b:"1983-03-16"},{n:"Андрей",b:"2000-06-25"},{n:"Мария Онучина",b:"1987-05-28"},{n:"Сергей Ледовский",b:"1981-10-01"},{n:"Сергей Туманин",b:"1984-06-06"},{n:"Алена Прядун",b:"1987-07-02"},{n:"Полина Михайлова",b:"1995-02-14"},{n:"Анна Кушхова",b:"1993-07-29"},{n:"Талгат Сагат",b:"1979-09-11"},{n:"Юля Сагат",b:"1991-07-23"},{n:"Павел Пожидаев",b:"1982-08-05"},{n:"Евгений Михайлов",b:"1982-05-29"},{n:"Александра Ефимович",b:"1991-11-01"}];
 var GOOD=[2,3,5,6];
 var selA=0, selB=1;
 var delAsk=-1, delT=null;
@@ -1116,7 +1120,22 @@ function openPerson(i){
   document.getElementById("sheet").classList.add("on");
   document.body.style.overflow="hidden";
 }
+function pairOpts(sel){
+  var h="";
+  for(var i=0;i<people.length;i++)
+    h+='<option value="'+i+'"'+(sel===i?" selected":"")+">"+people[i].n+"</option>";
+  return h;
+}
 function renderPairbar(){
+  var pa=document.getElementById("m-a"), pb=document.getElementById("m-b");
+  /* до шести человек имена помещаются на экран, дальше нужен выпадающий выбор */
+  if(people.length>6){
+    pa.className="pairsel"; pb.className="pairsel";
+    pa.innerHTML='<span>Кто</span><select onchange="setPair(0,+this.value)">'+pairOpts(selA)+"</select>";
+    pb.innerHTML='<span>С кем</span><select onchange="setPair(1,+this.value)">'+pairOpts(selB)+"</select>";
+    return;
+  }
+  pa.className="pairbar"; pb.className="pairbar";
   var ha="", hb="";
   for(var i=0;i<people.length;i++){
     ha+='<button class="pb'+(selA===i?" on":"")+'" onclick="setPair(0,'+i+')">'+people[i].n+"</button>";
@@ -1311,9 +1330,21 @@ function delPerson(i){
   if(selB>=people.length) selB=people.length>1?1:0;
   renderCircle(); renderPairbar(); renderMeet(); renderAdd(); renderExpWho();
 }
+var SKEY="syucai_seed_one", SEED="2026-08-07-team";
 function loadPeople(){
-  try{ var p=JSON.parse(localStorage.getItem(KEY)||"null"); if(p&&p.length) return p; }catch(e){}
-  return BASE.slice();
+  var saved=null, was=null;
+  try{ saved=JSON.parse(localStorage.getItem(KEY)||"null"); }catch(e){}
+  try{ was=localStorage.getItem(SKEY); localStorage.setItem(SKEY,SEED); }catch(e){}
+  if(!saved||!saved.length) return BASE.slice();
+  if(was!==SEED){
+    for(var i=0;i<BASE.length;i++){
+      var has=false;
+      for(var j=0;j<saved.length;j++) if(saved[j].b===BASE[i].b) has=true;
+      if(!has) saved.push({n:BASE[i].n, b:BASE[i].b});
+    }
+    try{ localStorage.setItem(KEY,JSON.stringify(saved)); }catch(e){}
+  }
+  return saved;
 }
 function savePeople(){ try{ localStorage.setItem(KEY,JSON.stringify(people)); }catch(e){} }
 var people=loadPeople();
