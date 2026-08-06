@@ -631,7 +631,7 @@ function digit(n){
 })();
 
 renderDay(); renderMonth(); renderYear(); renderMe();
-document.getElementById("me-bd").value=ME.bd;
+var f=document.getElementById("me-bd"); if(f) f.value=ME.bd;
 
 if(!localStorage.getItem(OKEY)){
   document.getElementById("me-bd").value="";

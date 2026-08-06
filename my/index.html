@@ -312,12 +312,8 @@ input{width:100%;background:#14161a;border:1px solid rgba(255,255,255,.1);color:
   <section id="s-me">
     <div class="card"><h2>Чей день считаем</h2>
       <div class="who" id="me-who"></div>
-      <label class="fl" for="me-bd">Или своя дата рождения</label>
-      <input id="me-bd" type="date" min="1900-01-01">
-      <p class="txt dim" style="font-size:12.5px;margin-top:7px">Нажми на поле, телефон
-        откроет выбор числа, месяца и года. У каждого свой дневник.</p>
-      <button class="btn ghost" onclick="setOwnBd()">Считать по этой дате</button>
-      <p class="txt dim" id="me-err" style="font-size:12.5px;margin-top:8px"></p>
+      <p class="txt dim" style="font-size:12.5px;margin-top:9px">У каждого свой дневник,
+        записи не смешиваются. Чужие даты смотри во вкладке «Люди» второго приложения.</p>
     </div>
     <div class="card"><h2>Профиль</h2>
       <div class="kv"><b>Имя</b><span id="p-name"></span></div>
@@ -717,23 +713,13 @@ function parseBD(raw){
   return null;
 }
 function pad2(n){ return (n<10?"0":"")+n; }
-function setOwnBd(){
-  var p=parseBD(document.getElementById("me-bd").value);
-  var e=document.getElementById("me-err");
-  if(!p){ e.textContent="Выбери дату рождения."; return; }
-  var dd=p.d, mm=p.m, yy=p.y;
-  if(mm<1||mm>12||dd<1||dd>dim(yy,mm)||yy<1900||yy>TY){
-    e.textContent="Такой даты нет. Год от 1900 до нынешнего."; return; }
-  ME={name:"Свой профиль", bd:yy+"-"+pad2(mm)+"-"+pad2(dd)};
-  saveOwner(); redrawAll();
-  e.textContent="Считаю по дате "+dd+" "+MNR[mm-1]+" "+yy+".";
-}
 function renderWho(){
   var h="";
   for(var i=0;i<OWNERS.length;i++)
     h+='<button class="'+(ME.bd===OWNERS[i].b?"on":"")+'" onclick="setOwner('+i+')">'+
        OWNERS[i].n+"</button>";
-  document.getElementById("me-who").innerHTML=h;
+  var w=document.getElementById("me-who");
+  if(w) w.innerHTML=h;
 }
 
 /* Завтрашний день одной строкой: вечером понятно, к чему готовиться. */

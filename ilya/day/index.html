@@ -225,14 +225,6 @@ input[type=date]{-webkit-appearance:none;appearance:none;min-height:46px}
 
   <!-- Я -->
   <section id="s-me">
-    <div class="card"><h2>Чья дата</h2>
-      <label class="fl" for="me-bd">Дата рождения</label>
-      <input id="me-bd" type="date" min="1900-01-01">
-      <p class="txt dim" style="font-size:12.5px;margin-top:7px">Нажми на поле, телефон
-        откроет выбор числа, месяца и года. Дата остаётся в этом телефоне.</p>
-      <button class="btn ghost" onclick="setOwnBd()">Считать по этой дате</button>
-      <p class="txt dim" id="me-err" style="font-size:12.5px;margin-top:8px"></p>
-    </div>
     <div class="card"><h2>Профиль</h2>
       <div class="kv"><b>Имя</b><span id="p-name"></span></div>
       <div class="kv"><b>Дата рождения</b><span id="p-bd"></span></div>
@@ -629,7 +621,7 @@ function digit(n){
 })();
 
 renderDay(); renderMonth(); renderYear(); renderMe();
-document.getElementById("me-bd").value=ME.bd;
+var f=document.getElementById("me-bd"); if(f) f.value=ME.bd;
 
 /* Шторка закрывается свайпом вниз — так же, как в родных приложениях телефона. */
 (function(){
