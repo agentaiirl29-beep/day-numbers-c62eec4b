@@ -197,8 +197,9 @@ nav b.on em{opacity:1}
   <section id="s-add">
     <div class="card"><h2>Новый человек</h2>
       <input id="a-name" placeholder="Имя" autocomplete="off">
-      <input id="a-bd" placeholder="Дата рождения" inputmode="numeric" autocomplete="off" maxlength="10" oninput="maskBD(this)">
-      <p class="txt dim" style="font-size:12.5px;margin-top:7px">Вводи только цифры, например 25062000 — точки поставятся сами.</p>
+      <label class="fl" for="a-bd">Дата рождения</label>
+      <input id="a-bd" type="date" min="1900-01-01" autocomplete="off">
+      <p class="txt dim" style="font-size:12.5px;margin-top:7px">Нажми на поле, телефон откроет выбор числа, месяца и года.</p>
       <p class="txt dim" id="a-err" style="font-size:12.5px;margin-top:8px"></p>
       <button class="btn" onclick="addPerson()">Добавить в круг</button>
       <button class="btn ghost" onclick="go('s-circle')">Назад</button>
@@ -531,12 +532,16 @@ function openPairDay(y,m,d){
 function pad(n){ return (n<10?"0":"")+n; }
 
 
-/* На телефоне цифровая клавиатура не даёт точку, поэтому ставим её сами. */
-function maskBD(el){
-  var v=el.value.replace(/\D/g,"").slice(0,8), o=v.slice(0,2);
-  if(v.length>2) o+="."+v.slice(2,4);
-  if(v.length>4) o+="."+v.slice(4,8);
-  el.value=o;
+/* Родной выбор даты отдаёт год-месяц-день; ручной ввод цифрами тоже принимаем. */
+function parseBD(raw){
+  raw=(raw||"").trim();
+  var m=raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(m) return {d:+m[3], m:+m[2], y:+m[1]};
+  m=raw.match(/^(\d{1,2})[.\-\/](\d{1,2})[.\-\/](\d{4})$/);
+  if(m) return {d:+m[1], m:+m[2], y:+m[3]};
+  var g=raw.replace(/\D/g,"");
+  if(g.length===8) return {d:+g.slice(0,2), m:+g.slice(2,4), y:+g.slice(4)};
+  return null;
 }
 
 /* ---------- Люди ---------- */
@@ -554,11 +559,10 @@ function addPerson(){
   var n=document.getElementById("a-name").value.trim();
   var raw=document.getElementById("a-bd").value.trim();
   var e=document.getElementById("a-err");
-  var m=raw.match(/^(\d{1,2})[.\-\/](\d{1,2})[.\-\/](\d{4})$/);
-  if(!m){ var g=raw.replace(/\D/g,""); if(g.length===8) m=[0,g.slice(0,2),g.slice(2,4),g.slice(4)]; }
+  var m=parseBD(raw);
   if(!n){ e.textContent="Впиши имя."; return; }
-  if(!m){ e.textContent="Нужны восемь цифр: день, месяц, год. Например 25062000."; return; }
-  var dd=+m[1], mm=+m[2], yy=+m[3];
+  if(!m){ e.textContent="Выбери дату рождения."; return; }
+  var dd=m.d, mm=m.m, yy=m.y;
   if(mm<1||mm>12||dd<1||dd>dim(yy,mm)||yy<1900||yy>TY){
     e.textContent="Такой даты нет. Год — от 1900 до нынешнего."; return; }
   people.push({n:n, b:yy+"-"+pad(mm)+"-"+pad(dd)});

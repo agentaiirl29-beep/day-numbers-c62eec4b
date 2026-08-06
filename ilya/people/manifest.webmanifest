@@ -1,0 +1,12 @@
+{
+  "name": "Люди · Сюцай",
+  "short_name": "Люди",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2f4f8",
+  "theme_color": "#f2f4f8",
+  "icons": [
+    {"src": "icon-180.png", "sizes": "180x180", "type": "image/png", "purpose": "any"}
+  ]
+}

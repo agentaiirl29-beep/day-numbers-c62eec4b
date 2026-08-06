@@ -1,0 +1,12 @@
+{
+  "name": "Календарь Сюцай",
+  "short_name": "Календарь",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4efe4",
+  "theme_color": "#f4efe4",
+  "icons": [
+    {"src": "icon-180.png", "sizes": "180x180", "type": "image/png", "purpose": "any"}
+  ]
+}
