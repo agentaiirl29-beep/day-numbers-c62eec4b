@@ -153,6 +153,12 @@ input[type=date]{-webkit-appearance:none;appearance:none;min-height:46px}
   color:#5f5847;border-radius:14px;padding:12px;font:inherit;font-size:15px;margin:10px 0 0;
   cursor:pointer;font-family:inherit}
 .hint{margin:14px 0 0}
+.hbtn{display:flex;align-items:center;justify-content:center;width:32px;height:32px;
+  flex:none;margin-left:6px;border:1px solid rgba(140,124,96,.3);background:transparent;
+  color:#5f5847;border-radius:11px;cursor:pointer;padding:0;font:inherit}
+.hrow{align-items:center;gap:8px}
+.hsub{flex:1;text-align:right;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:359px){ .hsub{display:none} }
 .foot{text-align:center;font-size:11.5px;color:#a89e8c;margin:18px 0 0;line-height:1.5}
 </style>
 <link rel="manifest" href="manifest.webmanifest">
@@ -160,7 +166,7 @@ input[type=date]{-webkit-appearance:none;appearance:none;min-height:46px}
 <body>
 <div class="wrap">
 <header>
-  <div class="hrow"><h1 id="htitle">Сегодня</h1><div class="hsub" id="hsub"></div></div>
+  <div class="hrow"><h1 id="htitle">Сегодня</h1><div class="hsub" id="hsub"></div><button class="hbtn" onclick="openHelp()" aria-label="Инструкция"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.1" stroke-linecap="round"/></svg></button></div>
 </header>
 
 <main>
@@ -396,6 +402,28 @@ function setOwnBd(){
   saveOwner();
   renderDay(); renderMonth(); renderYear(); renderMe();
   e.textContent="Считаю по дате "+p.d+" "+MNR[p.m-1]+" "+p.y+".";
+}
+
+var HELP=[{"t":"Что это","p":["Календарь показывает, к чему располагает каждый день лично для вас.","У дня два числа. Личное считается от вашей даты рождения и у каждого своё. Общее считается от самой даты и одинаково у всех.","Числа не приказывают, а подсказывают: в какой день легче договариваться, в какой — работать в одиночку, а какой лучше не нагружать важным."]},{"t":"Откуда берутся числа","p":["Личный год: день и месяц рождения складываются с текущим годом и сворачиваются до одной цифры.","Личный месяц: личный год плюс номер месяца.","Личный день: личный месяц плюс число.","Общий день: складывается из самой даты, без даты рождения.","Свернуть до цифры значит складывать цифры, пока не останется одна. Например 25 это 2 плюс 5, то есть 7."]},{"t":"Особые дни","p":["Эффективные дни отмечены цветом: это дни, когда общее число равно 3 или 6. В них проще двигать дела и договариваться.","Дни обнуления это 10, 20 и 30 числа. Их отмечаем отдельно: важное на них лучше не назначать, они хороши для завершения и отдыха."]},{"t":"Экран «Сегодня»","p":["Крупное число вверху это ваш личный день, рядом короткая подсказка настроения дня.","Ниже два числа поменьше: общий день и личный месяц.","«Главное на день» это две строки: что день усиливает и чего в нём лучше избегать.","Внизу строка «Завтра», чтобы вечером понимать, к чему готовиться. Нажмите на неё, и день откроется целиком."]},{"t":"Экран «Месяц»","p":["Месяц целиком сеткой. В каждой клетке сверху число месяца, снизу два числа: личное и общее.","Цветом выделены эффективные дни и дни обнуления, сегодняшний день обведён.","Нажмите на любой день, откроется его разбор целиком.","Стрелки листают месяцы вперёд и назад, кнопка «сегодня» возвращает на текущий."]},{"t":"Вкладка «Я»","p":["Число сознания считается от дня рождения и говорит, как человек принимает решения.","Миссия считается из всей даты рождения и говорит о направлении, в котором человек реализуется.","Ниже личный год, месяцы года списком и матрица цифр даты рождения."]},{"t":"Про данные","p":["Всё считается прямо в телефоне. Интернет нужен только чтобы открыть приложение в первый раз.","Записи дневника и список людей хранятся в самом телефоне и никуда не отправляются.","Приложение можно поставить на экран как обычное: «Поделиться», затем «На экран Домой»."]}];
+
+/* Инструкция для того, кто открыл календарь впервые. */
+function openHelp(){
+  var h="";
+  for(var i=0;i<HELP.length;i++){
+    h+='<div class="card"><h2>'+HELP[i].t+"</h2>";
+    for(var j=0;j<HELP[i].p.length;j++)
+      h+='<p class="txt" style="margin-top:'+(j?"9px":"0")+'">'+HELP[i].p[j]+"</p>";
+    h+="</div>";
+  }
+  h+='<div class="card"><h2>Что значат числа<span class="mini">коротко</span></h2>';
+  for(var n=1;n<=9;n++)
+    h+='<div class="kv"><b>'+n+"</b><span>"+(D.meanings[n]||"")+"</span></div>";
+  h+="</div>";
+  document.getElementById("sh-t").textContent="Как пользоваться";
+  document.getElementById("sh-s").textContent="за пару минут";
+  document.getElementById("sh-body").innerHTML=h;
+  document.getElementById("sheet").classList.add("on");
+  document.body.style.overflow="hidden";
 }
 
 var TITLES = {"s-day":"Сегодня","s-mon":"Месяц","s-year":"Год","s-me":"Я"};
