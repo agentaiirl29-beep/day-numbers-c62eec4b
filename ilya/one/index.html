@@ -340,13 +340,29 @@ input{width:100%;background:var(--bg);border:1px solid var(--bd2);color:var(--tx
 .seg button{flex:1;border:0;background:transparent;color:var(--dim);border-radius:11px;
   padding:9px 4px;font:inherit;font-size:12.5px;cursor:pointer;font-family:inherit}
 .seg button.on{background:var(--acc);color:var(--onacc);font-weight:620}
+.bkbtn{display:none;align-items:center;justify-content:center;width:34px;height:34px;
+  margin:0 4px 0 -6px;flex:none;border:1px solid var(--bd3);background:transparent;color:var(--tx2);
+  border-radius:11px;font:inherit;font-size:19px;line-height:1;cursor:pointer;padding:0}
+.mebtn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0}
+#s-meet .pd.g1{background:var(--card);border-color:var(--bd2)}
+#s-meet .pd.g2{background:var(--acc09);border-color:var(--acc50)}
+#s-meet .pd.g3{background:var(--acc22);border:2px solid var(--acc);padding:5px 1px 4px}
+#s-meet .pd.g3 b,#s-meet .pd.g3 i{color:var(--acc)}
+#s-meet .pd.g3 b{font-weight:700}
+#s-meet .pd.g0{background:var(--zero14);border-color:var(--zero30)}
+#s-meet .pd.g0 b{color:var(--zero)}
+#s-meet .lgnd i{width:14px;height:14px}
+#s-meet .lgnd .l1{background:var(--card);border-color:var(--bd2)}
+#s-meet .lgnd .l2{background:var(--acc09);border-color:var(--acc50)}
+#s-meet .lgnd .l3{background:var(--acc22);border:2px solid var(--acc)}
+#s-meet .lgnd .l0{background:var(--zero14);border-color:var(--zero30)}
 .foot{text-align:center;font-size:11.5px;color:var(--dim2);margin:18px 0 0;line-height:1.5}
 </style>
 <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
 <div class="wrap">
-<header><div class="hrow"><h1 id="htitle">Сегодня</h1><div class="hsub" id="hsub"></div><button class="mebtn" onclick="toggleTheme()" id="thbtn">☀</button><button class="mebtn" onclick="go('s-me')" id="mebtn">Я</button></div></header>
+<header><div class="hrow"><button class="bkbtn" id="bkbtn" onclick="go('s-day')">‹</button><h1 id="htitle">Сегодня</h1><div class="hsub" id="hsub"></div><button class="mebtn" onclick="go('s-me')" id="mebtn" aria-label="Профиль"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.4"/><path d="M4.9 20c.6-3.7 3.6-5.7 7.1-5.7s6.5 2 7.1 5.7" stroke-linecap="round"/></svg></button></div></header>
 
 <main>
   <!-- СЕГОДНЯ -->
@@ -424,9 +440,9 @@ input{width:100%;background:var(--bg);border:1px solid var(--bd2);color:var(--tx
       <span class="z"><i></i>день обнуления</span>
       <span>сверху личное число, снизу общее</span>
     </div>
-    <div class="card" style="margin-top:14px"><h2>Личный месяц <span class="mini" id="m-num"></span></h2>
+    <div class="card" style="margin-top:14px"><h2>Что помогает в этом месяце<span class="mini" id="m-num"></span></h2>
       <p class="txt" id="m-plus"></p></div>
-    <div class="card"><h2>В минусе</h2><p class="txt" id="m-minus"></p></div>
+    <div class="card"><h2>Что мешает в этом месяце</h2><p class="txt" id="m-minus"></p></div>
   </section>
 
   <!-- Я -->
@@ -436,8 +452,6 @@ input{width:100%;background:var(--bg);border:1px solid var(--bd2);color:var(--tx
         <button onclick="setTheme('dk')" id="th-dk">Тёмное</button>
         <button onclick="setTheme('lt')" id="th-lt">Светлое</button>
       </div>
-      <p class="txt dim" style="font-size:12.5px;margin-top:9px">Выбор запоминается
-        в этом телефоне.</p>
     </div>
     <div class="card"><h2>Профиль</h2>
       <div class="kv"><b>Имя</b><span id="p-name"></span></div>
@@ -464,7 +478,6 @@ input{width:100%;background:var(--bg);border:1px solid var(--bd2);color:var(--tx
     <div class="card"><h2>Матрица<span class="mini">цифры даты рождения</span></h2>
       <div class="mx" id="p-mx"></div>
       <div style="margin-top:12px" id="p-lines"></div></div>
-    <div class="foot">Расчёт идёт на устройстве. Интернет не нужен.</div>
   </section>
 <!-- КРУГ -->
   <section id="s-circle">
@@ -480,7 +493,6 @@ input{width:100%;background:var(--bg);border:1px solid var(--bd2);color:var(--tx
     <div id="c-list"></div>
     <div id="c-all"></div>
     <button class="btn ghost" onclick="go('s-add')">Добавить человека</button>
-    <div class="foot">Список хранится только в этом телефоне.</div>
   </section>
 
   <!-- ВСТРЕЧА -->
@@ -706,6 +718,8 @@ function go(id){
   for(var j=0;j<bs.length;j++) bs[j].classList.toggle("on", bs[j].dataset.s===(PARENT[id]||id));
   var gs=document.querySelectorAll(".seg button");
   for(var g=0;g<gs.length;g++) gs[g].classList.toggle("on", gs[g].dataset.g===id);
+  var bk=document.getElementById("bkbtn");
+  if(bk) bk.style.display = (id==="s-me") ? "flex" : "none";
   document.getElementById("htitle").textContent=TITLES[id];
   window.scrollTo(0,0);
 }
@@ -858,13 +872,17 @@ function renderLog(){
     ? "Средняя оценка дня по личному числу. Чем больше отметок, тем точнее картина."
     : "Пока нет ни одной отметки. Ставь оценку дню на вкладке «Сегодня».";
   var lh="";
-  for(i=0;i<Math.min(keys.length,30);i++){
+  for(i=0;i<Math.min(keys.length,7);i++){
     var k=keys[i], v=L[k], p=k.split("-");
-    lh+='<div class="stat"><div class="nn">'+(v.p||"·")+"</div>"+
+    lh+='<div class="stat" onclick="editDay(\''+k+'\')" style="cursor:pointer">'+
+        '<div class="nn">'+(v.p||"·")+"</div>"+
         '<div style="flex:1;font-size:13.5px;line-height:1.4">'+(+p[2])+" "+MNR[+p[1]-1]+
         (v.n?'<i style="font-style:normal;color:var(--dim);display:block;font-size:12.5px">'+v.n+"</i>":"")+
         "</div><div class=\"cnt\">"+(v.r?v.r+"/5":"")+"</div></div>";
   }
+  if(keys.length>7)
+    lh+='<button class="btn ghost" style="margin-top:10px" onclick="openArchive()">'+
+        "Все записи · "+keys.length+"</button>";
   document.getElementById("l-list").innerHTML = lh ||
     '<p class="txt dim" style="font-size:13.5px">Записей нет.</p>';
 }
@@ -1298,9 +1316,37 @@ function loadPeople(){
 function savePeople(){ try{ localStorage.setItem(KEY,JSON.stringify(people)); }catch(e){} }
 var people=loadPeople();
 
+
+/* Запись можно открыть и дописать: возвращаемся в тот день, а не пишем заново. */
+function editDay(k){
+  var p=k.split("-");
+  LOGD={y:+p[0], m:+p[1], d:+p[2]};
+  closeSheet();
+  go("s-day"); renderRate();
+  var c=document.getElementById("d-rate");
+  if(c) c.scrollIntoView({block:"center"});
+}
+function logRow(k,v){
+  var p=k.split("-");
+  return '<div class="stat" onclick="editDay(\''+k+'\')" style="cursor:pointer">'+
+    '<div class="nn">'+(v.p||"·")+"</div>"+
+    '<div style="flex:1;font-size:13.5px;line-height:1.4">'+(+p[2])+" "+MNR[+p[1]-1]+
+    (v.n?'<i style="font-style:normal;color:var(--dim);display:block;font-size:12.5px">'+v.n+"</i>":"")+
+    '</div><div class="cnt">'+(v.r?v.r+"/5":"")+"</div></div>";
+}
+function openArchive(){
+  var L=load(), keys=Object.keys(L).sort().reverse(), h="";
+  for(var i=0;i<keys.length;i++) h+=logRow(keys[i],L[keys[i]]);
+  document.getElementById("sh-t").textContent="Все записи";
+  document.getElementById("sh-s").textContent=keys.length+" дн.";
+  document.getElementById("sh-body").innerHTML='<div class="card">'+
+    (h||'<p class="txt dim">Записей нет.</p>')+"</div>";
+  document.getElementById("sheet").classList.add("on");
+  document.body.style.overflow="hidden";
+}
+
 function redrawAll(){
   renderWho(); renderCircle(); renderPairbar(); renderMeet(); renderAdd(); renderExpWho(); renderDay(); renderMonth(); renderHits(); renderLog(); renderMe();
-  document.getElementById("mebtn").textContent = "Я";
 }
 
 /* ---------- Месяц ---------- */
@@ -1322,7 +1368,7 @@ function renderMonth(){
   }
   document.getElementById("m-grid").innerHTML=h;
   var pm=PM(ME.bd,vy,vm);
-  document.getElementById("m-num").textContent="число "+pm;
+  document.getElementById("m-num").textContent="личное число "+pm;
   document.getElementById("m-plus").textContent=plain(D.month[pm].in_plus);
   document.getElementById("m-minus").textContent=plain(D.month[pm].in_minus);
 }
