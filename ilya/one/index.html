@@ -1,0 +1,1473 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Сюцай">
+<meta name="theme-color" content="#14161a">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAF8klEQVR4nO3d7U/VZRzH8d85cI7cCQrmDaIhY4TcCJu53GqWS+dMSlNSJFdzaWbe/B09azM153LpZuI9mTqtLCsr11yFgCKogPf3CuIJATmnJ2xOx/fHhfPHdZ1d79fjy/mZe+/3hO/Ql56R6QC98eseAHMRB0TEARFxQEQcEBEHRMQBEXFARBwQEQdExAERcUBEHBARB0TEARFxQEQcEBEHRMQBEXFARBwQEQdExAERcUBEHBARB0TEARFxQEQcEBEHRMQBEXFARBwQEQdExAERcUBEHBARB0TEARFxQEQcEBEHRMQBEXFARBwQEQdExAERcUBEHBARB0TEARFxQEQcEBEHRLG6B/TPS5lDKz6b2a8/0trWMXXpnufyt8fG+Cs/Lxk9POnZ/vjm706v2Vb1XJYMDL4c/TBvWvYzlxGNiENV/KDYJXMLdK8YUMSh6v1ZuWkpcbpXDCjiUJKSFPygZLzuFQONOJQsnpOflBDQvWKgEUffhqcmlM3I0b1CA+Lo27LSwmAgRvcKDYijDy+OGvzO61m6V+hBHH34dEFRTIxP9wo9iMNN7rjUaa+M1b1CG+Jws7q82GfpV8NxiMPFy3kjJheO1L1CJ+IQrS4v1j1BM+Lo3dRJYwqy03Sv0Iw4euH3+VYsmKB7hX7E0YuSKeOyMlJ0r9CPOJ4WDPiXvVeoe4URiONppdNzRg1L1L3CCMTxhMT4wEdz8nWvMAVxPGHRrNyhyYN0rzAFcTw2ZPCgRbNyda8wCHE8tuTd/MR4pYuecDhy4tQNr/doRxw9Rg5LLJ2uetFz4Lempiutnu4xAXH0+KS0MBhQ+tfo7Apv2F3j9R4TEIfjOE5menLJlHGKj3f92HD9dsjTPYYgDsdxnFULi/x+pZ/Nh9q7NlWe8nqPIYjDKchOmzppjOLjrQfPtLR1eLrHHMThrFpYrPjy3v2OrQfPeLnFLLbHMblw5KT8EYqPN1XWhtq7PN1jFNvjWKn82bh+O7T7yFkvtxjH6jimTx6bl5Wq+HjDrprOrrCne0xjbxx+v2/5fNWLnsbLrQeONXm6x0D2xjH7jazM9GTFx+t2VIfDEU/3GMjSOIKBmI9LVS96as/dOXrikqd7zGRpHGUzckakJig+/qKiysst5rIxjsT4wOLZeYqPj1dfs+EHsL2yMY4P3x6fMljpoicScdZuP+n1HmNZF0dqclz5W6oXPUf+uljXeNfTPSazLo6l8woS4pR+wWY4HFm/w97PhmNbHOkvJM59M1vx8b5fGi9ca/N0j+HsimP5/AmBWMWLnu6Ndlz0uLAojuwxQ2a+lqn4ePv3DTfu/uflnChgURwry4r8ar9tI9Te9fW+017vMZ8tcUzIGTZl4mjFx1v217Vac9HjwpY4VpUVK7680/rwG5suelxYEcerxekT84YrPv5qb217xyNP90QLC+Lw+VaUFSm+vXLzwd6fznk6J4pE2f+38gxSkoIpSUHFxxt21XQ9suuix4UFXw5l5y61HPq9WfcKgxDHY+u2V4cj1l30uCCOHicbbv/692XdK8xCHD2svehxQRyO4zh/VF39p+6m7hXGIQ7bL3pcEIfzw/EL9c33dK8wke1xdHdH1u+s1r3CULbH8e3R85euW33R48LqODo6uzfusf2ix4XVcVQcrr91r133CnPZG0dbqHMzFz2u7I1jy/66+6FO3SuMZmkcd1oebjtUr3uF6SyNY+Oemodc9PTFxjgu33hQ+fN53SuigI1xfLmz+lE3Fz19sy6OsxdbDv/ZrHtFdLAujrUVVRz0KLIrjqozt479e1X3iqhhVxxruOjpD196RqbuDTCUXV8O9AtxQEQcEBEHRMQBEXFARBwQEQdExAERcUBEHBARB0TEARFxQEQcEBEHRMQBEXFARBwQEQdExAERcUBEHBARB0TEARFxQEQcEBEHRMQBEXFARBwQEQdExAERcUBEHBARB0TEARFxQEQcEBEHRMQBEXFARBwQEQdExAERcUBEHBARB0TEARFxQEQcEBEHRMQBEXFA9D/idiHvgagIYQAAAABJRU5ErkJggg==">
+<title>Сюцай</title>
+<style>
+:root{
+  --bg:#14161a; --card:#1c1f25; --card2:#1a1d23; --card3:#242832;
+  --tx:#e9e6df; --tx2:#cfcabe; --dim:#8d8778; --dim2:#6f6a5d;
+  --acc:#e0b66e; --onacc:#191b1f; --eff:#8fbaff; --zero:#e6785f; --ok:#7fd0a4;
+  --bd0:rgba(255,255,255,.04); --bd:rgba(255,255,255,.07);
+  --bd2:rgba(255,255,255,.11); --bd3:rgba(255,255,255,.16);
+  --veil:rgba(20,22,26,.92); --shade:rgba(0,0,0,.55);
+  --acc07:rgba(224,182,110,.07); --acc09:rgba(224,182,110,.09);
+  --acc12:rgba(224,182,110,.12); --acc14:rgba(224,182,110,.14);
+  --acc22:rgba(224,182,110,.22); --acc30:rgba(224,182,110,.3);
+  --acc50:rgba(224,182,110,.5);
+  --eff08:rgba(110,170,255,.08); --eff14:rgba(110,170,255,.14);
+  --eff30:rgba(110,170,255,.3);
+  --zero07:rgba(230,120,95,.07); --zero14:rgba(230,120,95,.14);
+  --zero30:rgba(230,120,95,.3); --ok14:rgba(110,190,150,.14);
+}
+body.lt{
+  --bg:#f4efe4; --card:#fffdf7; --card2:#f7f2e6; --card3:#efe9dc;
+  --tx:#2b2a27; --tx2:#3f3c34; --dim:#8a8071; --dim2:#a89e8c;
+  --acc:#2e6f63; --onacc:#fffdf7; --eff:#2662c8; --zero:#c44a35; --ok:#2e6f63;
+  --bd0:rgba(140,124,96,.1); --bd:rgba(140,124,96,.17);
+  --bd2:rgba(140,124,96,.26); --bd3:rgba(140,124,96,.34);
+  --veil:rgba(244,239,228,.94); --shade:rgba(60,52,38,.4);
+  --acc07:rgba(46,111,99,.06); --acc09:rgba(46,111,99,.09);
+  --acc12:rgba(46,111,99,.12); --acc14:rgba(46,111,99,.14);
+  --acc22:rgba(46,111,99,.2); --acc30:rgba(46,111,99,.28);
+  --acc50:rgba(46,111,99,.45);
+  --eff08:rgba(38,98,200,.07); --eff14:rgba(38,98,200,.12);
+  --eff30:rgba(38,98,200,.28);
+  --zero07:rgba(196,74,53,.06); --zero14:rgba(196,74,53,.12);
+  --zero30:rgba(196,74,53,.28); --ok14:rgba(46,111,99,.14);
+}
+body.lt input,body.lt select,body.lt textarea{color-scheme:light}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font:400 16px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;
+  background:var(--bg);color:var(--tx);
+  padding-bottom:calc(78px + env(safe-area-inset-bottom));
+  -webkit-font-smoothing:antialiased;overscroll-behavior-y:none;
+}
+.wrap{max-width:520px;margin:0 auto}
+header{position:sticky;top:0;z-index:20;background:var(--veil);
+  backdrop-filter:saturate(180%) blur(14px);
+  padding:calc(10px + env(safe-area-inset-top)) 18px 10px;border-bottom:1px solid var(--bd)}
+.hrow{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+h1{margin:0;font-size:19px;font-weight:640;letter-spacing:-.2px}
+.hsub{font-size:12.5px;color:var(--dim);white-space:nowrap}
+main{padding:16px 16px 24px}
+section{display:none;animation:fade .18s ease}
+section.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;
+  padding:16px;margin:0 0 12px}
+.card h2{margin:0 0 10px;font-size:14px;font-weight:620;letter-spacing:.01em}
+.card h2 .mini{font-weight:400;color:var(--dim);font-size:12px;margin-left:6px}
+p.txt{margin:0;font-size:14.5px;line-height:1.5;color:var(--tx2)}
+p.txt+p.txt{margin-top:9px}
+.dim{color:var(--dim)}
+
+/* герой дня */
+.hero{background:linear-gradient(150deg,var(--card3),var(--card2));border:1px solid var(--acc22);
+  border-radius:22px;padding:18px;margin:0 0 12px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;
+  border-radius:50%;background:radial-gradient(circle,var(--acc14),transparent 70%)}
+.hero .lab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.hero .big{display:flex;align-items:flex-end;gap:12px;margin:6px 0 2px}
+.hero .big em{font-style:normal;font-size:66px;line-height:.95;font-weight:600;
+  color:var(--acc);letter-spacing:-2px}
+.hero .big span{font-size:14px;color:var(--tx2);padding-bottom:9px;line-height:1.35}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.chip{font-size:11.5px;padding:5px 10px;border-radius:999px;background:var(--bd);color:var(--tx2)}
+.chip.eff{background:var(--eff14);color:var(--eff)}
+.chip.zero{background:var(--zero14);color:var(--zero)}
+.chip.gold{background:var(--acc14);color:var(--acc)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 12px}
+.fl{display:block;font-size:12.5px;color:var(--dim);margin:2px 2px 6px}
+input[type=date]{-webkit-appearance:none;appearance:none;min-height:46px;color-scheme:dark}
+.tmr{display:flex;align-items:center;gap:12px;background:var(--card);
+  border:1px solid var(--bd);border-radius:16px;padding:13px 14px;margin:0 0 12px;
+  cursor:pointer}
+.tmr .t{flex:1;min-width:0}
+.tmr .t b{display:block;font-size:14px;font-weight:580}
+.tmr .t span{display:block;font-size:12.5px;color:var(--dim);margin-top:2px}
+.tmr .n{width:38px;height:38px;border-radius:13px;flex:none;display:flex;align-items:center;
+  justify-content:center;font-size:18px;font-weight:620;background:var(--bd);color:var(--tx2)}
+.tmr .n.eff{background:var(--eff14);color:var(--eff)}
+.tmr .n.zero{background:var(--zero14);color:var(--zero)}
+.pl{margin:0 0 14px}
+.pl:last-child{margin-bottom:0}
+.pl b{display:block;font-size:12.5px;color:var(--dim);margin:0 0 4px;font-weight:500}
+.pl .t{font-size:14.5px;font-weight:580;line-height:1.35}
+.pl .s{font-size:13px;color:var(--tx2);line-height:1.55;margin-top:4px}
+.pl.now .t{color:var(--acc)}
+.lognav{display:flex;align-items:center;gap:8px;margin:0 0 12px}
+.lognav b{flex:1;text-align:center;font-size:13.5px;font-weight:560}
+.lognav button{width:36px;height:36px;flex:none;border-radius:12px;font-size:17px;
+  border:1px solid var(--bd2);background:var(--bg);color:var(--tx2);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;padding:0;font-family:inherit}
+.lognav button:disabled{opacity:.3}
+.mini-card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:13px}
+.mini-card .lab{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.mini-card .v{font-size:30px;font-weight:600;line-height:1.1;margin:3px 0 2px}
+.mini-card .w{font-size:12px;color:var(--dim);line-height:1.35}
+
+.act{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--bd0)}
+.act:last-child{border:0;padding-bottom:0}
+.act .ic{width:26px;height:26px;border-radius:9px;flex:none;display:flex;align-items:center;
+  justify-content:center;font-size:14px;background:var(--ok14);color:var(--ok)}
+.act.no .ic{background:var(--zero14);color:var(--zero)}
+.act div{font-size:14.5px;line-height:1.45;color:var(--tx)}
+
+/* подбор */
+.goals{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 14px}
+.goal{background:var(--card);border:1px solid var(--bd);border-radius:15px;
+  padding:12px;cursor:pointer;text-align:left}
+.goal.on{border-color:var(--acc);background:var(--acc09)}
+.goal b{display:block;font-size:14px;font-weight:560;margin:0 0 3px;color:var(--tx)}
+.goal span{font-size:11.5px;color:var(--dim);line-height:1.3;display:block}
+.hit{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--bd);
+  border-radius:16px;padding:12px 14px;margin:0 0 8px;cursor:pointer}
+.hit .dt{width:46px;flex:none;text-align:center}
+.hit .dt b{display:block;font-size:19px;line-height:1.1;font-weight:620}
+.hit .dt span{font-size:11px;color:var(--dim)}
+.hit .ms{flex:1;font-size:13.5px;color:var(--tx2);line-height:1.4}
+.hit .ms i{font-style:normal;color:var(--dim);font-size:12px;display:block;margin-top:2px}
+.hit .sc{font-size:11px;color:var(--acc);border:1px solid var(--acc30);
+  border-radius:999px;padding:3px 8px;white-space:nowrap}
+
+/* горизонт */
+.strip{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.sd{background:var(--card);border:1px solid var(--bd);border-radius:12px;
+  padding:6px 2px;text-align:center;cursor:pointer;min-height:56px}
+.sd .n{font-size:14px;font-weight:560}
+.sd .wd{font-size:9.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.04em}
+.sd .p{font-size:11px;color:var(--acc);margin-top:2px}
+.sd.eff{border-color:var(--eff30);background:var(--eff08)}
+.sd.zero{border-color:var(--zero30);background:var(--zero07)}
+.sd.now{outline:2px solid var(--acc);outline-offset:1px}
+.mlab{font-size:12px;color:var(--dim);margin:16px 2px 8px;text-transform:capitalize}
+
+/* дневник */
+.rate{display:flex;gap:7px;margin:10px 0 0}
+.rate button{flex:1;background:var(--card);border:1px solid var(--bd2);color:var(--tx2);
+  border-radius:13px;padding:11px 0;font-size:15px;cursor:pointer;font-family:inherit}
+.rate button.on{background:var(--acc);border-color:var(--acc);color:var(--onacc);font-weight:640}
+textarea{width:100%;background:var(--bg);border:1px solid var(--bd2);color:var(--tx);
+  border-radius:13px;padding:11px 12px;font:inherit;font-size:14.5px;resize:vertical;min-height:74px;margin:10px 0 0}
+.stat{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--bd0)}
+.stat:last-child{border:0}
+.stat .nn{width:28px;height:28px;border-radius:9px;background:var(--acc14);color:var(--acc);
+  display:flex;align-items:center;justify-content:center;font-weight:620;font-size:13px;flex:none}
+.bar{flex:1;height:7px;border-radius:4px;background:var(--bd);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok)}
+.stat .cnt{font-size:11.5px;color:var(--dim);width:52px;text-align:right}
+.btn{display:block;width:100%;background:var(--acc);color:var(--onacc);border:0;border-radius:14px;
+  padding:13px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;margin:12px 0 0}
+.btn.ghost{background:transparent;border:1px solid var(--bd3);color:var(--tx2);font-weight:450}
+
+.sheet{position:fixed;inset:0;z-index:40;display:none}
+.sheet.on{display:block}
+.sheet .bg{position:absolute;inset:0;background:var(--shade)}
+.sheet .pan{position:absolute;left:0;right:0;bottom:0;max-height:88vh;overflow:auto;background:var(--bg);
+  border-radius:22px 22px 0 0;padding:8px 16px calc(26px + env(safe-area-inset-bottom));
+  max-width:520px;margin:0 auto;animation:up .22s cubic-bezier(.2,.8,.3,1);
+  border-top:1px solid var(--bd2)}
+@keyframes up{from{transform:translateY(24px);opacity:.6}to{transform:none;opacity:1}}
+.grab{width:38px;height:4px;border-radius:3px;background:var(--bd3);margin:6px auto 12px}
+.xbtn{border:0;background:var(--bd);color:var(--tx2);width:36px;height:36px;border-radius:50%;font-size:19px;line-height:1;cursor:pointer;font-family:inherit;flex:none}
+.shead{display:flex;align-items:center;justify-content:space-between;margin:0 0 12px;padding:0 2px}
+.shead b{font-size:19px;font-weight:620}
+.shead span{font-size:13px;color:var(--dim)}
+ol.pts{margin:0;padding:0;list-style:none;counter-reset:p}
+ol.pts li{counter-increment:p;position:relative;padding:0 0 0 28px;margin:0 0 11px;font-size:14.5px;
+  line-height:1.47;color:var(--tx2)}
+ol.pts li:last-child{margin-bottom:0}
+ol.pts li:before{content:counter(p);position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;
+  background:var(--ok14);color:var(--ok);font-size:11.5px;font-weight:600;display:flex;
+  align-items:center;justify-content:center}
+ol.pts.warn li:before{background:var(--zero14);color:var(--zero)}
+ul.qs{margin:0;padding:0;list-style:none}
+ul.qs li{position:relative;padding:0 0 0 15px;margin:0 0 10px;font-size:14.5px;line-height:1.47;color:var(--tx2)}
+ul.qs li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;
+  border:1.5px solid var(--acc50)}
+
+nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--veil);
+  backdrop-filter:saturate(180%) blur(14px);border-top:1px solid var(--bd);
+  padding:8px 0 calc(8px + env(safe-area-inset-bottom));display:flex}
+nav b{flex:1;text-align:center;font-size:11px;font-weight:500;color:var(--dim2);cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:3px;padding:2px 0}
+nav b em{font-style:normal;font-size:18px;line-height:1;opacity:.6}
+nav b.on{color:var(--acc)}
+nav b.on em{opacity:1}
+
+/* сетка месяца */
+.mbar{display:flex;align-items:center;justify-content:space-between;margin:0 0 12px;gap:8px}
+.mbar b{font-size:17px;font-weight:640;text-transform:capitalize}
+.mnav{display:flex;gap:8px}
+.mnav button{border:1px solid var(--bd2);background:var(--card);color:var(--tx2);
+  width:38px;height:38px;border-radius:12px;font-size:19px;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;padding:0;font-family:inherit}
+.mnav button.today{width:auto;padding:0 13px;font-size:13px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.wdh{font-size:11px;color:var(--dim);text-align:center;padding:0 0 4px}
+.cell{background:var(--card);border:1px solid var(--bd);border-radius:13px;
+  padding:6px 2px 5px;text-align:center;cursor:pointer;min-height:60px}
+.cell.out{visibility:hidden}
+.cell .d{font-size:15px;font-weight:560;line-height:1.1}
+.cell .pair{font-size:11px;color:var(--dim);margin-top:3px;letter-spacing:.5px}
+.cell .pair i{font-style:normal}
+.cell .pair .p{color:var(--acc);font-weight:600}
+.cell.eff{background:var(--eff08);border-color:var(--eff30)}
+.cell.eff .pair .c{color:var(--eff);font-weight:600}
+.cell.zero{background:var(--zero07);border-color:var(--zero30)}
+.cell.zero .d{color:var(--zero)}
+.cell.now{outline:2px solid var(--acc);outline-offset:1px}
+.legend{display:flex;gap:14px;margin:12px 2px 0;font-size:12px;color:var(--dim);flex-wrap:wrap}
+.legend i{width:11px;height:11px;border-radius:4px;display:inline-block;margin-right:5px;
+  vertical-align:-1px}
+.legend .e i{background:var(--eff30)}
+.legend .z i{background:var(--zero30)}
+
+/* профиль */
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--bd2);font-size:14px}
+.kv:last-child{border:0;padding-bottom:0}
+.kv b{min-width:112px;color:var(--dim);font-weight:400;font-size:13px}
+.kv span{flex:1;color:var(--tx)}
+.mx{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:2px 0 0}
+.mx div{aspect-ratio:1;border-radius:14px;background:var(--bd0);
+  border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;
+  font-size:19px;letter-spacing:2px;font-weight:600;color:var(--tx2);cursor:pointer}
+.mx div.empty{color:var(--dim2);font-weight:400;font-size:15px}
+.mx div.full{background:var(--acc12);border-color:var(--acc30);color:var(--acc)}
+.mrow{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:14px;
+  background:var(--card);border:1px solid var(--bd);margin:0 0 7px;cursor:pointer}
+.mrow .mm{flex:1;font-size:14.5px;text-transform:capitalize}
+.mrow .mv{width:30px;height:30px;border-radius:9px;background:var(--acc14);color:var(--acc);
+  font-weight:640;font-size:14px;display:flex;align-items:center;justify-content:center}
+.mrow.cur{border-color:var(--acc);background:var(--acc07)}
+
+/* кто смотрит */
+.who{display:flex;gap:7px;flex-wrap:wrap;margin:2px 0 0}
+.who button{flex:1;min-width:88px;background:var(--card);border:1px solid var(--bd2);
+  color:var(--tx2);border-radius:13px;padding:11px 8px;font:inherit;font-size:14px;cursor:pointer}
+.who button.on{background:var(--acc);border-color:var(--acc);color:var(--onacc);font-weight:640}
+input{width:100%;background:var(--bg);border:1px solid var(--bd2);color:var(--tx);
+  border-radius:13px;padding:11px 12px;font:inherit;font-size:15px;margin:8px 0 0;font-family:inherit}
+.mebtn{border:1px solid var(--bd3);background:transparent;color:var(--tx2);
+  border-radius:11px;padding:6px 11px;font:inherit;font-size:12.5px;cursor:pointer;flex:none}
+/* --- из приложения «Люди» --- */
+#s-circle /* люди */
+.per, #s-meet /* люди */
+.per, #s-exp /* люди */
+.per, #s-add /* люди */
+.per, #sheet /* люди */
+.per{display:flex;align-items:center;gap:13px;background:var(--card);border:1px solid var(--bd);
+  border-radius:18px;padding:13px 14px;margin:0 0 9px;cursor:pointer;
+  box-shadow:0 1px 3px var(--bd0)}
+#s-circle .per.on, #s-meet .per.on, #s-exp .per.on, #s-add .per.on, #sheet .per.on{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc12)}
+#s-circle .av, #s-meet .av, #s-exp .av, #s-add .av, #sheet .av{width:44px;height:44px;border-radius:14px;flex:none;display:flex;align-items:center;
+  justify-content:center;font-size:17px;font-weight:640;color:var(--card);background:var(--acc)}
+#s-circle .per .nm, #s-meet .per .nm, #s-exp .per .nm, #s-add .per .nm, #sheet .per .nm{flex:1;min-width:0}
+#s-circle .per .nm b, #s-meet .per .nm b, #s-exp .per .nm b, #s-add .per .nm b, #sheet .per .nm b{display:block;font-size:15px;font-weight:580}
+#s-circle .per .nm span, #s-meet .per .nm span, #s-exp .per .nm span, #s-add .per .nm span, #sheet .per .nm span{font-size:12.5px;color:var(--dim);display:block;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap}
+#s-circle .per .pn, #s-meet .per .pn, #s-exp .per .pn, #s-add .per .pn, #sheet .per .pn{width:38px;height:38px;border-radius:12px;background:var(--acc09);color:var(--acc);
+  display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:640;flex:none}
+#s-circle .per .pn.eff, #s-meet .per .pn.eff, #s-exp .per .pn.eff, #s-add .per .pn.eff, #sheet .per .pn.eff{background:var(--acc14)}
+#s-circle .per .pn.zero, #s-meet .per .pn.zero, #s-exp .per .pn.zero, #s-add .per .pn.zero, #sheet .per .pn.zero{background:var(--zero14);color:var(--zero)}
+#s-circle .big, #s-meet .big, #s-exp .big, #s-add .big, #sheet .big{background:linear-gradient(135deg,var(--acc),var(--eff));border-radius:22px;padding:18px;
+  color:var(--card);margin:0 0 12px}
+#s-circle .big .lab, #s-meet .big .lab, #s-exp .big .lab, #s-add .big .lab, #sheet .big .lab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--onacc)}
+#s-circle .big .row, #s-meet .big .row, #s-exp .big .row, #s-add .big .row, #sheet .big .row{display:flex;align-items:flex-end;gap:12px;margin:5px 0 0}
+#s-circle .big em, #s-meet .big em, #s-exp .big em, #s-add .big em, #sheet .big em{font-style:normal;font-size:60px;line-height:.95;font-weight:600;letter-spacing:-2px}
+#s-circle .big span, #s-meet .big span, #s-exp .big span, #s-add .big span, #sheet .big span{font-size:14px;padding-bottom:8px;color:var(--card);line-height:1.35}
+#s-circle .chip.wl, #s-meet .chip.wl, #s-exp .chip.wl, #s-add .chip.wl, #sheet .chip.wl{background:var(--bd3);color:var(--card)}
+#s-circle .mc, #s-meet .mc, #s-exp .mc, #s-add .mc, #sheet .mc{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:13px}
+#s-circle .mc .lab, #s-meet .mc .lab, #s-exp .mc .lab, #s-add .mc .lab, #sheet .mc .lab{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
+#s-circle .mc .v, #s-meet .mc .v, #s-exp .mc .v, #s-add .mc .v, #sheet .mc .v{font-size:29px;font-weight:600;line-height:1.1;margin:3px 0 2px}
+#s-circle .mc .w, #s-meet .mc .w, #s-exp .mc .w, #s-add .mc .w, #sheet .mc .w{font-size:12px;color:var(--dim);line-height:1.35}
+#s-circle /* совпадения */
+.pairbar, #s-meet /* совпадения */
+.pairbar, #s-exp /* совпадения */
+.pairbar, #s-add /* совпадения */
+.pairbar, #sheet /* совпадения */
+.pairbar{display:flex;gap:8px;margin:0 0 12px;overflow-x:auto;padding-bottom:2px}
+#s-circle .pb, #s-meet .pb, #s-exp .pb, #s-add .pb, #sheet .pb{flex:none;border:1px solid var(--bd2);background:var(--card);border-radius:999px;padding:10px 15px;
+  font-size:13.5px;cursor:pointer;color:var(--tx2);font-family:inherit}
+#s-circle .pb.on, #s-meet .pb.on, #s-exp .pb.on, #s-add .pb.on, #sheet .pb.on{background:var(--acc);border-color:var(--acc);color:var(--card)}
+#s-circle .mt, #s-meet .mt, #s-exp .mt, #s-add .mt, #sheet .mt{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--bd);
+  border-radius:16px;padding:12px 14px;margin:0 0 8px;cursor:pointer}
+#s-circle .mt .dt, #s-meet .mt .dt, #s-exp .mt .dt, #s-add .mt .dt, #sheet .mt .dt{width:46px;flex:none;text-align:center}
+#s-circle .mt .dt b, #s-meet .mt .dt b, #s-exp .mt .dt b, #s-add .mt .dt b, #sheet .mt .dt b{display:block;font-size:19px;line-height:1.1;font-weight:620}
+#s-circle .mt .dt span, #s-meet .mt .dt span, #s-exp .mt .dt span, #s-add .mt .dt span, #sheet .mt .dt span{font-size:11px;color:var(--dim)}
+#s-circle .mt .ms, #s-meet .mt .ms, #s-exp .mt .ms, #s-add .mt .ms, #sheet .mt .ms{flex:1;font-size:13.5px;color:var(--tx2);line-height:1.4}
+#s-circle .mt .ms i, #s-meet .mt .ms i, #s-exp .mt .ms i, #s-add .mt .ms i, #sheet .mt .ms i{font-style:normal;color:var(--dim);font-size:12px;display:block;margin-top:2px}
+#s-circle .mt .nums, #s-meet .mt .nums, #s-exp .mt .nums, #s-add .mt .nums, #sheet .mt .nums{display:flex;gap:5px}
+#s-circle .mt .nums u, #s-meet .mt .nums u, #s-exp .mt .nums u, #s-add .mt .nums u, #sheet .mt .nums u{text-decoration:none;width:26px;height:26px;border-radius:9px;background:var(--acc09);
+  color:var(--acc);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:620}
+#s-circle .pstrip, #s-meet .pstrip, #s-exp .pstrip, #s-add .pstrip, #sheet .pstrip{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:4px 0 0}
+#s-circle .pd, #s-meet .pd, #s-exp .pd, #s-add .pd, #sheet .pd{border-radius:12px;padding:6px 2px;text-align:center;cursor:pointer;min-height:56px;
+  border:1px solid var(--bd);background:var(--card)}
+#s-circle .pd span, #s-meet .pd span, #s-exp .pd span, #s-add .pd span, #sheet .pd span{display:block;font-size:9.5px;color:var(--dim);text-transform:uppercase}
+#s-circle .pd b, #s-meet .pd b, #s-exp .pd b, #s-add .pd b, #sheet .pd b{display:block;font-size:15px;font-weight:600;line-height:1.2}
+#s-circle .pd i, #s-meet .pd i, #s-exp .pd i, #s-add .pd i, #sheet .pd i{font-style:normal;font-size:10.5px;color:var(--dim)}
+#s-circle .pd.g1, #s-meet .pd.g1, #s-exp .pd.g1, #s-add .pd.g1, #sheet .pd.g1{background:var(--acc07)}
+#s-circle .pd.g2, #s-meet .pd.g2, #s-exp .pd.g2, #s-add .pd.g2, #sheet .pd.g2{background:var(--acc12);border-color:var(--acc22)}
+#s-circle .pd.g3, #s-meet .pd.g3, #s-exp .pd.g3, #s-add .pd.g3, #sheet .pd.g3{background:var(--acc30);border-color:var(--acc50)}
+#s-circle .pd.g3 i, #s-meet .pd.g3 i, #s-exp .pd.g3 i, #s-add .pd.g3 i, #sheet .pd.g3 i, #s-circle .pd.g2 i, #s-meet .pd.g2 i, #s-exp .pd.g2 i, #s-add .pd.g2 i, #sheet .pd.g2 i{color:var(--acc)}
+#s-circle .pd.g0, #s-meet .pd.g0, #s-exp .pd.g0, #s-add .pd.g0, #sheet .pd.g0{background:var(--zero07);border-color:var(--zero30)}
+#s-circle .pd.now, #s-meet .pd.now, #s-exp .pd.now, #s-add .pd.now, #sheet .pd.now{outline:2px solid var(--acc);outline-offset:1px}
+#s-circle .lgnd, #s-meet .lgnd, #s-exp .lgnd, #s-add .lgnd, #sheet .lgnd{display:flex;flex-wrap:wrap;gap:10px;margin:9px 2px 0;font-size:11.5px;color:var(--dim)}
+#s-circle .lgnd span, #s-meet .lgnd span, #s-exp .lgnd span, #s-add .lgnd span, #sheet .lgnd span{display:flex;align-items:center;gap:5px}
+#s-circle .lgnd i, #s-meet .lgnd i, #s-exp .lgnd i, #s-add .lgnd i, #sheet .lgnd i{width:13px;height:13px;border-radius:5px;display:block;border:1px solid var(--bd2)}
+#s-circle .lgnd .l3, #s-meet .lgnd .l3, #s-exp .lgnd .l3, #s-add .lgnd .l3, #sheet .lgnd .l3{background:var(--acc30);border-color:var(--acc50)}
+#s-circle .lgnd .l2, #s-meet .lgnd .l2, #s-exp .lgnd .l2, #s-add .lgnd .l2, #sheet .lgnd .l2{background:var(--acc12);border-color:var(--acc22)}
+#s-circle .lgnd .l1, #s-meet .lgnd .l1, #s-exp .lgnd .l1, #s-add .lgnd .l1, #sheet .lgnd .l1{background:var(--acc07)}
+#s-circle .lgnd .l0, #s-meet .lgnd .l0, #s-exp .lgnd .l0, #s-add .lgnd .l0, #sheet .lgnd .l0{background:var(--zero07);border-color:var(--zero30)}
+#s-circle .kv, #s-meet .kv, #s-exp .kv, #s-add .kv, #sheet .kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--bd2);font-size:14px}
+#s-circle input, #s-meet input, #s-exp input, #s-add input, #sheet input, #s-circle select, #s-meet select, #s-exp select, #s-add select, #sheet select{width:100%;background:var(--card);border:1px solid var(--bd3);color:var(--tx);
+  border-radius:13px;padding:11px 12px;font:inherit;font-size:15px;margin:8px 0 0;font-family:inherit}
+#s-circle .btn.danger, #s-meet .btn.danger, #s-exp .btn.danger, #s-add .btn.danger, #sheet .btn.danger{background:var(--card);border:1px solid var(--zero30);color:var(--zero);font-weight:450}
+.seg{display:flex;gap:6px;margin:0 0 14px;background:var(--card);padding:4px;
+  border-radius:14px;border:1px solid var(--bd)}
+.seg button{flex:1;border:0;background:transparent;color:var(--dim);border-radius:11px;
+  padding:9px 4px;font:inherit;font-size:12.5px;cursor:pointer;font-family:inherit}
+.seg button.on{background:var(--acc);color:var(--onacc);font-weight:620}
+.foot{text-align:center;font-size:11.5px;color:var(--dim2);margin:18px 0 0;line-height:1.5}
+</style>
+<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+<div class="wrap">
+<header><div class="hrow"><h1 id="htitle">Сегодня</h1><div class="hsub" id="hsub"></div><button class="mebtn" onclick="toggleTheme()" id="thbtn">☀</button><button class="mebtn" onclick="go('s-me')" id="mebtn">Я</button></div></header>
+
+<main>
+  <!-- СЕГОДНЯ -->
+  <section id="s-day" class="on">
+    <div class="hero">
+      <div class="lab">Личный день</div>
+      <div class="big"><em id="d-pd">—</em><span id="d-pdw"></span></div>
+      <div class="chips" id="d-chips"></div>
+    </div>
+    <div class="two">
+      <div class="mini-card"><div class="lab">Общий день</div><div class="v" id="d-cd">—</div>
+        <div class="w" id="d-cdw"></div></div>
+      <div class="mini-card"><div class="lab">Личный месяц</div><div class="v" id="d-pm">—</div>
+        <div class="w" id="d-pmw"></div></div>
+    </div>
+    <div class="card"><h2>Главное на день<span class="mini">коротко</span></h2>
+      <div class="act"><div class="ic">↑</div><div id="d-do"></div></div>
+      <div class="act no"><div class="ic">↓</div><div id="d-no"></div></div>
+    </div>
+    <div class="card"><h2>Как прошёл день<span class="mini" id="log-when"></span></h2>
+      <div class="lognav">
+        <button id="log-prev" onclick="logShiftDays(-1)">‹</button>
+        <b id="log-d"></b>
+        <button id="log-next" onclick="logShiftDays(1)">›</button>
+      </div>
+      <p class="txt dim" style="font-size:13px">Отметка остаётся в телефоне. По ней приложение
+        считает, какие числа работают именно у тебя.</p>
+      <div class="rate" id="d-rate"></div>
+      <textarea id="d-note" placeholder="Заметка о дне (по желанию)"></textarea>
+      <button class="btn ghost" onclick="saveDay()">Сохранить</button>
+      <p class="txt dim" id="d-saved" style="font-size:12.5px;margin-top:9px"></p>
+    </div>
+    <div class="tmr" id="d-tmr" onclick="openTomorrow()">
+      <div class="t"><b id="tmr-h"></b><span id="tmr-s"></span></div>
+      <div class="n" id="tmr-n"></div></div>
+    <button class="btn ghost" onclick="openDay(TY,TM,TD)">Открыть день целиком</button>
+    <div class="foot" id="d-foot"></div>
+  </section>
+
+  <!-- ПОДБОР -->
+  <section id="s-pick">
+    <p class="txt dim" style="margin:0 0 12px;font-size:13.5px">
+      Выбери задачу — приложение пройдёт по ближайшим 60 дням и покажет даты, где личное
+      и общее число совпадают с нужным настроем.</p>
+    <div class="goals" id="p-goals"></div>
+    <div id="p-hits"></div>
+  </section>
+
+  <!-- ГОРИЗОНТ -->
+
+  <!-- ДНЕВНИК -->
+  <section id="s-log">
+    <div class="card"><h2>Что работает у тебя<span class="mini">по личному числу дня</span></h2>
+      <p class="txt dim" style="font-size:13px;margin-bottom:6px" id="l-hint"></p>
+      <div id="l-stat"></div></div>
+    <div class="card"><h2>Записи</h2><div id="l-list"></div></div>
+    <button class="btn ghost" onclick="exportLog()">Выгрузить записи текстом</button>
+    <div class="foot">Данные хранятся только в этом браузере на телефоне.</div>
+  </section>
+
+  <!-- МЕСЯЦ -->
+  <section id="s-mon">
+    <div class="mbar">
+      <b id="m-title"></b>
+      <div class="mnav">
+        <button onclick="shift(-1)">‹</button>
+        <button class="today" onclick="toToday()">сегодня</button>
+        <button onclick="shift(1)">›</button>
+      </div>
+    </div>
+    <div class="grid" id="m-head"></div>
+    <div class="grid" id="m-grid" style="margin-top:2px"></div>
+    <div class="legend">
+      <span class="e"><i></i>эффективный день</span>
+      <span class="z"><i></i>день обнуления</span>
+      <span>сверху личное число, снизу общее</span>
+    </div>
+    <div class="card" style="margin-top:14px"><h2>Личный месяц <span class="mini" id="m-num"></span></h2>
+      <p class="txt" id="m-plus"></p></div>
+    <div class="card"><h2>В минусе</h2><p class="txt" id="m-minus"></p></div>
+  </section>
+
+  <!-- Я -->
+  <section id="s-me">
+    <div class="card"><h2>Оформление</h2>
+      <div class="who" id="th-btns">
+        <button onclick="setTheme('dk')" id="th-dk">Тёмное</button>
+        <button onclick="setTheme('lt')" id="th-lt">Светлое</button>
+      </div>
+      <p class="txt dim" style="font-size:12.5px;margin-top:9px">Выбор запоминается
+        в этом телефоне.</p>
+    </div>
+    <div class="card"><h2>Профиль</h2>
+      <div class="kv"><b>Имя</b><span id="p-name"></span></div>
+      <div class="kv"><b>Дата рождения</b><span id="p-bd"></span></div>
+      <div class="kv"><b>Число сознания</b><span id="p-sense"></span></div>
+      <div class="kv"><b>Тип личности</b><span id="p-type"></span></div>
+      <div class="kv"><b>Миссия</b><span id="p-mission"></span></div>
+    </div>
+    <div class="card"><h2>Сфера и профессия<span class="mini">по презентации Сюцай</span></h2>
+      <div id="p-pro"></div></div>
+    <div class="card"><h2>Что меня выбивает</h2>
+      <div id="p-dis"></div></div>
+    <div class="card"><h2>Личный год <span class="mini" id="y-year"></span></h2>
+      <div class="two" style="margin-bottom:0">
+        <div class="mini-card"><div class="lab">Число года</div><div class="v" id="y-pv">—</div>
+          <div class="w" id="y-pw"></div></div>
+        <div class="mini-card"><div class="lab">Личный месяц</div><div class="v" id="y-pm">—</div>
+          <div class="w" id="y-pmw"></div></div>
+      </div>
+    </div>
+    <div id="y-plus"></div>
+    <div class="card"><h2>Месяцы года<span class="mini">личное число месяца</span></h2>
+      <div id="y-months"></div></div>
+    <div class="card"><h2>Матрица<span class="mini">цифры даты рождения</span></h2>
+      <div class="mx" id="p-mx"></div>
+      <div style="margin-top:12px" id="p-lines"></div></div>
+    <div class="foot">Расчёт идёт на устройстве. Интернет не нужен.</div>
+  </section>
+<!-- КРУГ -->
+  <section id="s-circle">
+    <div class="seg">
+      <button data-g="s-circle" onclick="go('s-circle')">Круг</button>
+      <button data-g="s-meet" onclick="go('s-meet')">Встреча</button>
+      <button data-g="s-add" onclick="go('s-add')">Добавить</button>
+      <button data-g="s-exp" onclick="go('s-exp')">Экспорт</button>
+    </div>
+
+    <p class="txt dim" style="margin:0 0 12px;font-size:13.5px">
+      Числа дня для всех, кто в круге. Нажми на человека — откроется его день.</p>
+    <div id="c-list"></div>
+    <div id="c-all"></div>
+    <button class="btn ghost" onclick="go('s-add')">Добавить человека</button>
+    <div class="foot">Список хранится только в этом телефоне.</div>
+  </section>
+
+  <!-- ВСТРЕЧА -->
+  <section id="s-meet">
+    <div class="seg">
+      <button data-g="s-circle" onclick="go('s-circle')">Круг</button>
+      <button data-g="s-meet" onclick="go('s-meet')">Встреча</button>
+      <button data-g="s-add" onclick="go('s-add')">Добавить</button>
+      <button data-g="s-exp" onclick="go('s-exp')">Экспорт</button>
+    </div>
+
+    <p class="txt dim" style="margin:0 0 12px;font-size:13.5px">
+      Выбери двоих — приложение найдёт дни на 60 дней вперёд, когда числа хороши у обоих.</p>
+    <div class="card"><h2>Почему именно эти дни</h2>
+      <p class="txt" style="font-size:13.5px">Смотрим три числа: личное число каждого из двоих
+        и общее число дня. Числа 2, 3, 5, 6 — про связь, разговор и мягкость, на них
+        договориться легче. Числа 1, 7, 9 — про напор и уединение, если они у обоих сразу,
+        день хуже. Одинаковое число у двоих — плюс: вы в одном настроении. Эффективный день
+        добавляет очко, дни обнуления (10, 20 и 30 числа) исключаются совсем.</p></div>
+    <div class="pairbar" id="m-a"></div>
+    <div class="pairbar" id="m-b"></div>
+    <div id="m-strip"></div>
+    <div id="m-res"></div>
+  </section>
+
+  <!-- ЭКСПОРТ -->
+  <section id="s-exp">
+    <div class="seg">
+      <button data-g="s-circle" onclick="go('s-circle')">Круг</button>
+      <button data-g="s-meet" onclick="go('s-meet')">Встреча</button>
+      <button data-g="s-add" onclick="go('s-add')">Добавить</button>
+      <button data-g="s-exp" onclick="go('s-exp')">Экспорт</button>
+    </div>
+
+    <div class="card"><h2>Перенести в календарь телефона</h2>
+      <p class="txt dim" style="font-size:13.5px">
+        Файл со всеми эффективными днями и днями обнуления на выбранный срок. Открывается
+        в Apple Календаре или загружается в Google Календарь, дальше метки видны рядом
+        с обычными делами. Отметки идут на весь день и не занимают время.</p>
+      <label class="fl" for="e-who">Чьи дни переносим</label>
+      <select id="e-who"></select>
+      <label class="fl" for="e-range" style="margin-top:10px">На какой срок</label>
+      <select id="e-range">
+        <option value="90">на 3 месяца</option>
+        <option value="180" selected>на полгода</option>
+        <option value="365">на год</option>
+      </select>
+      <label class="fl" for="e-what" style="margin-top:10px">Что переносим</label>
+      <select id="e-what">
+        <option value="all" selected>эффективные дни и дни обнуления</option>
+        <option value="eff">только эффективные дни</option>
+        <option value="my">эффективные, обнуление и личные числа каждого дня</option>
+      </select>
+      <button class="btn" onclick="makeICS()">Создать файл календаря</button>
+      <p class="txt dim" id="e-note" style="font-size:12.5px;margin-top:9px"></p>
+    </div>
+    <div class="card"><h2>Поделиться днём</h2>
+      <p class="txt dim" style="font-size:13.5px">Короткий текст о сегодняшнем дне — можно
+        отправить себе или в чат.</p>
+      <button class="btn ghost" onclick="shareDay()">Отправить текст дня</button>
+    </div>
+    <div class="card"><h2>Как считается</h2>
+      <p class="txt">Личный день = личный месяц плюс число. Личный месяц = личный год плюс
+        номер месяца. Личный год = день рождения плюс месяц рождения плюс год, всё свёрнуто
+        до одной цифры. Общий день считается от самой даты и одинаков у всех.</p>
+      <p class="txt" style="margin-top:9px">Расчёт идёт в телефоне. Интернет не нужен,
+        данные никуда не уходят.</p>
+    </div>
+  </section>
+
+  <!-- ДОБАВИТЬ -->
+  <section id="s-add">
+    <div class="seg">
+      <button data-g="s-circle" onclick="go('s-circle')">Круг</button>
+      <button data-g="s-meet" onclick="go('s-meet')">Встреча</button>
+      <button data-g="s-add" onclick="go('s-add')">Добавить</button>
+      <button data-g="s-exp" onclick="go('s-exp')">Экспорт</button>
+    </div>
+
+    <div class="card"><h2>Новый человек</h2>
+      <input id="a-name" placeholder="Имя" autocomplete="off">
+      <label class="fl" for="a-bd">Дата рождения</label>
+      <input id="a-bd" type="date" min="1900-01-01" autocomplete="off">
+      <p class="txt dim" style="font-size:12.5px;margin-top:7px">Нажми на поле, телефон откроет выбор числа, месяца и года.</p>
+      <p class="txt dim" id="a-err" style="font-size:12.5px;margin-top:8px"></p>
+      <button class="btn" onclick="addPerson()">Добавить в круг</button>
+      <button class="btn ghost" onclick="go('s-circle')">Назад</button>
+    </div>
+    <div class="card"><h2>Кто уже в круге</h2><div id="a-list"></div></div>
+  </section>
+</main>
+
+
+<nav>
+  <b class="on" data-s="s-day" onclick="go('s-day')"><em>◉</em>Сегодня</b>
+  <b data-s="s-mon" onclick="go('s-mon')"><em>▦</em>Месяц</b>
+  <b data-s="s-circle" onclick="go('s-circle')"><em>◍</em>Люди</b>
+  <b data-s="s-pick" onclick="go('s-pick')"><em>◎</em>Подбор</b>
+  <b data-s="s-log" onclick="go('s-log')"><em>✎</em>Дневник</b>
+</nav>
+</div>
+
+<div class="sheet" id="sheet">
+  <div class="bg" onclick="closeSheet()"></div>
+  <div class="pan"><div class="grab"></div>
+    <div class="shead"><b id="sh-t"></b><span id="sh-s"></span><button class="xbtn" onclick="closeSheet()">×</button></div>
+    <div id="sh-body"></div></div>
+</div>
+
+<script>
+var D = {"day":{"7":{"in_plus":"ДЕЙСТВИЯ, КОТОРЫЕ ПОМОГУТ ПОДНЯТЬ РЕСУРС И ЭНЕРГИЮ<br />1. Начните день с дисциплины тела и ясности ума. Выполните зарядку, медитацию, дыхательную практику или любую другую форму заботы о теле и внутреннем состоянии.<br />2. Отслеживайте мысли, эмоции и реакции. Заменяйте осуждение на принятие, зависть на радость за другого человека, раздражение на наблюдение и более зрелое отношение к ситуации.<br />3. Проанализируйте дисциплину в своей жизни. Определите, где именно не хватает порядка: в спорте, питании, режиме сна, делах, финансах или личных обязательствах.<br />4. Создайте образ дисциплинированного, но не жесткого человека. Следуйте своему плану с уважением к себе, сохраняя любовь, гибкость и способность адаптироваться к обстоятельствам.<br />5. Используйте духовные практики для укрепления внутреннего спокойствия. Принимайте людей и события такими, какие они есть, не осуждая и не пытаясь все контролировать.<br />6. Проявляйте щедрость через личный пример. Делитесь пониманием дисциплины мягко, без навязывания, показывая другим, как порядок может поддерживать свободу и внутреннюю силу.<br /><br />ВОПРОСЫ, КОТОРЫЕ ПОМОГУТ ЭФФЕКТИВНО СПЛАНИРОВАТЬ ЭТОТ ДЕНЬ<br />1. В каких сферах жизни я чаще всего теряю дисциплину, и какие конкретные шаги помогут мне это исправить?<br />2. Как я могу сегодня проявлять больше принятия к людям, событиям и обстоятельствам, которые не зависят от меня?<br />3. Какие духовные практики помогут мне укрепить спокойствие, ясность и устойчивость внутри?<br />4. Как я могу заменить зависть радостью за других, а жадность — щедростью и доверием к жизни?<br />5. Какой план на день поможет мне чувствовать себя собранным, дисциплинированным и организованным?<br />6. Какие ошибки в моей системе дисциплины я могу увидеть и исправить, чтобы она стала более эффективной и мягкой?","in_minus":"ДЕЙСТВИЯ, КОТОРЫЕ МОГУТ ПРИВЕСТИ К ПОТЕРЕ РЕСУРСА И ЭНЕРГИИ<br />1. Избегайте хаоса, паники и кризисного мышления. Важно не ломать планы из-за временных эмоций и не погружаться в тревожные сценарии.<br />2. Остерегайтесь состояния тумана в голове. Если чувствуете замешательство, усталость или потерю ясности, сделайте паузу, восстановите дыхание и вернитесь к плану постепенно.<br />3. Не позволяйте эмоциям управлять поведением. Старайтесь смотреть на ситуацию объективно, спокойно и без лишней драматизации.<br />4. Избегайте сарказма, язвительности и колких замечаний. Такие реакции могут нарушить гармонию в общении и испортить даже важные отношения.<br />5. Не уходите в чрезмерный эгоизм и зацикленность только на себе. Забота о других, участие и щедрость способны духовно обогатить вас и вернуть чувство баланса.<br />6. Будьте внимательны к документам, договоренностям и текущим делам. Невнимательность сегодня может привести к ошибкам, задержкам и лишним переживаниям."},"2":{"in_plus":"ДЕЙСТВИЯ, КОТОРЫЕ ПОМОГУТ ПОДНЯТЬ РЕСУРС И ЭНЕРГИЮ<br />1. Проявляйте терпение, мягкость и понимание. Если вас не сразу слышат или понимают, не закрывайтесь и не давите. Дайте человеку пространство, слушайте внимательнее и сохраняйте искренний интерес.<br />2. Восстановите связь с важным человеком. Позвоните или напишите тому, с кем давно не общались, даже если сделать первый шаг непросто. Такой контакт может вернуть тепло, поддержку и ощущение внутренней целостности.<br />3. Составьте небольшой план улучшения отношений. Выберите одну или две значимые связи, которые требуют внимания, и определите простые шаги для их укрепления. Начните с малого, но сделайте это осознанно.<br />4. Используйте молчание как инструмент гармонии. Иногда спокойная пауза, внимательное присутствие и отсутствие лишних слов помогают создать больше доверия, чем длинные объяснения.<br />5. Добавьте физическую активность с утра. Прогулка, легкая зарядка или ходьба помогут наполнить тело энергией, стабилизировать эмоции и не уйти в состояние внутреннего спада.<br />6. Обратите внимание на силу воды. Контрастный душ, ванна, плавание или прогулка рядом с водой помогут обновить ресурс, снять напряжение и вернуть ощущение эмоциональной чистоты.<br />---<br />ВОПРОСЫ, КОТОРЫЕ ПОМОГУТ ЭФФЕКТИВНО СПЛАНИРОВАТЬ ЭТОТ ДЕНЬ<br />1. С кем из близких или значимых людей я давно не выходил на связь? Кому сегодня стоит позвонить или написать?<br />2. Какие отношения я хочу улучшить в первую очередь? Какие маленькие шаги могу сделать уже сейчас?<br />3. Что поможет мне сегодня быть более терпеливым, спокойным и понимающим в общении?<br />4. Какой материал, видео, статья или разговор о взаимоотношениях может вдохновить меня и дать новый взгляд?<br />5. Как я могу включить физическую активность и водные процедуры в свой день так, чтобы они действительно восстановили ресурс?<br />6. Как я могу поддержать кого-то в его отношениях, не навязывая советы, а проявляя участие и заботу?","in_minus":"ДЕЙСТВИЯ, КОТОРЫЕ МОГУТ ПРИВЕСТИ К ПОТЕРЕ РЕСУРСА И ЭНЕРГИИ<br />1. Избегайте осуждения, резкой критики и поспешных выводов. Реакция людей на вас не всегда показывает их истинное отношение или глубинную суть, поэтому не делайте окончательных выводов на эмоциях.<br />2. Не принимайте серьезные решения в состоянии сомнений. Двойственность, неуверенность и эмоциональные качели могут привести к ошибкам, о которых позже придется пожалеть.<br />3. Не манипулируйте чувствами других людей. Попытки вызвать вину, жалость или зависимость разрушат доверие, усилят напряжение и заберут много внутренней энергии.<br />4. Не спешите разрывать связи. Даже если эмоции поднимаются слишком сильно, дайте себе паузу, время на осмысление и возможность увидеть ситуацию спокойнее.<br />5. Не игнорируйте признаки грусти, апатии или депрессивного состояния. Движение, вода, прогулка и бережное отношение к телу помогут не провалиться глубже в эмоциональный спад.<br />6. Остерегайтесь чрезмерного погружения в чужие или собственные проблемы. Дайте себе отдых, переключение и право не решать все вопросы сразу."},"6":{"in_plus":"ДЕЙСТВИЯ, КОТОРЫЕ ПОМОГУТ ПОДНЯТЬ РЕСУРС И ЭНЕРГИЮ<br />1. Проявляйте творчество, любовь и мягкость в любых делах. Ищите красивый, вдохновляющий или нестандартный подход даже в самых простых бытовых задачах.<br />2. Дарите любовь, заботу и внимание близким. Говорите теплые слова, проявляйте нежность, тактильность, участие и создавайте ощущение эмоциональной безопасности.<br />3. Создайте комфорт для себя и окружающих. Подойдут практики расслабления, спа, массаж, медитация, спокойная музыка, уютное пространство или любые действия, которые возвращают телу и душе гармонию.<br />4. Ищите источники вдохновения. Проанализируйте, в каких сферах жизни вам не хватает красоты, радости и творческого импульса, и добавьте туда хотя бы одно приятное действие уже сегодня.<br />5. Визуализируйте свои мечты и желания. Представьте их подробно, с ощущениями, деталями и внутренней готовностью к реализации, чтобы почувствовать связь с будущим результатом.<br />6. Позвольте себе расслабиться, но не уходите в лень и излишества. Наслаждайтесь днем, сохраняя баланс между отдыхом, удовольствием, активностью и внутренней собранностью.<br /><br />ВОПРОСЫ, КОТОРЫЕ ПОМОГУТ ЭФФЕКТИВНО СПЛАНИРОВАТЬ ЭТОТ ДЕНЬ<br />1. Какие творческие занятия, красивые детали или вдохновляющие действия я могу включить в сегодняшний день?<br />2. В каких сферах мне важно добавить больше любви, заботы, нежности и человеческого тепла?<br />3. Как я могу сделать этот день комфортным, уютным и гармоничным для себя и для окружающих людей?<br />4. Что вдохновляет меня сильнее всего, и каким образом я могу привнести это вдохновение в сегодняшние дела?<br />5. Какие цели, мечты и желания я хочу визуализировать, чтобы приблизить их к реальному воплощению?<br />6. Как я могу расслабиться и получить удовольствие от дня, не уходя при этом в лень, пассивность или чрезмерные удовольствия?","in_minus":"ДЕЙСТВИЯ, КОТОРЫЕ МОГУТ ПРИВЕСТИ К ПОТЕРЕ РЕСУРСА И ЭНЕРГИИ<br />1. Избегайте погружения в страдания, тоску и драматизацию. Не позволяйте тяжелым эмоциям полностью закрывать красоту дня и возможность увидеть в нем поддержку.<br />2. Не уходите в лень, пассивность или излишества. Найдите здоровую середину между отдыхом и деятельностью, удовольствием и осознанностью, расслаблением и ответственностью.<br />3. Не мстите, не замыкайтесь в молчании из-за обиды и не наказывайте других холодностью. Признавайте свои чувства, но не позволяйте им управлять вашими поступками.<br />4. Не перегружайте себя тяжелой рутиной. Сократите задачи, которые требуют чрезмерного напряжения, и по возможности перенесите самые сложные дела на более подходящее время.<br />5. Не создавайте дискомфорт ни себе, ни окружающим. Старайтесь поддерживать атмосферу тепла, принятия, красоты и эмоциональной гармонии.<br />6. Остерегайтесь чрезмерной эмоциональности и перепадов настроения. Следите за мыслями и реакциями, которые могут привести к конфликтам, обидам или ненужным разногласиям."},"1":{"in_plus":"ДЕЙСТВИЯ, КОТОРЫЕ ПОМОГУТ ПОДНЯТЬ РЕСУРС И ЭНЕРГИЮ<br />1. Направьте внимание на новые возможности. Будьте открыты к свежим идеям, предложениям и обстоятельствам, даже если на первый взгляд они кажутся незначительными. Именно через маленькие знаки день может показать новый путь.<br />2. Продумайте конкретные действия. Составьте понятную стратегию, план или список первых шагов для проекта, который хотите запустить. Пусть это станет надежной точкой старта и даст ощущение внутренней опоры.<br />3. Проявляйте лидерство через вдохновение. Ведите людей за собой мягко, спокойно и экологично, не подавляя их, а помогая им увидеть свои сильные стороны и возможности.<br />4. Разрешите себе принимать решения. Этот день хорошо подходит для начала нового дела, даже если оно пока небольшое. Важно сделать первый уверенный шаг, а не ждать идеального момента.<br />5. Прислушивайтесь к знакам пространства. Замечайте мысли, идеи, подсказки, случайные разговоры и внутренние импульсы. В них может находиться важный ключ к дальнейшему успеху.<br />6. Найдите время для короткой паузы, медитации или тишины. Это поможет снизить лишнюю эмоциональность, вернуть ясность мышления и сохранить энергию для действительно важных действий.<br /><br />ВОПРОСЫ, КОТОРЫЕ ПОМОГУТ ЭФФЕКТИВНО СПЛАНИРОВАТЬ ЭТОТ ДЕНЬ<br />1. Какие возможности я уже замечаю вокруг себя? Как я могу использовать их сегодня с пользой?<br />2. Какое дело, проект или направление я давно хотел начать? Что раньше останавливало меня от первого шага?<br />3. Какую стратегию я могу выстроить уже сейчас? Какие конкретные действия стоит сделать в первую очередь?<br />4. Как я могу проявить лидерство так, чтобы оставаться открытым, уважительным и вдохновляющим?<br />5. Что я могу предпринять, чтобы эмоции не мешали мне принимать зрелые и точные решения?<br />6. Какой вклад я могу внести сегодня в развитие, успех или уверенность других людей?","in_minus":"ДЕЙСТВИЯ, КОТОРЫЕ МОГУТ ПРИВЕСТИ К ПОТЕРЕ РЕСУРСА И ЭНЕРГИИ<br />1. Избегайте упрямства, жесткости и деспотичного поведения. Старайтесь слышать мнение других людей — это поможет сохранить контакт, избежать напряжения и не спровоцировать конфликт.<br />2. Не позволяйте эмоциям управлять вашими решениями. Слишком сильные переживания могут исказить восприятие ситуации и помешать объективно увидеть реальные возможности дня.<br />3. Не пытайтесь все выполнить только своими силами. Настоящее лидерство проявляется не в контроле над всем, а в умении делегировать, объединять людей и действовать в команде.<br />4. Не уходите в чрезмерный эгоизм. Помните, что устойчивый успех приходит тогда, когда личные цели находятся в гармонии с окружающими и не разрушают отношения.<br />5. Не давите на людей и не заставляйте их следовать вашему сценарию. Гораздо эффективнее вдохновлять личным примером, спокойствием и уверенностью, чем принуждением.<br />6. Остерегайтесь спешки и импульсивности. Непродуманные решения сегодня могут забрать много энергии, привести к ошибкам и потере времени, которое можно было использовать продуктивно."},"5":{"in_plus":"ДЕЙСТВИЯ, КОТОРЫЕ ПОМОГУТ ПОДНЯТЬ РЕСУРС И ЭНЕРГИЮ<br />1. Действуйте логично, спокойно и последовательно. Разделите задачи на понятные этапы, определите приоритеты и двигайтесь по плану без лишней суеты и резких рывков.<br />2. Анализируйте и оптимизируйте процессы. Найдите сферы жизни, где можно упростить действия, убрать лишнее, повысить эффективность и сделать результат более стабильным.<br />3. Сохраняйте теплоту в общении. Даже если день требует делового подхода, точности и рациональности, не забывайте об искренности, уважении и человеческой поддержке.<br />4. Уделите внимание своему имиджу, стилю и внешнему виду. Наведите порядок в образе, одежде или деталях, которые влияют на самоощущение. Это поможет почувствовать больше уверенности.<br />5. Соединяйте логику с творчеством. Рациональный подход даст структуру, а вдохновение поможет найти нестандартные решения. Вместе эти качества принесут более сильный результат.<br />6. Поддерживайте других людей в поиске лучших решений. Помощь, совет или спокойное участие принесут вам удовлетворение и усилят ощущение собственной полезности.<br /><br /><br />ВОПРОСЫ, КОТОРЫЕ ПОМОГУТ ЭФФЕКТИВНО СПЛАНИРОВАТЬ ЭТОТ ДЕНЬ<br />1. Какие процессы в моей жизни можно сегодня упростить, настроить или оптимизировать, чтобы они работали лучше?<br />2. Как я могу объединить логический подход и творческое видение в текущих задачах?<br />3. Какие конкретные шаги помогут мне улучшить имидж, стиль или ощущение уверенности в себе?<br />4. С кем мне стоит сегодня пообщаться, чтобы поддержать человека в поиске решений или новых возможностей?<br />5. Как я могу сохранить тепло, мягкость и уважение в общении, даже если действую рационально и по делу?<br />6. Какой урок я могу извлечь из сложных эмоций, неудачного разговора или потенциального конфликта сегодня?","in_minus":"ДЕЙСТВИЯ, КОТОРЫЕ МОГУТ ПРИВЕСТИ К ПОТЕРЕ РЕСУРСА И ЭНЕРГИИ<br />1. Избегайте борьбы, жесткости и желания доказать свою правоту любой ценой. Не поддавайтесь на провокации, сохраняйте спокойствие и выбирайте конструктивный диалог.<br />2. Следите за эмоциональным состоянием. Холодный расчет без участия и тепла может вызвать недовольство у окружающих, поэтому важно сохранять баланс между разумом и сердцем.<br />3. Не обижайтесь на людей из-за резких слов или непонятных реакций. Даже если фраза показалась неприятной, попробуйте продолжить диалог спокойно, без внутреннего закрытия.<br />4. Избегайте импульсивных покупок, сделок и быстрых финансовых решений. Непродуманные действия могут привести к ошибкам, потерям и ощущению разочарования.<br />5. Не погружайтесь в поиск выгоды любой ценой. Когда польза становится важнее отношений, честности и внутреннего равновесия, это истощает и создает напряжение.<br />6. Не превращайте рациональность в сухость и безразличие. День требует точности, но ресурс сохранится только тогда, когда логика будет соединена с уважением к себе и людям."},"9":{"in_plus":"ДЕЙСТВИЯ, КОТОРЫЕ ПОМОГУТ ПОДНЯТЬ РЕСУРС И ЭНЕРГИЮ<br />1. Создавайте возможности для других людей. Помогайте окружающим продвигаться к их целям без ожидания благодарности, похвалы или немедленной отдачи.<br />2. Уделите внимание здоровью и восстановлению. Баня, массаж, оздоровительные процедуры, спокойная прогулка или бережная забота о теле помогут вернуть ресурс и внутреннее равновесие.<br />3. Контролируйте эмоции и не усиливайте споры. Уступайте там, где это не разрушает ваши границы, не настаивайте на своем любой ценой и выбирайте мир вместо борьбы.<br />4. Завершайте начатые проекты и незакрытые дела. Поставьте точки там, где это возможно, чтобы освободить пространство для нового этапа и не тянуть за собой лишний груз.<br />5. Очистите пространство вокруг себя. Избавьтесь от ненужного, наведите порядок дома, в делах, документах, мыслях и планах. Внешняя чистота поможет почувствовать внутреннее облегчение.<br />6. Учитесь принимать обстоятельства без чрезмерной привязанности к результату. Наблюдайте за происходящим, делайте выводы и сохраняйте внутреннюю свободу даже там, где не все идет по плану.<br /><br />ВОПРОСЫ, КОТОРЫЕ ПОМОГУТ ЭФФЕКТИВНО СПЛАНИРОВАТЬ ЭТОТ ДЕНЬ<br />1. Как я могу помочь другим людям сегодня, не ожидая ничего взамен и не привязываясь к благодарности?<br />2. Какие оздоровительные процедуры, практики восстановления или действия для тела я могу запланировать на сегодня?<br />3. Какие проекты, задачи или старые дела я могу завершить, чтобы освободить место для нового?<br />4. Как я могу управлять своими эмоциями и не настаивать на своем там, где это только усилит напряжение?<br />5. От чего лишнего я могу избавиться в пространстве, делах или мыслях, чтобы почувствовать порядок и легкость?<br />6. Какие выводы я могу сделать из текущих обстоятельств, не цепляясь за результат и не сопротивляясь переменам?","in_minus":"ДЕЙСТВИЯ, КОТОРЫЕ МОГУТ ПРИВЕСТИ К ПОТЕРЕ РЕСУРСА И ЭНЕРГИИ<br />1. Остерегайтесь разрушительных мыслей, обид и внутренней агрессии. Не позволяйте тяжелым эмоциям управлять вашими решениями, словами и поступками.<br />2. Избегайте ярости, авантюризма и рискованных действий. Будьте внимательны к своим реакциям, чтобы не спровоцировать конфликт, неприятность или ненужное обострение ситуации.<br />3. Не ждите идеальной справедливости от других людей. Отпустите осуждение, не зацикливайтесь на доказательствах правоты и ищите гармонию прежде всего внутри себя.<br />4. Будьте особенно внимательны к здоровью. Бездействие, стресс, подавленные эмоции и отсутствие восстановления могут ухудшить самочувствие и снизить общий ресурс.<br />5. Остерегайтесь чрезмерной эмоциональности, особенно если планы меняются или что-то выходит из-под контроля. Сохраняйте спокойствие и возвращайтесь к внутренней опоре.<br />6. Не впадайте в бездействие и ощущение бесполезности. Завершение даже небольших дел поможет вернуть чувство смысла, движения и собственной эффективности."},"4":{"in_plus":"ДЕЙСТВИЯ, КОТОРЫЕ ПОМОГУТ ПОДНЯТЬ РЕСУРС И ЭНЕРГИЮ<br />1. Посвятите день целям, мечтам и расширению внутреннего горизонта. Визуализируйте желаемое, позволяйте себе мыслить шире привычного и не ограничивайте мечты прежними рамками.<br />2. Пообщайтесь с целеустремленными людьми. Наблюдайте за теми, кто умеет ставить цели, двигаться к ним и сохранять мотивацию. Их опыт может стать для вас сильным источником вдохновения.<br />3. Проанализируйте свои цели более глубоко. Проверьте, насколько они реалистичны по срокам, ресурсам и текущим возможностям. Это поможет увидеть ясную картину и избежать лишних ожиданий.<br />4. Создайте образ щедрого, доброго и креативного человека. Проявляйте поддержку, вдохновляйте окружающих и помогайте им поверить в свои стремления, не забывая при этом о собственном развитии.<br />5. Помогайте другим людям продвигаться к их целям. Такая поддержка поднимет настроение, усилит чувство значимости и может открыть перед вами неожиданные перспективы.<br />6. Обратитесь к духовным знаниям и практикам. Священные тексты, молитва, медитация, философские размышления или другие духовные инструменты помогут найти внутреннюю гармонию и опору.<br /><br />ВОПРОСЫ, КОТОРЫЕ ПОМОГУТ ЭФФЕКТИВНО СПЛАНИРОВАТЬ ЭТОТ ДЕНЬ<br />1. Какие цели я могу пересмотреть сегодня, чтобы добавить им ясности, глубины и реалистичности?<br />2. С кем мне стоит пообщаться, чтобы лучше понять тему целеполагания, мотивации и движения к результату?<br />3. Какой креативный образ я могу создать для себя, чтобы вдохновить и себя, и окружающих?<br />4. Как я могу помочь другому человеку в его целях и сделать это легко, искренне и с радостью?<br />5. Какие духовные, философские или мистические знания могут сегодня дать мне вдохновение и внутреннюю опору?<br />6. Какие небольшие действия помогут мне сохранить мотивацию и не уйти в апатию или разочарование?","in_minus":"ДЕЙСТВИЯ, КОТОРЫЕ МОГУТ ПРИВЕСТИ К ПОТЕРЕ РЕСУРСА И ЭНЕРГИИ<br />1. Избегайте отчужденности, недовольства и внутреннего отдаления от людей. Ищите поводы для радости в общении и не позволяйте критике разрушать контакт.<br />2. Остерегайтесь апатии и ощущения бессмысленности. Даже если что-то не получается сразу, переключайтесь на маленькие шаги, которые возвращают движение и веру в результат.<br />3. Не боритесь за абсолютную честность и единственно правильную правду. Примите, что у каждого человека есть свой опыт, своя картина мира и своя степень готовности видеть ситуацию.<br />4. Не совершайте крупных покупок, сделок и финансово значимых решений. Сегодня такие действия могут привести к разочарованию, завышенным ожиданиям или неверной оценке ситуации.<br />5. Не оценивайте происходящее только с негативной стороны. Даже в сложных обстоятельствах постарайтесь увидеть урок, возможность или направление для роста.<br />6. Будьте внимательны к мошенничеству, обещаниям легкого успеха и слишком красивым предложениям. Не доверяйте всем подряд и проверяйте информацию перед действиями."},"8":{"in_plus":"ДЕЙСТВИЯ, КОТОРЫЕ ПОМОГУТ ПОДНЯТЬ РЕСУРС И ЭНЕРГИЮ<br />1. Посвятите день труду, качеству и укреплению результата. Работайте над уже начатыми проектами, улучшайте детали, доводите процессы до более сильного и надежного состояния.<br />2. Станьте учеником, а не наставником. Стремитесь учиться у других, внимательно слушать, перенимать полезный опыт и оставаться открытым для новой информации.<br />3. Оптимизируйте расходы, усилия и рабочие процессы. Найдите сферы, где можно сократить лишние траты, убрать неэффективные действия и направить энергию туда, где она даст лучший результат.<br />4. Визуализируйте конечный результат своего труда. Четкое представление о желаемом итоге поможет сохранить мотивацию, повысить продуктивность и не потеряться в мелочах.<br />5. Создавайте условия для своей и чужой результативности. Помогайте людям быть эффективнее, поддерживайте их в работе и выстраивайте вокруг себя пространство порядка и пользы.<br />6. Не избегайте общения. Даже если результат коммуникации не сразу очевиден, контакты с людьми могут дать нужную информацию, поддержку или новую возможность.<br /><br />ВОПРОСЫ, КОТОРЫЕ ПОМОГУТ ЭФФЕКТИВНО СПЛАНИРОВАТЬ ЭТОТ ДЕНЬ<br />1. На каком деле мне стоит сегодня сосредоточиться, чтобы получить действительно качественный и ощутимый результат?<br />2. Какие расходы, действия или привычки в моей жизни можно оптимизировать без потери пользы и качества?<br />3. Как я могу сегодня быть учеником, и чему мне важно научиться у других людей или обстоятельств?<br />4. Какой конечный результат своего труда я хочу увидеть и почувствовать в конце дня?<br />5. Как я могу помочь другим людям стать более эффективными, собранными и результативными в их работе?<br />6. Как я могу поддерживать дисциплину, трудолюбие и продуктивность, не уходя в лень или сопротивление?","in_minus":"ДЕЙСТВИЯ, КОТОРЫЕ МОГУТ ПРИВЕСТИ К ПОТЕРЕ РЕСУРСА И ЭНЕРГИИ<br />1. Избегайте безделья, тунеядства и откладывания важных дел. Лень сегодня особенно нежелательна, потому что она может привести к упущенным возможностям и чувству внутренней неудовлетворенности.<br />2. Не уходите в изоляцию и закрытость. Отсутствие общения, отказ от контактов и погружение только в себя могут снизить энергию и лишить вас полезной обратной связи.<br />3. Остерегайтесь тотального контроля. Доверяйте людям и процессам, не пытайтесь удерживать в руках каждую деталь, иначе напряжение быстро заберет ресурс.<br />4. Не судите других по себе. У каждого человека свой темп, опыт, метод работы и уровень готовности, поэтому проявляйте больше понимания и терпения.<br />5. Избегайте праздников, шумных застолий и чрезмерного расслабления. Этот день больше подходит для труда, завершения задач и повышения продуктивности.<br />6. Сосредоточьтесь на завершении текущих проектов. Переключение на развлечения или новые необязательные дела может рассеять внимание и снизить качество результата."},"3":{"in_plus":"ДЕЙСТВИЯ, КОТОРЫЕ ПОМОГУТ ПОДНЯТЬ РЕСУРС И ЭНЕРГИЮ<br />1. Анализируйте свои действия и выбирайте осознанный подход. Двигайтесь по плану, наблюдайте за результатами и получайте новые знания. Это даст ощущение ясности, устойчивости и уверенности в выбранном направлении.<br />2. Запланируйте небольшое путешествие или выход в новое пространство. Даже короткая поездка, прогулка по незнакомому маршруту или смена обстановки могут вдохновить, расширить восприятие и обновить внутренний ресурс.<br />3. Проведите анализ расходов, привычек и состояния здоровья. Небольшая проверка этих сфер поможет вернуть контроль над жизнью, увидеть слабые места и сделать шаги к большей стабильности.<br />4. Создайте для себя образ мудрого наставника. Делитесь знаниями щедро, спокойно и с удовольствием, не доказывая превосходство, а вдохновляя людей своим примером и опытом.<br />5. Пересмотрите свои цели и планы. Выделите время для анализа недели, месяца или года, чтобы понять, что требует корректировки, а что уже дает хорошие результаты. Это укрепит уверенность в действиях.<br />6. Прислушивайтесь к телу и его сигналам. Замечайте усталость, напряжение, вдохновение или сопротивление и при необходимости мягко корректируйте свой день, не игнорируя внутренние подсказки.<br /><br />ВОПРОСЫ, КОТОРЫЕ ПОМОГУТ ЭФФЕКТИВНО СПЛАНИРОВАТЬ ЭТОТ ДЕНЬ<br />1. Какую сферу своей жизни я могу сегодня внимательно проанализировать и улучшить хотя бы на один шаг?<br />2. Какие новые знания мне важно получить сегодня, и как я смогу применить их на практике?<br />3. Какой маршрут, поездка или выход в новое место может вдохновить меня и расширить мое восприятие?<br />4. Какие цели на неделю, месяц или год уже требуют пересмотра, уточнения или обновления?<br />5. Как я могу делиться своими знаниями так, чтобы это поддерживало, вдохновляло и не давило на других?<br />6. Как мое тело реагирует на сегодняшний день, и что я могу сделать, чтобы бережно поддержать его ресурс?","in_minus":"ДЕЙСТВИЯ, КОТОРЫЕ МОГУТ ПРИВЕСТИ К ПОТЕРЕ РЕСУРСА И ЭНЕРГИИ<br />1. Избегайте категоричности, упрямства и ощущения, что вы уже все знаете. Даже при большом опыте важно оставлять место для нового взгляда, свежей информации и мнения другого человека.<br />2. Не увлекайтесь азартом и рискованными решениями. Обдумывайте каждый шаг, чтобы не совершить необдуманный поступок под влиянием эмоций, желания доказать правоту или получить быстрый результат.<br />3. Остерегайтесь лени и откладывания дел. Маленькие действия, сделанные сегодня, помогут не скатиться в прокрастинацию и сохранить чувство внутреннего движения.<br />4. Не ставьте себя выше других людей. Даже если вы обладаете знаниями и опытом, помните, что каждый человек может стать для вас учителем в определенной ситуации.<br />5. Не спорьте ради победы и не перебивайте собеседника. Внимательное слушание сегодня даст больше пользы, чем стремление доказать свою точку зрения любой ценой.<br />6. Не теряйте гибкость мышления. Мир меняется, поэтому полезно анализировать даже те убеждения, в которых вы давно уверены."}},"month":{"9":{"in_plus":"В этом месяце появляется много энергии, желание побеждать, действовать смело и двигаться вперед с внутренней силой. Проявляется благородство, готовность защищать, помогать и быть полезным тем, кто рядом. Спортивность, динамичность и активность могут стать естественным образом жизни, поэтому важно направлять энергию в созидательное русло. Усиливается желание помогать людям, служить, поддерживать и делать вклад в общее благо. Целеустремленность и благородство становятся ярче, а внутренний вектор может направлять вас к завершению старых процессов. Из жизни будет уходить что-то ненужное, отжившее или потерявшее смысл.<br /><br />Посвятите месяц служению другим людям, делайте это бескорыстно, осознанно и от чистого сердца. Выделите часть своего ресурса, времени, внимания или возможностей на благо других людей, не ожидая немедленной благодарности.<br /><br />Также будет хорошо проверить здоровье, выявить слабые зоны, заняться восстановлением, профилактикой и укреплением тела.","in_minus":"В минусе может проявляться стремление к победе любой ценой, наивность, авантюризм и желание рисковать ради ощущения силы или адреналина. Возможны экстремальные, резкие и необдуманные действия, которые приводят к конфликтам, травмам или разрушительным последствиям. Может усиливаться апатия, безделье, безразличие и потеря интереса к тому, что раньше вдохновляло. Появляется желание продавливать всё и всех, жестко отстаивая свое мнение и не слыша позицию других людей. Возможны ярость, агрессия и резкие проявления, которые важно вовремя осознавать и направлять в безопасное русло. События месяца могут разрушать иллюзии, поэтому важно принимать такие процессы с благодарностью: люди и обстоятельства могут задевать больные места, показывая то, что требует исцеления. Возможно возникновение болезней, физических повреждений или ухудшение самочувствия при игнорировании сигналов тела. Из жизни может уйти то, что вам дорого, особенно если к этому есть сильная привязка, поэтому важно учиться отпускать без разрушения себя."},"1":{"in_plus":"В этом месяце важно направить внимание на стратегию, выстроить понятные планы и обязательно зафиксировать их письменно. Период хорошо подходит для проявления лидерских качеств, инициативы и умения вести людей за собой. Усиливаются оптимизм, вера в лучшее и стремление видеть большую перспективу. Может ярче раскрыться ораторский талант, способность убеждать, вдохновлять и влиять словом. Повышается психическая энергия воздействия на людей, поэтому важно использовать её экологично и осознанно. Благоприятно запускать новые проекты, делать первые шаги, заявлять о себе и проявлять желание быть первым в важных для вас направлениях. Рекомендуется развивать личную ответственность, самостоятельность и зрелый подход к каждому принятому решению.","in_minus":"Сильный эгоизм, деспотизм, жажда подавления людей. Будут ошибочные, неправильные действия, проявятся такие качества как самодурство, упрямство, твердолобие. В действиях может проявиться авантюризм.В минусе может усилиться выраженный эгоизм, деспотичность и стремление подавлять других людей своим мнением или авторитетом. Возрастает риск ошибочных, резких и неправильно выбранных действий, особенно если человек действует только из желания доказать свою правоту. Могут проявиться самодурство, упрямство, твердолобость и нежелание слышать обратную связь. В поступках способен появиться авантюризм, чрезмерная самоуверенность и импульсивность, из-за которых энергия месяца будет расходоваться не на созидание, а на конфликты и ненужное сопротивление."},"2":{"in_plus":"Это месяц налаживания отношений, тонкого понимания людей, психологии и умения слышать не только слова, но и состояние собеседника. Проявляется реалистичность, желание разобраться в причинах происходящего и докопаться до самой сути ситуаций. Поднимается энергия воспоминаний, усиливается чувственность, эмоциональная восприимчивость и потребность в душевной близости. Во всех делах важно применять дипломатию, мягкость, терпение и способность договариваться без давления. Серьезные решения лучше отложить до следующего месяца, особенно если внутри есть сомнения или эмоциональная нестабильность. Пейте больше воды, чаще восстанавливайте внутренний баланс и поддерживайте тело через спокойный режим.","in_minus":"В минусе могут проявляться медлительность, затяжные сомнения и трудность в принятии даже простых решений. Усиливается склонность к депрессивным состояниям, внутренней закрытости и эмоциональному уходу в себя. Мысли и действия могут быть направлены на разрыв отношений, дистанцирование или болезненное обесценивание связей. Возрастает желание манипулировать чувствами других людей, проверять их на привязанность или добиваться внимания обходными путями. Важно не разрушать отношения под влиянием временных эмоций и не принимать внутреннюю неуверенность за окончательную правду."},"3":{"in_plus":"В этом месяце лучше действовать через анализ: сначала внимательно думать, просчитывать последствия, а уже затем переходить к действиям. Усилится желание анализировать события, поступать справедливо и принимать решения, в которых есть забота, польза и разумный порядок. Появляется стремление учиться, расширять знания, систематизировать опыт и применять его на практике. Это хороший период для сдачи экзаменов, прохождения обучения, медицинских процедур и внимательного отношения к здоровью. Рекомендуется структурировать дела, планы и текущие задачи, чтобы не распыляться и двигаться последовательно. Полезно анализировать прожитый день, планировать ближайшие события и действовать по заранее намеченному плану. Месяц особенно благоприятен для свадьбы, укрепления союза и создания более зрелой основы в отношениях.","in_minus":"В минусе могут усиливаться лень, азартность и необдуманные действия, которые приводят к разрушению, потерям или разочарованию. Может проявляться упрямство, категоричность, жесткий контроль, повышенная требовательность к себе и окружающим. Есть риск пустословия, споров ради споров и желания доказывать свою правоту без реальной пользы. Нежелание учиться, слушать опытных людей или признавать свои ошибки будет снижать ресурс месяца. Важно не поддаваться импульсам, не действовать из азарта и не заменять глубокий анализ поверхностными выводами."},"4":{"in_plus":"Этот месяц стоит посвятить работе с целями, мечтами и будущими ориентирами. Важно всё упорядочить, структурировать, детализировать и четко спланировать, чтобы идеи получили понятную форму и могли перейти в реальные действия. Будут появляться новые цели, свежие идеи, нестандартные решения и желание выйти за пределы привычного сценария. Усиливается креатив, тяга к новизне и стремление создать что-то более интересное, красивое или значимое. Интуиция становится сильнее, поэтому обращайте внимание на внутренние подсказки, совпадения и внезапные озарения. Возможны неожиданные позитивные события, приятные повороты и подарки судьбы, которые помогут увидеть новые пути развития.","in_minus":"В минусе человек может испытывать отчужденность, закрываться от людей и становиться словно «невидимкой» для окружающих. Усиливается недовольство, претензии ко всем и ко всему, ощущение, что обстоятельства складываются несправедливо. Возможна апатия и желание разрушить то, что уже создавалось, из-за иллюзии, что где-то дальше обязательно будет лучше. Могут происходить неприятные события мистического или непонятного характера, усиливающие тревожность и внутреннее напряжение. Появляется желание нарушать систему, инструкции, правила и действовать вопреки установленному порядку. В голове могут возникать схемы мошеннического характера или соблазн получить желаемое нечестным путем. Усилится неудовлетворенность, может появляться иллюзия, что с вами поступили нечестно, даже если ситуация требует более спокойного анализа."},"5":{"in_plus":"В этом месяце усиливаются коммуникация, гибкость, удача и способность оказываться в нужном месте в нужное время. Ум начинает активнее работать на рационализаторство, улучшения, поиск новых решений и логичных путей развития. Усиливается чувство эстетики, стиля, красоты и желание сделать пространство, образ или проект более привлекательными. Проявляется умение подстраиваться под собеседника, находить общий язык и выстраивать полезные связи. Возрастает желание начать новый бизнес, проект или направление, которое может принести расширение. Месяц можно посвятить разработке бизнес-идей, дизайну, упаковке, презентации, продвижению и поиску новых форм самовыражения. Приходит энергия расширения, размножения и приумножения ресурсов. Может возникать желание к поездкам, путешествиям, шопингу, обновлению и приобретению чего-то, что символически увеличивает ваши возможности.","in_minus":"В минусе может усилиться обидчивость, ранимость и болезненная реакция на слова или действия окружающих. Ощущение фарта и везения может временно отключиться, из-за чего события будут казаться более сложными и ограничивающими. Без очевидной причины может подниматься чувство паники, страха или внутренней тревоги. Обстоятельства могут будто ограничивать вашу свободу, проверяя гибкость и способность адаптироваться. Возможны постоянные удары по логике: люди могут вести себя нелогично, неправильно или непредсказуемо с вашей точки зрения. По отношению к окружающим вы можете становиться холодными, расчетливыми, жесткими, а местами даже жестокими. Есть вероятность, что личные тайны станут публичными, либо вы узнаете информацию, которая раньше была скрыта. Могут участиться споры, возражения, несогласия и желание делать всё только с пользой для себя."},"6":{"in_plus":"В этом месяце усиливается желание действовать творчески, начинать творческие проекты и наполнять привычные дела красотой, любовью и вдохновением. Период несет энергию удачи, везения, богатства и более тонкого чувствования возможностей. Усиливается интуиция на деньги, вложения, покупки и материальные решения. В мыслях и действиях может проявляться мудрость, способность выбирать более гармоничные и дальновидные варианты. Повышаются тактильность, чувственность, коммуникабельность и потребность в теплых контактах. Старайтесь всё делать творчески и с любовью, даже если речь идет о бытовых, рабочих или финансовых вопросах. Это благоприятный месяц для бракосочетания, инвестиций, вложения денег, крупных покупок и решений, связанных с комфортом, красотой и качеством жизни.","in_minus":"В минусе может проявляться высокая эмоциональность, нежелание учиться, лень и чрезмерное стремление к комфорту, удовольствиям и излишествам. Может возникнуть желание получить деньги или выгоду нечестным путем, минуя честный труд и внутреннюю зрелость. Появляются мысли мстительного характера, сценарии обид, желание доказать свою правоту через эмоциональное давление или молчаливое наказание. Возможны болезни, обострения и сигналы тела, особенно если человек игнорирует баланс между удовольствием, ответственностью и режимом. Важно не уходить в расслабленность без меры и не подменять любовь зависимостью от комфорта."},"7":{"in_plus":"В этом месяце важно жить в дисциплине, продумывать свои действия и мысли до конца, не оставляя важных решений на уровне импульса. В этот период нет выраженной золотой середины: возможен либо стремительный взлёт, либо такое же быстрое падение, поэтому самоконтроль и дисциплина будут особенно помогать. Усиливается интуиция, внутреннее предчувствие и способность видеть глубже обычного. Повышается сексуальность, жизненная сила и общая энергия в теле. Может проявляться гениальность, стремление к совершенству, перфекционизм и желание сделать всё максимально точно. Лучше воздержаться от быстрых решений, особенно если они приняты на эмоциях или под давлением обстоятельств. Уделите время духовным практикам, внутреннему очищению, работе с телом и разумом; особенно рекомендуются йога, медитация и практики концентрации.","in_minus":"В минусе усиливается ожидание похвалы, признания и подтверждения собственной значимости со стороны окружающих. Может повышаться эгоизм, появляться хаос в голове, туман в мыслях и непонимание реальной ситуации. Возможна забывчивость, рассеянность и ощущение, что всё происходит слишком неопределенно. Может возникать ожидание мистических событий и иллюзия, что всё само собой чудесным образом разрешится без ваших действий. Усиливается желание побыть в одиночестве, закрыться от людей или уйти от ответственности. При перегрузе возможны психологические срывы, крайности в поведении и риск уйти «во все тяжкие», поэтому особенно важно держать режим, тело и мысли в дисциплине."},"8":{"in_plus":"В этом месяце появляется желание много трудиться, уделять внимание деталям и доводить начатое до качественного результата. Усиливается способность адекватно оценивать материальные события, финансовые решения и практические действия в жизни. Возрастает желание всё контролировать, но в плюсе этот контроль помогает выстраивать порядок и укреплять результат. Проявляется мудрость, усиливается интуиция на деньги, денежные события, ресурсы и возможности материального роста. Важно много трудиться, учиться, повышать свои навыки, квалификацию, профессиональную ценность и параллельно работать над здоровьем. Старайтесь меньше бездельничать и больше вкладываться в те направления, которые дают реальную опору. Посвятите себя достижению целей, проявляйте терпение, упорство, выдержку и последовательность — такой подход обязательно принесет результат.","in_minus":"В минусе может проявляться тотальный контроль, недоверие к людям и желание держать всё только в своих руках. Мысли могут постоянно вращаться вокруг денег, материальных потерь, долгов или страха лишиться ресурсов. Возможна потеря денег, особенно если решения принимаются из тревоги, жадности или желания доказать свою власть. Может появиться стремление вершить правосудие, наказывать, оценивать окружающих слишком жестко. Усиливается желание побыть в одиночестве, уйти в отшельничество или закрыться от взаимодействия. Духовность может сменяться грубым материализмом, а внутренние ценности — стремлением всё измерять выгодой. Проявляется тунеядство, желание подмять всех под себя и при этом ничего не делать, но много получать. В этот период нежелательно подписывать кредитные договоры и брать на себя финансовые обязательства без тщательного анализа."}},"common":{"6":"Это очень благоприятный день, наполненный энергией мудрости, творчества, внутреннего комфорта и гармоничного взаимодействия. Сегодня хорошо заниматься делами, где важны красота, вдохновение, забота и любовь к процессу. День подходит для подписания документов, заключения договоров, покупок и решений, связанных с улучшением качества жизни. При этом некоторые люди могут уходить в излишества, лень, чрезмерное стремление к удовольствиям или проявлять мстительные реакции. Сохраняйте баланс: действуйте с любовью, но не теряйте осознанность и чувство меры.","1":"В этот день благоприятно запускать новые процессы, начинать важные дела и делать первые шаги в проектах, в том числе в бизнес-направлении. Хорошо проявляется энергия стратегии, ясного выбора и уверенного принятия решений. Также активна энергия восстановления и целительства, которая помогает внимательнее отнестись к здоровью и поддержать общее состояние организма. При этом людей может испытывать энергия эгоизма, давления, деспотичности и излишнего консерватизма. Не стоит поддаваться таким проявлениям. Используйте календарь как инструмент осознанности: он поможет лучше понимать реакции людей, мягче выстраивать общение и уходить от конфликтов, претензий и ненужного напряжения.","5":"Это благоприятный день для новых знакомств, общения, переговоров и активной коммуникации. Сегодня хорошо проявляются интеллект, логика и способность трезво воспринимать происходящее, что помогает принимать более адекватные решения и находить общий язык с людьми. День подходит для обсуждения идей, обмена информацией и поиска полезных контактов. При этом у людей может проявляться излишняя обидчивость, ранимость и желание спорить. Не поддавайтесь этим эмоциональным волнам. Постарайтесь мягко обходить стремление окружающих бороться, доказывать свою правоту или вступать в конфликты.","9":"В этот день у многих людей может проявляться повышенная эмоциональность, поэтому важно внимательнее относиться к своим реакциям и словам. День благоприятен для спорта, активного движения, благотворительности и поступков, направленных на поддержку других. Это день служения: присмотритесь, возможно, рядом есть человек, которому действительно нужна ваша помощь, участие или доброе слово. Не навязывайтесь, а мягко спросите, нужна ли поддержка, и действуйте искренне. Направляйте сильные эмоции в созидание, заботу, завершение дел и полезные действия для себя и окружающих.","4":"Сегодняшний день благоприятен для получения новых знаний, постановки целей и более глубокого осмысления своих дальнейших шагов. Хорошо прописывать цели на бумаге, структурировать желания и переводить идеи в понятный план действий. Перед этим желательно выделить время на двух- или трехчасовую пешую прогулку: движение поможет очистить мысли, усилить концентрацию и лучше почувствовать правильное направление. У окружающих людей может повыситься неудовлетворенность результатами, появиться борьба за абсолютную честность, претензии или даже склонность к мошенническим схемам. Взаимодействуйте спокойно, с пониманием и внимательностью к деталям.","8":"В этот день особенно полезно трудиться, доводить начатое до результата и вкладываться в качество своей работы. Труд сегодня формирует положительный опыт, усиливает жизненную мудрость и помогает трезво оценивать материальные вопросы. День подходит для подписания документов и оформления важных договоренностей, за исключением кредитных договоров, с которыми лучше быть особенно осторожными. Многие люди могут проявляться через тотальный контроль, недоверие, жесткость и желание всё держать под личным управлением. Сохраняйте терпение, работайте последовательно и не позволяйте чужому напряжению сбивать вас с курса.","3":"Это очень благоприятный день, в котором хорошо работает энергия анализа, продуманной стратегии и движения к поставленным целям. Сегодня полезно планировать дела, наводить порядок в задачах, принимать взвешенные решения и подписывать документы. День помогает увидеть, какие шаги действительно ведут к результату, а какие требуют корректировки. Окружающие люди при этом могут поддаваться лени, азарту, чрезмерной принципиальности и категоричности. Возможно, кто-то будет много говорить, но мало действовать. Сохраняйте собранность, опирайтесь на факты и не втягивайтесь в пустые споры.","7":"Сегодня на людей влияет энергия гениальности, внутренней силы и глубокой трансформации сознания. Из-за этого может повышаться темпераментность, эмоциональная интенсивность и желание действовать резко. В такой день особенно важны дисциплина, спорт, ходьба, йога, духовные практики и любые действия, которые помогают соединить тело, ум и внутреннее состояние. Если игнорировать необходимость порядка и самоконтроля, возрастает вероятность попасть в кризисную ситуацию или столкнуться с внутренним напряжением. Направляйте сильную энергию дня в развитие, практику и осознанное движение.","2":"Сегодня в отношениях между людьми особенно заметна энергия дипломатии, психологии, чувственности, реалистичного взгляда, нежности и глубокого понимания. День подходит для мягкого общения, восстановления контактов и внимательного отношения к чувствам других людей. При этом повышается вероятность, что кто-то будет проявляться через сомнения, внутреннюю нестабильность, депрессивные состояния или двойственность в поведении. Может усилиться желание резко разорвать отношения как дома, так и в рабочей среде. Важно не спешить с выводами, сохранять спокойствие и выбирать диалог вместо эмоциональных решений."},"year":{"4":{"in_plus":"🔮 ЧЕМУ ПОСВЯТИТЬ ЭТОТ ГОД<br />\nЭтот год наполнен мистикой и неожиданностями, которые не всегда поддаются логике. События и встречи будут казаться почти волшебными, а подарки судьбы могут появляться неожиданно, как приятные бонусы. Это время открыть своё сердце духовности и начать глубже исследовать духовные практики. Прислушайтесь к сигналам, которые посылает вам жизнь: они могут указывать на правильное направление. Важно также вспомнить о роде и семейных традициях. Родовые практики и поминание предков помогут вам обрести внутреннюю опору и мудрость.<br />\nЭтот год даёт возможность получить доступ к знаниям рода и к более глубокой связи с внутренним миром. Чем больше вы будете стремиться к духовному росту, тем больше гармонии и спокойствия появится в вашей жизни. Верьте в силу неожиданных встреч и знаковых событий — они могут сыграть важную роль в вашем пути. Позвольте этой мистической энергии направлять вас, вместо того чтобы пытаться её контролировать. Открытость и доверие к происходящему приведут вас к важным откровениям и встречам.<br />\n<br />\n🎯 ВОПРОСЫ ДЛЯ ГЛУБОКОГО ПЛАНИРОВАНИЯ НА ГОД<br />\n1. Какие духовные практики или традиции моего рода я могу изучить и внедрить в свою жизнь?<br />\n2. Как я могу развивать духовность, чтобы достичь внутреннего спокойствия и гармонии?<br />\n3. Что мне помогает оставаться открытым к знаковым встречам и неожиданным событиям?<br />\n4. Как я могу избежать внутренних конфликтов и напряжения, доверяя течению жизни?<br />\n5. Какими способами я могу управлять финансами и ресурсами, чтобы избежать рисков?<br />\n6. Как этот год может помочь мне обрести мудрость и понимание себя и своего пути?","in_minus":"⚠️ ИЗБЕГАЙТЕ ЭТИХ ПРОЯВЛЕНИЙ<br />\nЕсли ваше эго не в ладу с вами, энергия этого года может обернуться мистическими потерями и неожиданными трудностями. Ощущение неудовлетворённости и внутреннего напряжения может нарастать, если вы будете слишком зациклены на контроле. Жизнь будет ставить препятствия и вносить внезапные изменения, и сопротивление этим процессам лишь усилит стресс. Сложность принятия решений в этом году — тоже испытание, поэтому старайтесь подходить к проблемам с терпением и мудростью.<br />\nБудьте внимательны с деньгами и материальными ресурсами. Вложение средств или необдуманные траты могут принести неприятные последствия. Важно помнить, что в этом году лучше довериться внутреннему чувству и духовным знакам, чем пытаться искать рациональные объяснения всему происходящему. Открытость к переменам и принятие обстоятельств помогут избежать негатива и сохранить баланс."},"3":{"in_plus":"📈 ЧЕМУ ПОСВЯТИТЬ ЭТОТ ГОД<br />\nЭтот год — время максимальной эффективности и успеха. Вам будут открываться новые возможности, которые смогут привести к значительным достижениям, если вы подойдёте к ним осознанно. Главное — анализируйте свои шаги и результаты, фиксируйте успехи и ошибки. Ведение ежедневника или планировщика станет вашим верным союзником: это поможет понять, что работает, а что требует корректировки. В этом году особенно полезно планировать каждый день и следить за своим прогрессом, чтобы достигать поставленных целей с максимальной точностью.<br />\nЭто отличное время для инвестиций и материальных перемен — будь то покупка жилья, переезд или расширение бизнеса. Учёба и получение новых знаний тоже будут очень плодотворными: используйте этот год для освоения навыков, которые придадут вам уверенности в будущем. В этом году важно не просто трудиться, но и радоваться успехам, которые вы создаёте через планомерные действия. Если будете следовать своему плану и уделять внимание анализу, все задуманные цели окажутся вполне достижимыми.<br />\n<br />\n⚠️ ИЗБЕГАЙТЕ ЭТИХ ПРОЯВЛЕНИЙ<br />\nВместе с успехом может прийти соблазн действовать азартно и импульсивно, но это может привести к разрушению достигнутого. Осторожно относитесь к своим решениям: чрезмерная категоричность и упрямство могут оттолкнуть людей и создать препятствия на пути. Пустые разговоры и бездействие будут тянуть вниз и создавать иллюзию нехватки времени и ресурсов. Лень станет врагом этого года — если вы позволите ей захватить вас, даже благоприятные возможности будут упущены.<br />\nПостарайтесь избегать одностороннего стремления к выгоде. Если фокусироваться только на личных интересах, можно потерять доверие окружающих и разрушить важные связи. Старайтесь оставаться гибкими и открытыми, не фиксируйтесь на одних только материальных результатах. Финансовые ресурсы будут приходить, если ваши усилия направлены на созидание и помощь другим.<br />\n<br />\n🎯 ВОПРОСЫ ДЛЯ ГЛУБОКОГО ПЛАНИРОВАНИЯ НА ГОД<br />\n1. Как я могу внедрить ежедневный анализ, чтобы поддерживать свой успех на высоком уровне?<br />\n2. Какие новые знания и навыки помогут мне достичь долгосрочных целей?<br />\n3. Какие финансовые решения я могу принять, чтобы укрепить своё благосостояние?<br />\n4. Как я могу избежать импульсивных решений и действовать более осознанно?<br />\n5. Что поможет мне сохранить баланс между личной выгодой и поддержкой окружающих?<br />\n6. Как я могу бороться с ленью и поддерживать высокую эффективность на протяжении всего года?","in_minus":"⚠️ ИЗБЕГАЙТЕ ЭТИХ ПРОЯВЛЕНИЙ<br />\nВместе с успехом может прийти соблазн действовать азартно и импульсивно, но это может привести к разрушению достигнутого. Осторожно относитесь к своим решениям: чрезмерная категоричность и упрямство могут оттолкнуть людей и создать препятствия на пути. Пустые разговоры и бездействие будут тянуть вниз и создавать иллюзию нехватки времени и ресурсов. Лень станет врагом этого года — если вы позволите ей захватить вас, даже благоприятные возможности будут упущены.<br />\nПостарайтесь избегать одностороннего стремления к выгоде. Если фокусироваться только на личных интересах, можно потерять доверие окружающих и разрушить важные связи. Старайтесь оставаться гибкими и открытыми, не фиксируйтесь на одних только материальных результатах. Финансовые ресурсы будут приходить, если ваши усилия направлены на созидание и помощь другим."},"2":{"in_plus":"🌱 ЧЕМУ ПОСВЯТИТЬ ЭТОТ ГОД<br />\nЭтот год — про доверие, терпение и искусство выстраивания отношений. Вам предстоит научиться слышать и понимать людей на глубоком уровне, находить к каждому индивидуальный подход. Действуйте через дипломатию и мягкость. Главное сейчас — сохранять все текущие связи и даже укреплять их. Работайте над отношениями с друзьями, коллегами и особенно с родными, ведь этот год подарит вам возможность укрепить связь с матерью и восстановить гармонию в семейных отношениях.<br />\n<br />\nЭтот год — не время для быстрых решений или серьёзных сделок. Дайте процессам развиваться постепенно и плавно, без спешки. Пусть каждая встреча и взаимодействие будут шагом к более глубокому пониманию людей и укреплению связей. Учитесь быть открытым и терпеливым, даже когда всё кажется неясным. Сотрудничество и поддержка будут основными инструментами вашего успеха.<br />\n<br />\nЕсли почувствуете застой или рутину, попробуйте добавить в день что-то приятное и значимое: прогулки, медитации, время с близкими. Откройтесь моментам тишины и умиротворения — они помогут обрести внутреннюю опору и наполнят ресурсами.<br />\n<br />\n<br />\n🎯 ВОПРОСЫ ДЛЯ ГЛУБОКОГО ПЛАНИРОВАНИЯ НА ГОД<br />\n1. Какие отношения в моей жизни нуждаются в укреплении, и что я могу сделать для их развития?<br />\n2. Как я могу сохранять дипломатичность и гибкость в сложных ситуациях?<br />\n3. Какие шаги помогут мне поддерживать связь с матерью и наладить семейные отношения?<br />\n4. Как я могу справляться с сомнениями и находить внутреннюю опору в моменты неуверенности?<br />\n5. Чем я могу разнообразить повседневные рутинные задачи, чтобы чувствовать вдохновение?<br />\n6. Как этот год может помочь мне стать более терпеливым и открытым для других людей?","in_minus":"⚠️ ИЗБЕГАЙТЕ ЭТИХ ПРОЯВЛЕНИЙ<br />\nВ этом году может возникнуть ощущение, что отношения с другими рушатся, но важно помнить, что это всего лишь иллюзия. Усилятся сомнения и переживания, и порой будет казаться, что все вокруг ускользает. Старайтесь не погружаться в эти мысли и избегайте поиска постоянного подтверждения своей значимости у окружающих — вы можете оказаться в ловушке зависимости от чужого мнения.<br />\n<br />\nИзбегайте погружения в рутину и депрессивные состояния. Если чувствуете, что день кажется однообразным, попробуйте добавить что-то новое, пусть даже небольшое. Опасность этого года в том, что страх потерять людей или не оправдать их ожиданий может затмить ваши собственные желания и потребности. Держитесь подальше от чрезмерных обдумываний и беспокойства о том, что могло бы пойти не так. Помните, что отсутствие решений сейчас — это тоже важная часть вашего пути."},"1":{"in_plus":"🚀 ЧЕМУ ПОСВЯТИТЬ ЭТОТ ГОД<br />\nЭтот год несёт в себе мощную энергию действий и новых начинаний. Он приглашает вас заложить фундамент будущего: начните бизнес, возьмитесь за крупные проекты или внедрите важные привычки. Это идеальное время для смелых шагов и экспериментов. Даже небольшие действия сегодня могут стать отправной точкой для масштабных перемен в будущем. Позвольте себе мечтать смело и двигаться к новым целям уверенно.<br />\n<br />\nПрислушайтесь к идеям, которые приходили раньше — возможно, именно сейчас настал их час. Успешное взаимодействие с государственными структурами и решение официальных вопросов также благоприятны в этом году. Ощущение внутреннего огня подсказывает, что энергия требует выхода. Направляйте её в продуктивные действия: спорт, творчество, учёбу или физический труд.<br />\n<br />\nПланируйте свои шаги и действуйте с уверенностью — каждый день этого года станет кирпичиком в фундаменте вашей новой жизни. Сфокусируйтесь на том, что приносит пользу вам и окружающим, и шаг за шагом стройте реальность, о которой мечтаете.<br />\n<br />\n🎯 ВОПРОСЫ ДЛЯ ГЛУБОКОГО ПЛАНИРОВАНИЯ НА ГОД<br />\n1. Какие проекты или привычки могут стать основой для моего будущего?<br />\n2. Какие идеи, которые я откладывал, готовы к реализации именно сейчас?<br />\n3. Как я могу найти баланс между уверенностью в себе и уважением к окружающим?<br />\n4. Что поможет мне избежать апатии и эффективно направлять внутреннюю энергию?<br />\n5. Как я буду поддерживать гармонию и восстанавливаться в моменты выгорания?<br />\n6. Какими шагами я могу прийти к лучшей версии себя к концу этого года?","in_minus":"⚠️ ИЗБЕГАЙТЕ ЭТИХ ПРОЯВЛЕНИЙ<br />\nЭнергия года настолько сильна, что может провоцировать эгоизм и желание контролировать окружающих. Это может привести к напряжённым отношениям и даже деспотичному поведению. Важно помнить: великая сила требует мудрого управления. Не поддавайтесь соблазну навязывать своё мнение другим или принуждать их следовать вашим планам. Истинное лидерство строится на взаимном уважении и сотрудничестве.<br />\n<br />\nБездействие станет вашим главным врагом. Если внутренняя энергия не найдёт выхода, она может привести к апатии и депрессии. Дайте себе паузу, если почувствуете выгорание, но не уходите в изоляцию. Наполняйте день физической активностью и полезным общением — это поможет избежать эмоционального застоя.<br />\n<br />\nТакже избегайте чрезмерного контроля над другими и жёстких требований. Важно сохранять гибкость и позволять себе и окружающим расти в собственном темпе."},"9":{"in_plus":"🔥 ЧЕМУ ПОСВЯТИТЬ ЭТОТ ГОД<br />\nЭтот год — время завершения, разрушения старого и подготовки к новому этапу. Вселенная будет убирать из вашей жизни всё, что больше не служит вашему росту: старые убеждения, иллюзии, привязанности и эгоистичные стремления. Это не повод для отчаяния, а возможность освободить пространство для нового. Ощущение, что многое заканчивается, — это естественная часть цикла, который завершает девятилетний путь. Учитесь принимать перемены с благодарностью и видеть в разрушениях возможность перерождения.<br />\nЭтот год важен для подведения итогов: проанализируйте отношения, ценности и интересы, которые были важны для вас, и решите, что вы хотите взять с собой в следующий цикл. Осознайте, что вам больше не нужно и с чем пора попрощаться. Вам откроется новое видение того, как вы хотите строить свою жизнь и что будет иметь значение в будущем. Сейчас важно отпустить всё лишнее и довериться процессу, помня, что ночь темнее всего перед рассветом. Не спешите начинать новые проекты — лучше дождаться следующего года. Этот год — о переоценке и подготовке, а не о создании.<br />\n<br />\n🎯 ВОПРОСЫ ДЛЯ ГЛУБОКОГО ПЛАНИРОВАНИЯ НА ГОД<br />\n1. Какие убеждения и привязанности мне нужно отпустить, чтобы освободиться для нового?<br />\n2. Какие уроки из девятилетнего цикла я могу извлечь и использовать в будущем?<br />\n3. Что я хочу изменить в своей жизни и в каких сферах мне нужно перестроить подход?<br />\n4. Как я могу подготовиться к новому началу в следующем году, завершая важные дела сейчас?<br />\n5. Как я могу справляться с эмоциональностью и агрессией, сохраняя внутренний баланс?<br />\n6. Какие инструменты и практики помогут мне научиться отпускать и принимать перемены с благодарностью?","in_minus":"⚠️ ИЗБЕГАЙТЕ ЭТИХ ПРОЯВЛЕНИЙ<br />\nЭтот год может усилить эмоциональность, агрессию и стремление к разрушению, в том числе отношений и связей. Важно осознавать эти порывы и направлять энергию конструктивно. Спорт и физическая активность станут хорошими союзниками в управлении эмоциями и снижении напряжения. Возможны трудности, такие как увольнение, завершение проектов или болезненные разрывы. Потери могут быть значимыми, но учитесь отпускать и помнить: «Мне принадлежит только моя жизнь, всё остальное божественно». Принятие этого поможет избежать болезненной привязанности к людям или вещам.<br />\nСтарайтесь избегать попыток всё контролировать или мстить за потери. Этот год требует гибкости и доверия к жизни. Чем быстрее вы научитесь отпускать, тем легче пройдёте через этот этап и подготовите почву для нового начала."},"5":{"in_plus":"💼 ЧЕМУ ПОСВЯТИТЬ ЭТОТ ГОД<br />\nЭтот год — о коммуникации, бизнесе и возможностях для роста. У вас может появиться множество идей для бизнеса или проектов. Если у вас уже есть своё дело, вы найдёте новые пути для его расширения или вдохновения для запуска чего-то совершенно нового. Действуйте быстро и уверенно — этот год благоприятен для переговоров, встреч и активного общения. Каждая новая связь и каждая поездка могут стать началом чего-то значимого, поэтому держите сердце и разум открытыми для сотрудничества и возможностей.<br />\nПри этом не забывайте об отношениях с близкими. Из-за фокуса на делах вы можете показаться холодным и отстранённым. Старайтесь компенсировать это теплом и заботой, чтобы сохранить баланс между личной и профессиональной жизнью. Этот год принесёт откровения — что-то тайное может стать явным, будь то ваш секрет или чей-то другой. Позвольте честности и откровенности стать частью вашего пути, но с уважением к чувствам других.<br />\nПринимайте жизнь такой, какая она есть — без попыток всё разложить по полочкам. Логика в этом году может не сработать, и важно увидеть в этом силу: жизнь часто непредсказуема, и именно в этом её магия. Отпустите стремление всё контролировать, и откройтесь потоку событий.<br />\n<br />\n🎯 ВОПРОСЫ ДЛЯ ГЛУБОКОГО ПЛАНИРОВАНИЯ НА ГОД<br />\n1. Какие идеи для бизнеса я могу воплотить и развивать в этом году?<br />\n2. Как я могу расширить свои контакты и улучшить навыки переговоров?<br />\n3. Что я могу сделать, чтобы поддерживать тепло и близость в отношениях с родными?<br />\n4. Как я могу справляться с тревожными мыслями и сохранять спокойствие в неопределённости?<br />\n5. Что поможет мне отказаться от навязчивого стремления к логике и увидеть в жизни её спонтанность?<br />\n6. Как честность и откровенность могут помочь мне создать более гармоничные отношения и укрепить связи?","in_minus":"⚠️ ИЗБЕГАЙТЕ ЭТИХ ПРОЯВЛЕНИЙ<br />\nЭтот год может усилить желание отстаивать свою точку зрения и бороться за правоту. Постарайтесь не увязнуть в бесконечных спорах и конфликтах. Жёсткость и холодность могут оттолкнуть людей, поэтому важно следить за тем, как вы общаетесь, особенно с близкими. Важно не позволять тревожным мыслям и паническим настроениям взять верх. Если возникнут моменты тревоги, дайте себе паузу и вспомните, что вы не обязаны решать всё сразу.<br />\nТакже в этом году может появиться соблазн любовных приключений и импульсивных решений в отношениях. Постарайтесь не разрушить важные связи в погоне за кратковременными удовольствиями. В моменты, когда логика кажется бесполезной, старайтесь принимать происходящее без осуждения — это поможет избежать разочарований и ненужных конфликтов."},"6":{"in_plus":"❤️ ЧЕМУ ПОСВЯТИТЬ ЭТОТ ГОД<br />\nЭтот год — о любви, радости и успехе. Это время, когда мечты могут сбыться, а успех придёт во все сферы вашей жизни, если вы будете подходить к каждому событию с любовью и благодарностью. Позвольте себе мечтать смело, визуализируйте свои цели и создавайте карты желаний. Чем больше творчества и любви вы вложите в свои дела, тем больше возможностей откроется перед вами. Этот год может подарить встречу с любовью, будь то новое романтическое знакомство или глубокое обновление уже существующих отношений.<br />\nНаслаждайтесь жизнью, но не уходите в излишества. Пусть каждый день будет наполнен моментами радости и вдохновения, будь то творчество, общение или забота о себе. Старайтесь наслаждаться настоящим моментом, видеть красоту даже в мелочах. Любовь будет ключом к успеху, поэтому действуйте из любви — к себе, близким и миру вокруг вас.<br />\n<br />\n🎯 ВОПРОСЫ ДЛЯ ГЛУБОКОГО ПЛАНИРОВАНИЯ НА ГОД<br />\n1. Какие мечты и цели я хочу визуализировать и воплотить в этом году?<br />\n2. Как я могу проявлять больше любви и благодарности в повседневной жизни?<br />\n3. Что я могу сделать, чтобы сохранять баланс между наслаждением жизнью и избеганием излишеств?<br />\n4. Как я могу поддерживать себя, если возникает чувство недостатка любви и внимания?<br />\n5. Какой вклад я могу внести в улучшение отношений с окружающими и создать пространство для любви?<br />\n6. Что поможет мне бороться с ленью и усталостью, сохраняя высокий уровень энергии?","in_minus":"⚠️ ИЗБЕГАЙТЕ ЭТИХ ПРОЯВЛЕНИЙ<br />\nВ этом году могут усилиться внутренние страдания, связанные с ощущением недостатка любви или внимания. Может казаться, что вас недостаточно ценят и любят, и эти мысли будут приводить к дискомфорту и даже обострению хронических заболеваний. Важно не поддаваться этому «внутреннему нытику» и не впадать в саможалость. Помните, что любовь начинается с вас самих — научитесь любить и поддерживать себя, не ожидая подтверждений извне.<br />\nСтарайтесь избегать желания мстить обидчикам или доказывать что-то другим. Желание тратить деньги на себя чрезмерно тоже может быть соблазном, но это приведёт к опустошению. Следите за тем, чтобы лень и усталость не захватили вас. Если почувствуете сонливость или апатию, переключитесь на что-то лёгкое и приятное, чтобы восстановить энергию без ухода в пассивность."},"7":{"in_plus":"🌪️ ЧЕМУ ПОСВЯТИТЬ ЭТОТ ГОД<br />\nЭтот год — период глубоких перемен и трансформаций. Он требует от вас отпустить старое, чтобы освободить место для нового. Всё, что мешает вашему росту и развитию, будет уходить — будь то убеждения, ожидания или связи. Год учит не привязываться ни к чему: как только вы научитесь принимать жизнь с благодарностью, даже негативные события станут ступенями к личному росту. Важно принимать происходящее как часть вашего пути, без страданий и сопротивления.<br />\nЭтот год открывает перед вами возможность развязать старые кармические узлы, которые тянулись 9 или даже 18 лет. Представьте это как баню, в которой вы очищаетесь от всего лишнего: сначала жарко и неудобно, но после этого приходит ощущение лёгкости и обновления. Чем больше вы размышляете о смысле жизни и духовности, тем легче пройдёте через эти перемены. Перестаньте делить людей на хороших и плохих — научитесь видеть мир целостно и без оценок. Медитативные практики, благодарность и прощение станут надёжными инструментами, которые помогут вам сохранять баланс.<br />\nНе стоит в этом году принимать серьёзные финансовые решения или совершать крупные покупки. Дайте себе время на осмысление и трансформацию, а большие проекты или вложения оставьте на потом. Пусть этот год станет вашим внутренним перерождением.<br />\n<br />\n<br />\n🎯 ВОПРОСЫ ДЛЯ ГЛУБОКОГО ПЛАНИРОВАНИЯ НА ГОД<br />\n1. Какие убеждения и привязанности мне пора отпустить, чтобы расти и развиваться?<br />\n2. Какие кармические уроки я могу завершить, чтобы освободить себя от прошлого?<br />\n3. Как я могу научиться благодарить за каждое событие, даже если оно кажется негативным?<br />\n4. Какие медитативные и духовные практики помогут мне оставаться в балансе и проходить трансформацию?<br />\n5. Что мне мешает принимать людей и мир такими, какие они есть, без оценок?<br />\n6. Как я могу подготовить почву для будущих успехов, сосредоточившись на внутренней работе в этом году?","in_minus":"⚠️ ИЗБЕГАЙТЕ ЭТИХ ПРОЯВЛЕНИЙ<br />\nГод трансформации может погружать в хаос и кризис, если не принимать его как процесс обновления. Негативные мысли, претензии к миру и ощущение, что «жизнь несправедлива», лишь усилят ощущение беспомощности. Постарайтесь не погружаться в постоянные размышления «за что мне это», а задайте себе вопрос: «Чему это меня учит?»<br />\nОтношения могут оказаться под угрозой, если вы будете цепляться за обиды и разочарования. Избегайте обвинений и претензий к окружающим — они отражают ваши внутренние конфликты. Также не стоит совершать операции, крупные покупки или инвестиции в этом году. Это время для внутренней работы, а не для внешних изменений."}},"sense":{"7":{"id":7,"info":"Число сознания 7 формирует мышление через трансформацию и самоконтроль. Такой человек склонен к глубине, внутренней дисциплине и поиску истины. Его сознание ориентировано на развитие силы духа и внутренней опоры.","in_pluse":"В плюсе это даёт мощную интуицию, выдержку, способность проходить кризисы и становиться сильнее. Человек умеет управлять собой и вдохновлять примером.","in_minus":"В минусе возможны крайности: резкие подъёмы и падения, уход в одиночество, ожидание чуда без действий, хаос мыслей."}},"ptype":{"7":{"id":7,"title":"Технолог","dates":[7,16,25],"strategy":"Усовершенствование и быстрая реализация.","realization":"Дисциплина тела (йога) и инновации.","thinking":{"type":"Интуитивное","description":"Способность быстро принимать решения на основе внутреннего ощущения и подсознательного восприятия. Этот тип мышления помогает мгновенно реагировать на изменения, находить нестандартные решения в условиях неопределенности и выявлять скрытые возможности."},"moral":"От непризнания","pluses":["Быстрая реализация идей","Йога","Кризис-менеджер"],"minuses":["Хаос","Разрушение","Рассеянность","Непонимание ситуации"]}},"meanings":{"1":"Самостоятельность в принятии решений","2":"Эмпатия и понимание других","3":"Аналитические способности","4":"Целеполагание и стремление к обновлению","5":"Коммуникационные навыки","6":"Создание комфорта и гармоничных отношений","7":"Продуктивность и дисциплина","8":"Практичность и нацеленность на результат","9":"Физическая выносливость и активность"},"reco":{"1":{"focus":["Самостоятельность","Стратегическое мышление","Личная ответственность"],"do":["Брать ответственность на себя и принимать решения самостоятельно.","Развивать навык стратегического мышления.","Следить за состоянием тела и осанкой."],"avoid":["Перекладывать ответственность на других.","Пассивность в принятии решений."]},"2":{"focus":["Эмпатия","Понимание себя и других","Эмоциональная осознанность"],"do":["Учиться слышать, понимать и задавать вопросы.","Развивать способность чувствовать ситуацию и другого человека.","Оценивать своё психологическое состояние и выводить себя в ресурс."],"avoid":["Игнорировать свои чувства.","Подменять понимание людей догадками."]},"3":{"focus":["Анализ","Структура","Планирование"],"do":["Записывать свои действия и планы.","Структурировать день и время.","Развивать навык анализа и оценки своего состояния."],"avoid":["Хаотичные действия без плана.","Поверхностный анализ ситуации."]},"4":{"focus":["Цели","Приоритеты","Самообновление"],"do":["Приобретать знания и практику целеполагания.","Учиться ставить чёткие цели.","Формировать устойчивые жизненные ориентиры."],"avoid":["Жить без понятных целей.","Расплывчатые приоритеты."]},"5":{"focus":["Коммуникация","Открытость","Социальная включённость"],"do":["Больше общаться и коммуницировать.","Развивать адекватное восприятие людей и мира.","Регулярно расширять круг общения."],"avoid":["Замыкаться в себе.","Избегать живого общения."]},"6":{"focus":["Комфорт","Гармония","Завершение дел"],"do":["Практиковать благодарность.","Подводить итоги своей работы.","Учиться завершать незавершённые дела."],"avoid":["Оставлять много незавершённых задач.","Игнорировать внутренний и внешний комфорт."]},"7":{"focus":["Дисциплина","Энергия","Внутренняя собранность"],"do":["Поддерживать дисциплину тела и ума.","Работать над проявленностью и харизмой.","Добавлять регулярную физическую практику."],"avoid":["Расфокус и отсутствие режима.","Пассивный образ жизни."]},"8":{"focus":["Практика","Труд","Результат"],"do":["Формировать привычку трудиться регулярно.","Доводить начатое до результата.","Повторять и закреплять практический опыт."],"avoid":["Откладывать практику.","Ждать результата без системной работы."]},"9":{"focus":["Физический ресурс","Активность","Выносливость"],"do":["Добавлять спорт и физическую активность.","Работать с телом и уровнем жизненной энергии.","Развивать выносливость через регулярное движение."],"avoid":["Малоподвижность.","Игнорирование телесного ресурса."]}},"lines":[{"key":"r369","title":"Линия достижения","digits":[3,6,9]},{"key":"r258","title":"Линия отношений и личного благополучия","digits":[2,5,8]},{"key":"r147","title":"Линия денег и сексуальности","digits":[1,4,7]},{"key":"c321","title":"Линия здоровья","digits":[3,2,1]},{"key":"c654","title":"Линия интеллекта","digits":[6,5,4]},{"key":"c987","title":"Линия трансформации и бесконечных денег","digits":[9,8,7]},{"key":"d357","title":"Линия успеха","digits":[3,5,7]},{"key":"d951","title":"Линия коммуникации","digits":[9,5,1]}],"comp":[{"key":"self_decision","title":"Самостоятельность в принятии решений","digits":[1],"description":"Способность брать ответственность на себя и самостоятельно принимать решения.","tips":["Выстраивать стратегию действий","Быть дружелюбным и отзывчивым","Следить за осанкой и состоянием позвоночника","Тренировать самостоятельное принятие решений"]},{"key":"empathy","title":"Эмпатия и понимание других","digits":[2],"description":"Умение слышать, понимать других людей и адекватно оценивать своё внутреннее состояние.","tips":["Учиться слышать и задавать вопросы","Стараться понять ситуацию и другого человека","Отслеживать своё психологическое состояние","Выводить себя в плюс через противоположную эмоцию"]},{"key":"analytics","title":"Аналитические способности","digits":[3],"description":"Умение анализировать информацию, структурировать действия и планировать.","tips":["Записывать свои действия","Структурировать задачи в план","Анализировать шаги и итоги дня","Получать знания для оценки своего состояния и здоровья"]},{"key":"goal_setting","title":"Целеполагание и стремление к обновлению","digits":[4],"description":"Способность ставить цели, определять приоритеты и стремиться к обновлению.","tips":["Приобретать новые знания","Ставить чёткие цели","Развивать навык целеполагания","Регулярно пересматривать жизненные приоритеты"]},{"key":"communication","title":"Коммуникационные навыки","digits":[5],"description":"Навык рациональной, адекватной и устойчивой коммуникации с окружающими.","tips":["Тренировать спокойное деловое общение","Развивать адекватное восприятие людей и мира","Активировать 5 органов чувств","Каждый день знакомиться и общаться с новыми людьми"]},{"key":"comfort","title":"Создание комфорта и гармоничных отношений","digits":[6],"description":"Умение создавать комфорт, поддерживать тёплые отношения и завершать начатое.","tips":["Благодарить ежедневно","Пить больше воды","Подводить итоги дня и недели","Завершать незакрытые дела"]},{"key":"productivity","title":"Продуктивность и дисциплина","digits":[7],"description":"Способность быть дисциплинированным, энергичным и направлять себя в развитие.","tips":["Держать дисциплину тела и ума","Работать над проявленностью и харизмой","Поднимать энергию ходьбой от 7 км","Практиковать йогу и телесные практики"]},{"key":"practicality","title":"Практичность и нацеленность на результат","digits":[8],"description":"Умение трудиться, применять знания на практике и доводить до результата.","tips":["Сразу применять увиденное на практике","Развивать трудолюбие","Углубляться в одно дело надолго","Тренировать доведение задач до результата"]},{"key":"physical_activity","title":"Физическая выносливость и активность","digits":[9],"description":"Физическая активность, выносливость и способность действовать через тело.","tips":["Делать зарядку","Заниматься спортом регулярно","Работать с телом и физической активностью","Следить за эмоциональным состоянием"]}],"layout":[[3,6,9],[2,5,8],[1,4,7]]};
+/* Ядро расчётов Сюцай. Формулы сверены с календарём на 31/31 днях августа
+   и на четырёх других месяцах: расхождений нет. */
+var ME = { name: "Илья", bd: "1983-03-16" };
+
+function red(n) {
+  n = Math.abs(n);
+  while (n > 9) {
+    var s = 0, x = n;
+    while (x > 0) { s += x % 10; x = Math.floor(x / 10); }
+    n = s;
+  }
+  return n;
+}
+function bparts(bd) { var p = bd.split("-"); return { y: +p[0], m: +p[1], d: +p[2] }; }
+function PY(bd, y) { var b = bparts(bd); return red(red(b.d) + red(b.m) + red(y)); }
+function PM(bd, y, m) { return red(PY(bd, y) + m); }
+function PD(bd, y, m, d) { return red(PM(bd, y, m) + d); }
+function CD(y, m, d) { return red(red(d) + red(m) + red(y)); }
+function SENSE(bd) { return red(bparts(bd).d); }
+function MISSION(bd) {
+  var s = 0, t = bd.replace(/-/g, "");
+  for (var i = 0; i < t.length; i++) s += +t[i];
+  return red(s);
+}
+function PTYPE(bd) { return red(bparts(bd).d); }
+function COUNTS(bd) {
+  var c = {}, t = bd.replace(/-/g, "");
+  for (var i = 1; i <= 9; i++) c[i] = 0;
+  for (var j = 0; j < t.length; j++) if (t[j] !== "0") c[+t[j]]++;
+  return c;
+}
+
+/* Разметка дня: обнуление — числа 10, 20, 30; эффективный — общий день 3 или 6.
+   Так же размечает исходный календарь. */
+function isZero(d) { return d === 10 || d === 20 || d === 30; }
+function isEff(y, m, d) { var c = CD(y, m, d); return c === 3 || c === 6; }
+
+var MN = ["январь","февраль","март","апрель","май","июнь","июль",
+          "август","сентябрь","октябрь","ноябрь","декабрь"];
+var MNR = ["января","февраля","марта","апреля","мая","июня","июля",
+           "августа","сентября","октября","ноября","декабря"];
+var WD = ["пн","вт","ср","чт","пт","сб","вс"];
+var WDF = ["понедельник","вторник","среда","четверг","пятница","суббота","воскресенье"];
+
+function dim(y, m) { return new Date(y, m, 0).getDate(); }
+function wd(y, m, d) { return (new Date(y, m - 1, d).getDay() + 6) % 7; }
+function iso(y, m, d) {
+  return y + "-" + ("0" + m).slice(-2) + "-" + ("0" + d).slice(-2);
+}
+
+/* Тексты приходят с <br />, эмодзи-заголовками и нумерацией «1. …».
+   Режем на секции: каждая — заголовок и список абзацев. */
+function clean(s) {
+  return s.replace(/[\u{1F000}-\u{1FAFF}\u{2190}-\u{27BF}\u{FE0F}\u{2B00}-\u{2BFF}]/gu, "")
+          .replace(/\s+/g, " ").trim();
+}
+function isHead(s) {
+  if (/^\d+\./.test(s)) return false;
+  if (s.length > 120) return false;
+  var letters = s.replace(/[^А-Яа-яЁёA-Za-z]/g, "");
+  if (!letters) return false;
+  var up = letters.replace(/[^А-ЯЁA-Z]/g, "").length;
+  return up / letters.length > 0.7;
+}
+function sections(t) {
+  if (!t) return [];
+  var raw = t.replace(/<br\s*\/?>/gi, "\n").split("\n");
+  var out = [{ head: "", items: [] }];
+  for (var i = 0; i < raw.length; i++) {
+    var s = clean(raw[i]);
+    if (!s) continue;
+    if (isHead(s)) {
+      if (out[out.length - 1].items.length || out[out.length - 1].head) out.push({ head: s, items: [] });
+      else out[out.length - 1].head = s;
+      continue;
+    }
+    out[out.length - 1].items.push(s.replace(/^\d+\.\s*/, ""));
+  }
+  return out.filter(function (x) { return x.items.length; });
+}
+function parseText(t) {
+  var s = sections(t);
+  return s.length ? s[0] : { head: "", items: [] };
+}
+function plain(t) {
+  return clean((t || "").replace(/<br\s*\/?>/gi, " "));
+}
+
+
+var TITLES = {"s-day":"Сегодня","s-mon":"Месяц","s-pick":"Подбор дня","s-log":"Дневник","s-me":"Я","s-circle":"Круг","s-meet":"Встреча","s-exp":"Экспорт","s-add":"Люди"};
+var PARENT={"s-meet":"s-circle","s-exp":"s-circle","s-add":"s-circle"};
+var now = new Date();
+var TY = now.getFullYear(), TM = now.getMonth()+1, TD = now.getDate();
+
+/* Цели: числа взяты из фокуса чисел в самом календаре (раздел «рекомендации»). */
+var GOALS = [
+  {k:"start", t:"Начать новое", s:"запуск, первый шаг", p:[1,3], c:[1,3]},
+  {k:"talk",  t:"Переговоры",   s:"договориться, продать", p:[5,3], c:[5,3]},
+  {k:"money", t:"Деньги",       s:"счета, сделки, оплата", p:[8,4], c:[8,4]},
+  {k:"work",  t:"Работа руками",s:"довести до результата", p:[8,4], c:[8]},
+  {k:"learn", t:"Учиться",      s:"разбор, аналитика", p:[7,4], c:[7,4]},
+  {k:"people",t:"Люди и семья", s:"отношения, поддержка", p:[2,6], c:[2,6]},
+  {k:"show",  t:"Показать себя",s:"публично, контент", p:[3,6], c:[3,6]},
+  {k:"rest",  t:"Отдых",        s:"восстановиться, тишина", p:[9,2], c:[9,2]}
+];
+var goal = "start";
+
+function go(id){
+  var ss=document.querySelectorAll("section");
+  for(var i=0;i<ss.length;i++) ss[i].classList.toggle("on", ss[i].id===id);
+  var bs=document.querySelectorAll("nav b");
+  for(var j=0;j<bs.length;j++) bs[j].classList.toggle("on", bs[j].dataset.s===(PARENT[id]||id));
+  var gs=document.querySelectorAll(".seg button");
+  for(var g=0;g<gs.length;g++) gs[g].classList.toggle("on", gs[g].dataset.g===id);
+  document.getElementById("htitle").textContent=TITLES[id];
+  window.scrollTo(0,0);
+}
+function word(n){ return (D.reco[n]&&D.reco[n].focus)?D.reco[n].focus.join(" · "):""; }
+function w1(n){ return (D.reco[n]&&D.reco[n].focus)?D.reco[n].focus[0]:""; }
+function sentence(s){ s=(s||"").toLowerCase().trim(); return s.charAt(0).toUpperCase()+s.slice(1); }
+function blocks(t,title,warn){
+  var ss=sections(t),h="";
+  for(var i=0;i<ss.length;i++){
+    var body="";
+    if(i===0){
+      if(ss[i].items.length>1){ body='<ol class="pts'+(warn?" warn":"")+'">';
+        for(var j=0;j<ss[i].items.length;j++) body+="<li>"+ss[i].items[j]+"</li>"; body+="</ol>"; }
+      else body='<p class="txt">'+ss[i].items.join(" ")+"</p>";
+    } else {
+      body='<ul class="qs">';
+      for(var k=0;k<ss[i].items.length;k++) body+="<li>"+ss[i].items[k]+"</li>"; body+="</ul>";
+    }
+    h+='<div class="card"><h2>'+(i===0?title:sentence(ss[i].head))+"</h2>"+body+"</div>";
+  }
+  return h;
+}
+
+/* ---------- Сегодня ---------- */
+function renderDay(){
+  var pd=PD(ME.bd,TY,TM,TD), cd=CD(TY,TM,TD), pm=PM(ME.bd,TY,TM);
+  document.getElementById("hsub").textContent=TD+" "+MNR[TM-1]+", "+WDF[wd(TY,TM,TD)];
+  document.getElementById("d-pd").textContent=pd;
+  document.getElementById("d-pdw").textContent=word(pd);
+  document.getElementById("d-cd").textContent=cd;
+  document.getElementById("d-cdw").textContent=word(cd);
+  document.getElementById("d-pm").textContent=pm;
+  document.getElementById("d-pmw").textContent=word(pm);
+  var ch="";
+  if(isEff(TY,TM,TD)) ch+='<span class="chip eff">эффективный день</span>';
+  if(isZero(TD)) ch+='<span class="chip zero">день обнуления</span>';
+  ch+='<span class="chip">личный месяц '+pm+"</span>";
+  ch+='<span class="chip">личный год '+PY(ME.bd,TY)+"</span>";
+  document.getElementById("d-chips").innerHTML=ch;
+  var sp=sections(D.day[pd].in_plus), sm=sections(D.day[pd].in_minus);
+  document.getElementById("d-do").textContent=sp.length?sp[0].items[0]:"";
+  document.getElementById("d-no").textContent=sm.length?sm[0].items[0]:"";
+  document.getElementById("d-foot").textContent="Личный день "+pd+" · общий "+cd+" · месяц "+pm;
+  renderTomorrow();
+  renderRate();
+}
+
+/* ---------- Хранилище ---------- */
+function KEYF(){ return "syucai_log_one_"+ME.bd; }
+function load(){ try{ return JSON.parse(localStorage.getItem(KEYF())||"{}"); }catch(e){ return {}; } }
+function store(o){ try{ localStorage.setItem(KEYF(),JSON.stringify(o)); }catch(e){} }
+var rating=0;
+function renderRate(){
+  var L=load(), k=iso(LOGD.y,LOGD.m,LOGD.d), cur=L[k]||{};
+  renderLogNav();
+  rating=cur.r||0;
+  document.getElementById("d-note").value=cur.n||"";
+  var h="";
+  for(var i=1;i<=5;i++) h+='<button class="'+(rating===i?"on":"")+'" onclick="setRate('+i+')">'+i+"</button>";
+  document.getElementById("d-rate").innerHTML=h;
+  document.getElementById("d-saved").textContent = cur.r ? "Сохранено: оценка "+cur.r+"." : "";
+}
+function setRate(i){ rating=i; renderRate2(); }
+function renderRate2(){
+  var bs=document.querySelectorAll("#d-rate button");
+  for(var i=0;i<bs.length;i++) bs[i].classList.toggle("on", i+1===rating);
+}
+function saveDay(){
+  var L=load(), k=iso(LOGD.y,LOGD.m,LOGD.d);
+  L[k]={r:rating, n:document.getElementById("d-note").value, p:PD(ME.bd,LOGD.y,LOGD.m,LOGD.d), c:CD(LOGD.y,LOGD.m,LOGD.d)};
+  if(!rating && !L[k].n) delete L[k];
+  store(L); renderRate(); renderLog();
+  document.getElementById("d-saved").textContent="Сохранено.";
+}
+
+/* ---------- Подбор ---------- */
+function renderGoals(){
+  var h="";
+  for(var i=0;i<GOALS.length;i++){
+    var g=GOALS[i];
+    h+='<button class="goal'+(goal===g.k?" on":"")+'" onclick="pick(\''+g.k+'\')">'+
+       "<b>"+g.t+"</b><span>"+g.s+"</span></button>";
+  }
+  document.getElementById("p-goals").innerHTML=h;
+}
+function pick(k){ goal=k; renderGoals(); renderHits(); }
+function renderHits(){
+  var box=document.getElementById("p-hits");
+  if(!goal){ box.innerHTML='<p class="txt dim" style="text-align:center;padding:20px 0">Задача не выбрана.</p>'; return; }
+  var g=null;
+  for(var i=0;i<GOALS.length;i++) if(GOALS[i].k===goal) g=GOALS[i];
+  var d=new Date(TY,TM-1,TD), hits=[];
+  for(var n=0;n<60;n++){
+    var y=d.getFullYear(), m=d.getMonth()+1, dd=d.getDate();
+    var pd=PD(ME.bd,y,m,dd), cd=CD(y,m,dd), sc=0, why=[];
+    if(g.p.indexOf(pd)>=0){ sc+=2; why.push("личное "+pd+" — "+w1(pd).toLowerCase()); }
+    if(g.c.indexOf(cd)>=0){ sc+=1; why.push("общее "+cd+" — "+w1(cd).toLowerCase()); }
+    if(isEff(y,m,dd)) sc+=1;
+    if(isZero(dd)) sc-=2;
+    if(sc>=2) hits.push({y:y,m:m,d:dd,sc:sc,why:why.join(", "),pd:pd,cd:cd,
+                         eff:isEff(y,m,dd),zero:isZero(dd),n:n});
+    d.setDate(d.getDate()+1);
+  }
+  var total=hits.length;
+  hits.sort(function(a,b){ return b.sc-a.sc || a.n-b.n; });
+  var best=hits[0];
+  hits=hits.slice(0,10);
+  hits.sort(function(a,b){ return a.n-b.n; });
+  if(!total){ box.innerHTML='<p class="txt dim">Подходящих дней в ближайшие 60 дней нет.</p>'; return; }
+  var bl = best.n===0 ? "сегодня" : (best.n===1 ? "завтра" : best.d+" "+MNR[best.m-1]);
+  var h='<div class="card" style="border-color:var(--acc30)">'+
+        '<h2>Лучший день<span class="mini">'+g.t.toLowerCase()+"</span></h2>"+
+        '<p class="txt" style="font-size:16px">'+sentence(bl)+" · "+WDF[wd(best.y,best.m,best.d)]+
+        '</p><p class="txt dim" style="font-size:13px;margin-top:4px">'+best.why+"</p></div>"+
+        '<p class="txt dim" style="margin:14px 2px 10px;font-size:13px">Всего подходящих дней '+
+        "за 60 дней: "+total+". Ближайшие "+hits.length+
+        " (справа личное и общее число):</p>";
+  for(var j=0;j<hits.length;j++){
+    var x=hits[j], lbl = x.n===0 ? "сегодня" : (x.n===1 ? "завтра" : "через "+x.n+" дн.");
+    h+='<div class="hit" onclick="openDay('+x.y+","+x.m+","+x.d+')">'+
+       '<div class="dt"><b>'+x.d+"</b><span>"+MN[x.m-1].slice(0,3)+"</span></div>"+
+       '<div class="ms">'+WDF[wd(x.y,x.m,x.d)]+", "+lbl+"<i>"+x.why+
+       (x.eff?" · эффективный день":"")+"</i></div>"+
+       '<div class="sc">'+x.pd+" · "+x.cd+"</div></div>";
+  }
+  box.innerHTML=h;
+}
+
+/* ---------- Горизонт ---------- */
+
+/* ---------- Дневник ---------- */
+function renderLog(){
+  var L=load(), keys=Object.keys(L).sort().reverse();
+  var agg={}, i;
+  for(i=1;i<=9;i++) agg[i]={s:0,c:0};
+  for(i=0;i<keys.length;i++){
+    var v=L[keys[i]];
+    if(v.r && v.p){ agg[v.p].s+=v.r; agg[v.p].c++; }
+  }
+  var h="", any=false;
+  for(i=1;i<=9;i++){
+    var a=agg[i], avg=a.c?(a.s/a.c):0;
+    if(a.c) any=true;
+    h+='<div class="stat"><div class="nn">'+i+"</div>"+
+       '<div class="bar"><i style="width:'+(avg/5*100)+'%"></i></div>'+
+       '<div class="cnt">'+(a.c?avg.toFixed(1)+" · "+a.c:"—")+"</div></div>";
+  }
+  document.getElementById("l-stat").innerHTML=h;
+  document.getElementById("l-hint").textContent = any
+    ? "Средняя оценка дня по личному числу. Чем больше отметок, тем точнее картина."
+    : "Пока нет ни одной отметки. Ставь оценку дню на вкладке «Сегодня».";
+  var lh="";
+  for(i=0;i<Math.min(keys.length,30);i++){
+    var k=keys[i], v=L[k], p=k.split("-");
+    lh+='<div class="stat"><div class="nn">'+(v.p||"·")+"</div>"+
+        '<div style="flex:1;font-size:13.5px;line-height:1.4">'+(+p[2])+" "+MNR[+p[1]-1]+
+        (v.n?'<i style="font-style:normal;color:var(--dim);display:block;font-size:12.5px">'+v.n+"</i>":"")+
+        "</div><div class=\"cnt\">"+(v.r?v.r+"/5":"")+"</div></div>";
+  }
+  document.getElementById("l-list").innerHTML = lh ||
+    '<p class="txt dim" style="font-size:13.5px">Записей нет.</p>';
+}
+function exportLog(){
+  var L=load(), keys=Object.keys(L).sort(), t="Дневник дней\n\n";
+  for(var i=0;i<keys.length;i++){
+    var v=L[keys[i]];
+    t+=keys[i]+" · личное "+(v.p||"?")+" · оценка "+(v.r||"—")+(v.n?" · "+v.n:"")+"\n";
+  }
+  if(navigator.share){ navigator.share({text:t}).catch(function(){}); }
+  else { var a=document.createElement("textarea"); a.value=t; document.body.appendChild(a);
+    a.select(); try{document.execCommand("copy")}catch(e){} document.body.removeChild(a);
+    alert("Записи скопированы."); }
+}
+
+/* ---------- Шторка дня ---------- */
+function openDay(y,m,d){
+  var pd=PD(ME.bd,y,m,d), cd=CD(y,m,d);
+  document.getElementById("sh-t").textContent=d+" "+MNR[m-1];
+  document.getElementById("sh-s").textContent=WDF[wd(y,m,d)];
+  var ch="";
+  if(isEff(y,m,d)) ch+='<span class="chip eff">эффективный день</span>';
+  if(isZero(d)) ch+='<span class="chip zero">день обнуления</span>';
+  var h='<div class="two"><div class="mini-card"><div class="lab">Личный день</div>'+
+        '<div class="v">'+pd+'</div><div class="w">'+word(pd)+"</div></div>"+
+        '<div class="mini-card"><div class="lab">Общий день</div><div class="v">'+cd+
+        '</div><div class="w">'+word(cd)+"</div></div></div>"+
+        (ch?'<div class="chips" style="margin:0 2px 12px">'+ch+"</div>":"")+
+        blocks(D.day[pd].in_plus,"Что даёт ресурс")+
+        blocks(D.day[pd].in_minus,"Что забирает ресурс",true)+
+        '<div class="card"><h2>Общий фон дня</h2><p class="txt">'+plain(D.common[cd])+"</p></div>";
+  document.getElementById("sh-body").innerHTML=h;
+  document.getElementById("sheet").classList.add("on");
+  document.body.style.overflow="hidden";
+}
+function closeSheet(){
+  document.getElementById("sheet").classList.remove("on");
+  document.body.style.overflow="";
+}
+
+
+/* ---------- Кто смотрит ---------- */
+var OWNERS=[{n:"Илья",b:"1983-03-16"}];
+var OKEY="syucai_owner_one";
+(function(){
+  try{
+    var s=JSON.parse(localStorage.getItem(OKEY)||"null");
+    if(s&&s.b) ME={name:s.n||"Свой профиль", bd:s.b};
+  }catch(e){}
+})();
+function saveOwner(){ try{ localStorage.setItem(OKEY,JSON.stringify({n:ME.name,b:ME.bd})); }catch(e){} }
+function setOwner(i){
+  ME={name:OWNERS[i].n, bd:OWNERS[i].b};
+  saveOwner(); redrawAll();
+}
+/* Родной выбор даты отдаёт год-месяц-день; ручной ввод цифрами тоже принимаем. */
+function parseBD(raw){
+  raw=(raw||"").trim();
+  var m=raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(m) return {d:+m[3], m:+m[2], y:+m[1]};
+  m=raw.match(/^(\d{1,2})[.\-\/](\d{1,2})[.\-\/](\d{4})$/);
+  if(m) return {d:+m[1], m:+m[2], y:+m[3]};
+  var g=raw.replace(/\D/g,"");
+  if(g.length===8) return {d:+g.slice(0,2), m:+g.slice(2,4), y:+g.slice(4)};
+  return null;
+}
+function pad2(n){ return (n<10?"0":"")+n; }
+function renderWho(){
+  var h="";
+  for(var i=0;i<OWNERS.length;i++)
+    h+='<button class="'+(ME.bd===OWNERS[i].b?"on":"")+'" onclick="setOwner('+i+')">'+
+       OWNERS[i].n+"</button>";
+  var w=document.getElementById("me-who");
+  if(w) w.innerHTML=h;
+}
+
+/* Завтрашний день одной строкой: вечером понятно, к чему готовиться. */
+function tmrDate(){
+  var d=new Date(TY,TM-1,TD); d.setDate(d.getDate()+1);
+  return {y:d.getFullYear(), m:d.getMonth()+1, d:d.getDate()};
+}
+function openTomorrow(){ var t=tmrDate(); openDay(t.y,t.m,t.d); }
+function renderTomorrow(){
+  var t=tmrDate(), pd=PD(ME.bd,t.y,t.m,t.d), eff=isEff(t.y,t.m,t.d), zero=isZero(t.d);
+  document.getElementById("tmr-h").textContent="Завтра, "+t.d+" "+MNR[t.m-1];
+  var s=w1(pd).toLowerCase();
+  if(eff) s+=" · эффективный день";
+  if(zero) s+=" · день обнуления";
+  document.getElementById("tmr-s").textContent=s;
+  var n=document.getElementById("tmr-n");
+  n.textContent=pd;
+  n.className="n"+(zero?" zero":(eff?" eff":""));
+}
+
+var PRO={"type":{"1":{"t":"Стратег","m":"стратегическое мышление","s":"Менеджмент и управление, экономика и финансы, политология и государственное управление, предпринимательство и стартапы, корпоративное право, психология лидерства, ораторское искусство."},"2":{"t":"Дипломат","m":"эмпатическое мышление","s":"Психология и психотерапия, международные отношения и дипломатия, медиация и конфликтология, управление персоналом, социальные науки и коммуникации, искусствоведение, корпоративная культура, лингвистика."},"3":{"t":"Аналитик","m":"аналитическое мышление","s":"Анализ данных, финансовая аналитика, экономика и статистика, бизнес-аналитика, бухгалтерский учёт, программирование и IT, математика, медицина и фармакология, системная инженерия, робототехника."},"4":{"t":"Новатор","m":"креативное мышление","s":"Маркетинг и реклама, медиа и коммуникации, публицистика, журналистика, креативные индустрии, режиссура и сценарное искусство, технологии и IT, предпринимательство и инновации, юриспруденция."},"5":{"t":"Бизнес-логика","m":"логическое мышление","s":"Бизнес и предпринимательство, логистика и управление цепями поставок, программирование, информационные технологии и автоматизация, связи с общественностью, инженерное дело, математика и физика, мода и эстетика."},"6":{"t":"Корпоративная культура","m":"творческое мышление","s":"Искусство и дизайн (архитектура, интерьер, одежда, ювелирное дело), финансы и инвестиции, изобразительное искусство, туризм и гостиничный бизнес, психология эмоций и межличностных отношений, управление VIP-недвижимостью."},"7":{"t":"Технолог","m":"интуитивное мышление","s":"Кризис-менеджмент и управление изменениями, управление рисками, альтернативная медицина и йога, духовные и философские исследования, инновационное предпринимательство, когнитивная психология и нейронаука, экология."},"8":{"t":"Контроль","m":"практическое мышление","s":"Финансы, кредит и управление, аудит и учёт, инвестиционный анализ и управление активами, управление недвижимостью, контроль качества и стандартизация, операционный менеджмент, безопасность, налоговое консультирование."},"9":{"t":"Социальная поддержка","m":"тактическое мышление","s":"Спорт и физическая культура, военные науки и безопасность, медицина и хирургия, управление и координация проектов, продвижение продуктов и услуг, проектное управление, ивент, социальная работа, театр и кино."}},"act":{"1":{"t":"Менеджмент","s":"Руководство, стратегия, управленческая деятельность."},"2":{"t":"Построение отношений","s":"Менторство, тренерство, деловые связи."},"3":{"t":"Анализ, систематизация и управление","s":"Обучение и образование, статистика, наставничество, коммуникации."},"4":{"t":"Определение и постановка целей","s":"Маркетинг, новаторство, креатив, работа с информацией и знаниями."},"5":{"t":"Выявление пользы продукта и масштабирование","s":"Предпринимательство, логистика, масштабирование, сервис и услуги."},"6":{"t":"Создание комфорта и творчества","s":"Творчество, культура, психология, климат в коллективе, HR."},"7":{"t":"Быстрое и перфекционное внедрение целей","s":"Эксперт по инновациям, технолог, мастер разработки продукта."},"8":{"t":"Контроль процессов и ресурсов","s":"Контроль производства, качества и результатов, ОТК."},"9":{"t":"Генерация идей и схем для взаимовыгодной пользы","s":"Продвижение и промоутерство, производство, благотворительность, безопасность."}},"dis":{"1":{"t":"От эгоизма","s":"не по-моему, не соглашаются с моими решениями"},"2":{"t":"От непонимания","s":"меня не понимают, не слышат, не чувствуют"},"3":{"t":"Всё несправедливо","s":"не ценят мою заботу, не принимают мою инструкцию"},"4":{"t":"Всё нечестно","s":"поступают нечестно, ограничивают системой, цели не достигаются"},"5":{"t":"Всё нелогично","s":"поступают нелогично, ограничивают свободу"},"6":{"t":"Всё некомфортно","s":"доставляют дискомфорт, не проявляют любви"},"7":{"t":"От непризнания","s":"не замечают, не хвалят"},"8":{"t":"От отсутствия результатов","s":"недооценили результат моего труда"},"9":{"t":"От несправедливого отношения к себе","s":"не проявили благодарности"}},"ego":{"1":"эгоцентризм","2":"претензия","3":"доказывает","4":"протест","5":"борьба","6":"нет действий","7":"ждёт","8":"ожидает","9":"зависть"},"moral":{"1":{"t":"Диктатура","s":"моё мнение важнее, моё слово последнее"},"2":{"t":"Взаимоотношения","s":"навязать своё понимание, сохранить отношения вопреки цели"},"3":{"t":"Справедливость","s":"свои принципы и своё понимание выше цели"},"4":{"t":"Честность","s":"скорость достижения и своё понимание честности важнее цели"},"5":{"t":"Правильность","s":"собственная выгода и свобода выше цели"},"6":{"t":"Комфорт","s":"мой комфорт дороже цели, манипуляция через отношения"},"7":{"t":"Духовность","s":"самоутверждение и похвала выше цели"},"8":{"t":"Дисциплина","s":"эффективность дороже самой цели"},"9":{"t":"Справедливое противоречие","s":"жажда победы выше цели"}},"divide":{"1":"свой или чужой, подчиняется или нет","2":"понимает или не понимает","3":"умный или глупый, слушает или нет, заботится или нет","4":"честный или нечестный, есть цель или нет цели","5":"логично или нелогично, правильно или неправильно","6":"комфортный или некомфортный, создаёт комфорт или нет","7":"духовный или бездуховный, признаёт или не признаёт","8":"есть результат или нет, трудится или нет, приносит деньги или нет","9":"ответил взаимностью на доброту или не ответил"},"money":{"1":"через власть","2":"через отношения","3":"через знания","4":"через цели и креатив","5":"через выгоду и логику","6":"через комфорт","7":"через признание","8":"через труд","9":"через идею и помощь другим"}};
+
+/* Сколько человеку лет: до 33 работает тип личности, после — миссия. */
+function ageNow(){
+  var b=bparts(ME.bd), a=TY-b.y;
+  if(TM<b.m || (TM===b.m && TD<b.d)) a--;
+  return a;
+}
+function proRow(lab,t,s,now){
+  return '<div class="pl'+(now?" now":"")+'"><b>'+lab+"</b>"+
+         '<div class="t">'+t+"</div>"+(s?'<div class="s">'+s+"</div>":"")+"</div>";
+}
+function renderPro(){
+  var sn=SENSE(ME.bd), mi=MISSION(ME.bd), a=ageNow(), T=PRO.type[sn], A=PRO.act[mi];
+  document.getElementById("p-pro").innerHTML=
+    proRow("До 33 лет · по числу "+sn, T.t+", "+T.m, T.s, a<33)+
+    proRow("После 33 лет · по миссии "+mi, A.t, A.s, a>=33);
+}
+function renderDis(){
+  var sn=SENSE(ME.bd), mi=MISSION(ME.bd), d=PRO.dis[sn], m=PRO.moral[mi];
+  document.getElementById("p-dis").innerHTML=
+    proRow("Несогласие включается", d.t, d.s.charAt(0).toUpperCase()+d.s.slice(1)+".", false)+
+    proRow("Со стороны выглядит как", PRO.ego[sn], "", false)+
+    proRow("Мораль давит через", m.t, m.s.charAt(0).toUpperCase()+m.s.slice(1)+".", false);
+}
+
+/* ---------- Дневник: можно вернуться и оценить прошедший день ---------- */
+var LOGD={y:TY,m:TM,d:TD};
+function logShiftDays(k){
+  var dt=new Date(LOGD.y,LOGD.m-1,LOGD.d); dt.setDate(dt.getDate()+k);
+  var t=new Date(TY,TM-1,TD), back=(t-dt)/86400000;
+  if(back<0 || back>60) return;
+  LOGD={y:dt.getFullYear(), m:dt.getMonth()+1, d:dt.getDate()};
+  renderRate();
+}
+function renderLogNav(){
+  var t=new Date(TY,TM-1,TD), dt=new Date(LOGD.y,LOGD.m-1,LOGD.d);
+  var back=Math.round((t-dt)/86400000);
+  var name = back===0 ? "Сегодня" : (back===1 ? "Вчера" : "");
+  document.getElementById("log-d").textContent=
+    (name?name+", ":"")+LOGD.d+" "+MNR[LOGD.m-1];
+  document.getElementById("log-next").disabled = back<=0;
+  document.getElementById("log-prev").disabled = back>=60;
+  var pd=PD(ME.bd,LOGD.y,LOGD.m,LOGD.d);
+  document.getElementById("log-when").textContent="личное число "+pd;
+}
+
+
+/* ---------- Люди: круг, встреча, экспорт ---------- */
+var KEY="syucai_people_one";
+var BASE=[{n:"Илья",b:"1983-03-16"},{n:"Андрей",b:"2000-06-25"}];
+var GOOD=[2,3,5,6];
+var selA=0, selB=1;
+var delAsk=-1, delT=null;
+function initials(n){ return (n||"?").trim().charAt(0).toUpperCase(); }
+function renderCircle(){
+  document.getElementById("hsub").textContent=TD+" "+MNR[TM-1]+", "+WDF[wd(TY,TM,TD)];
+  var cd=CD(TY,TM,TD), h="";
+  h+='<div class="big"><div class="lab">Общий день у всех</div>'+
+     '<div class="row"><em>'+cd+"</em><span>"+word(cd)+"</span></div>"+
+     '<div class="chips">'+(isEff(TY,TM,TD)?'<span class="chip wl">эффективный день</span>':"")+
+     (isZero(TD)?'<span class="chip wl">день обнуления</span>':"")+
+     '<span class="chip wl">'+TD+" "+MNR[TM-1]+"</span></div></div>";
+  for(var i=0;i<people.length;i++){
+    var p=people[i], pd=PD(p.b,TY,TM,TD), pm=PM(p.b,TY,TM);
+    h+='<div class="per" onclick="openPerson('+i+')">'+
+       '<div class="av">'+initials(p.n)+"</div>"+
+       '<div class="nm"><b>'+p.n+"</b><span>"+w1(pd).toLowerCase()+
+       " · месяц "+pm+"</span></div>"+
+       '<div class="pn">'+pd+"</div></div>";
+  }
+  document.getElementById("c-list").innerHTML=h;
+  renderAllGood();
+}
+function renderAllGood(){
+  var d=new Date(TY,TM-1,TD), found=null;
+  for(var n=0;n<90 && !found;n++){
+    var y=d.getFullYear(), m=d.getMonth()+1, dd=d.getDate(), ok=!isZero(dd);
+    for(var i=0;i<people.length && ok;i++) if(GOOD.indexOf(PD(people[i].b,y,m,dd))<0) ok=false;
+    if(ok && GOOD.indexOf(CD(y,m,dd))>=0) found={y:y,m:m,d:dd,n:n};
+    d.setDate(d.getDate()+1);
+  }
+  var box=document.getElementById("c-all");
+  if(!found){ box.innerHTML=""; return; }
+  var lbl = found.n===0?"сегодня":(found.n===1?"завтра":"через "+found.n+" дн.");
+  var who=[];
+  for(var j=0;j<people.length;j++) who.push(people[j].n+" "+PD(people[j].b,found.y,found.m,found.d));
+  box.innerHTML='<div class="card" style="border-color:rgba(32,74,122,.25)">'+
+    '<h2>Спокойный день у всех сразу</h2><p class="txt" style="font-size:16px">'+
+    found.d+" "+MNR[found.m-1]+", "+WDF[wd(found.y,found.m,found.d)]+" — "+lbl+"</p>"+
+    '<p class="txt dim" style="font-size:13px;margin-top:4px">'+who.join(" · ")+
+    " · общий "+CD(found.y,found.m,found.d)+"</p></div>";
+}
+function openPerson(i){
+  var p=people[i], pd=PD(p.b,TY,TM,TD), cd=CD(TY,TM,TD), pm=PM(p.b,TY,TM);
+  document.getElementById("sh-t").textContent=p.n;
+  document.getElementById("sh-s").textContent=TD+" "+MNR[TM-1];
+  var b=bparts(p.b), sn=SENSE(p.b), mi=MISSION(p.b), tp=PTYPE(p.b);
+  var c=COUNTS(p.b), mx="";
+  for(var r=0;r<3;r++) for(var q=0;q<3;q++){
+    var n=D.layout[r][q], k=c[n];
+    mx+='<div class="'+(k?"full":"empty")+'">'+(k?new Array(k+1).join(n):n)+"</div>";
+  }
+  var h='<div class="two"><div class="mc"><div class="lab">Личный день</div><div class="v">'+pd+
+        '</div><div class="w">'+word(pd)+"</div></div>"+
+        '<div class="mc"><div class="lab">Общий день</div><div class="v">'+cd+
+        '</div><div class="w">'+word(cd)+"</div></div></div>"+
+        '<div class="card"><h2>Профиль</h2>'+
+        '<div class="kv"><b>Дата рождения</b><span>'+b.d+" "+MNR[b.m-1]+" "+b.y+"</span></div>"+
+        '<div class="kv"><b>Личный месяц</b><span>'+pm+" — "+word(pm)+"</span></div>"+
+        '<div class="kv"><b>Личный год</b><span>'+PY(p.b,TY)+" — "+word(PY(p.b,TY))+"</span></div>"+
+        '<div class="kv"><b>Число сознания</b><span>'+sn+" — "+(D.meanings[sn]||"")+"</span></div>"+
+        '<div class="kv"><b>Тип личности</b><span>'+tp+
+        (D.ptype[tp]?" — "+D.ptype[tp].title:"")+"</span></div>"+
+        '<div class="kv"><b>Миссия</b><span>'+mi+" — "+(D.meanings[mi]||"")+"</span></div></div>"+
+        '<div class="card"><h2>Матрица<span class="mini">цифры даты рождения</span></h2>'+
+        '<div class="mx">'+mx+"</div></div>"+
+        proPerson(p.b)+
+        blocks(D.day[pd].in_plus,"Что даёт ресурс сегодня")+
+        blocks(D.day[pd].in_minus,"Что забирает ресурс",true)+
+        '<div class="card"><h2>Общий фон дня</h2><p class="txt">'+plain(D.common[cd])+"</p></div>";
+  document.getElementById("sh-body").innerHTML=h;
+  document.getElementById("sheet").classList.add("on");
+  document.body.style.overflow="hidden";
+}
+function renderPairbar(){
+  var ha="", hb="";
+  for(var i=0;i<people.length;i++){
+    ha+='<button class="pb'+(selA===i?" on":"")+'" onclick="setPair(0,'+i+')">'+people[i].n+"</button>";
+    hb+='<button class="pb'+(selB===i?" on":"")+'" onclick="setPair(1,'+i+')">'+people[i].n+"</button>";
+  }
+  document.getElementById("m-a").innerHTML=ha;
+  document.getElementById("m-b").innerHTML=hb;
+}
+function setPair(side,i){ if(side===0) selA=i; else selB=i; renderPairbar(); renderMeet(); }
+function pairScore(A,B,y,m,dd){
+  var a=PD(A.b,y,m,dd), b=PD(B.b,y,m,dd), cd=CD(y,m,dd), sc=0, why=[];
+  /* договориться легче, когда у обоих числа связи и мягкости, а не борьбы */
+  var good=[2,3,5,6], hard=[1,7,9];
+  if(good.indexOf(a)>=0) sc++;
+  if(good.indexOf(b)>=0) sc++;
+  if(good.indexOf(cd)>=0) sc++;
+  if(a===b){ sc++; why.push("у обоих одно число — "+w1(a).toLowerCase()); }
+  if(isEff(y,m,dd)){ sc++; why.push("эффективный день"); }
+  if(hard.indexOf(a)>=0 && hard.indexOf(b)>=0) sc-=1;
+  if(isZero(dd)) sc-=3;
+  return {a:a,b:b,c:cd,sc:sc,why:why};
+}
+function renderMeet(){
+  var box=document.getElementById("m-res");
+  if(selA===selB){
+    box.innerHTML='<p class="txt dim">Выбери двух разных людей.</p>';
+    document.getElementById("m-strip").innerHTML=""; return;
+  }
+  var A=people[selA], B=people[selB], d=new Date(TY,TM-1,TD), hits=[];
+  /* полоса на три недели: сразу видно, какие дни лучше */
+  var sh="", dd2=new Date(TY,TM-1,TD);
+  for(var q=0;q<21;q++){
+    var y2=dd2.getFullYear(), m2=dd2.getMonth()+1, d2=dd2.getDate();
+    var r=pairScore(A,B,y2,m2,d2);
+    var lvl = r.sc>=4?"g3":(r.sc===3?"g2":(r.sc<=0?"g0":"g1"));
+    sh+='<div class="pd '+lvl+(q===0?" now":"")+'" onclick="openPairDay('+y2+","+m2+","+d2+')">'+
+        '<span>'+WD[wd(y2,m2,d2)]+"</span><b>"+d2+"</b><i>"+r.a+"·"+r.b+"</i></div>";
+    dd2.setDate(dd2.getDate()+1);
+  }
+  document.getElementById("m-strip").innerHTML=
+    '<div class="pstrip">'+sh+"</div>"+
+    '<div class="lgnd">'+'<span><i class="l3"></i>лучший день</span>'+'<span><i class="l2"></i>хороший</span>'+'<span><i class="l1"></i>нейтральный</span>'+'<span><i class="l0"></i>неудачный</span></div>'+
+    '<p class="txt dim" style="font-size:12px;margin:8px 2px 16px">'+
+    "Три недели вперёд, внизу ячейки личные числа: "+A.n+" и "+B.n+".</p>";
+  for(var n=0;n<60;n++){
+    var y=d.getFullYear(), m=d.getMonth()+1, dd=d.getDate();
+    var r2=pairScore(A,B,y,m,dd), a=r2.a, b=r2.b, cd=r2.c, sc=r2.sc, why=r2.why;
+    if(sc>=3){
+      if(!why.length) why.push("числа спокойные у обоих: "+A.n+" "+a+", "+B.n+" "+b+", общий "+cd);
+      hits.push({y:y,m:m,d:dd,n:n,sc:sc,a:a,b:b,c:cd,why:why.join(", ")});
+    }
+    d.setDate(d.getDate()+1);
+  }
+  hits.sort(function(x,z){ return z.sc-x.sc || x.n-z.n; });
+  hits=hits.slice(0,10);
+  hits.sort(function(x,z){ return x.n-z.n; });
+  if(!hits.length){ box.innerHTML='<p class="txt dim">Совпадений в ближайшие 60 дней нет.</p>'; return; }
+  var h='<p class="txt dim" style="margin:0 0 10px;font-size:13px">'+A.n+" и "+B.n+
+        ": лучшие дни для встречи и разговора</p>";
+  for(var j=0;j<hits.length;j++){
+    var x=hits[j], lbl = x.n===0?"сегодня":(x.n===1?"завтра":"через "+x.n+" дн.");
+    h+='<div class="mt" onclick="openPairDay('+x.y+","+x.m+","+x.d+')">'+
+       '<div class="dt"><b>'+x.d+"</b><span>"+MN[x.m-1].slice(0,3)+"</span></div>"+
+       '<div class="ms">'+WDF[wd(x.y,x.m,x.d)]+", "+lbl+"<i>"+x.why+"</i></div>"+
+       '<div class="nums"><u>'+x.a+"</u><u>"+x.b+"</u></div></div>";
+  }
+  h+='<p class="txt dim" style="font-size:12.5px;margin-top:10px">Числа справа — личные числа '+
+     "дня: "+A.n+" и "+B.n+".</p>";
+  box.innerHTML=h;
+}
+function openPairDay(y,m,d){
+  var A=people[selA], B=people[selB], a=PD(A.b,y,m,d), b=PD(B.b,y,m,d), cd=CD(y,m,d);
+  document.getElementById("sh-t").textContent=d+" "+MNR[m-1];
+  document.getElementById("sh-s").textContent=WDF[wd(y,m,d)];
+  document.getElementById("sh-body").innerHTML=
+    '<div class="two"><div class="mc"><div class="lab">'+A.n+'</div><div class="v">'+a+
+    '</div><div class="w">'+word(a)+"</div></div>"+
+    '<div class="mc"><div class="lab">'+B.n+'</div><div class="v">'+b+
+    '</div><div class="w">'+word(b)+"</div></div></div>"+
+    '<div class="card"><h2>Общий фон дня<span class="mini">число '+cd+"</span></h2>"+
+    '<p class="txt">'+plain(D.common[cd])+"</p></div>"+
+    proPair(A,B)+
+    blocks(D.day[a].in_plus,"Что даёт ресурс — "+A.n)+
+    blocks(D.day[b].in_plus,"Что даёт ресурс — "+B.n);
+  document.getElementById("sheet").classList.add("on");
+  document.body.style.overflow="hidden";
+}
+function pad(n){ return (n<10?"0":"")+n; }
+function makeICS(){
+  var days=+document.getElementById("e-range").value;
+  var what=document.getElementById("e-what").value;
+  var d=new Date(TY,TM-1,TD), L=[
+    "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//syucai//calendar//RU","CALSCALE:GREGORIAN",
+    "X-WR-CALNAME:Дни Сюцай"+(people[+((document.getElementById("e-who")||{}).value||0)]?" · "+people[+document.getElementById("e-who").value].n:"")];
+  var cnt=0;
+  for(var n=0;n<days;n++){
+    var y=d.getFullYear(), m=d.getMonth()+1, dd=d.getDate();
+    var eff=isEff(y,m,dd), zer=isZero(dd), pd=PD(EBD(),y,m,dd), t=null;
+    if(eff) t="Эффективный день";
+    if(zer) t="День обнуления";
+    if(what==="eff" && !eff) t=null;
+    if(what==="my" && !t) t="Личное число "+pd;
+    if(!t){ d.setDate(d.getDate()+1); continue; }
+    if(what!=="eff") t+=" · личное "+pd;
+    var st=""+y+pad(m)+pad(dd), en=new Date(y,m-1,dd+1);
+    L.push("BEGIN:VEVENT");
+    L.push("UID:syucai-"+st+"@local");
+    L.push("DTSTART;VALUE=DATE:"+st);
+    L.push("DTEND;VALUE=DATE:"+en.getFullYear()+pad(en.getMonth()+1)+pad(en.getDate()));
+    L.push("SUMMARY:"+t);
+    L.push("DESCRIPTION:"+w1(pd)+". Общее число дня "+CD(y,m,dd)+".");
+    L.push("TRANSP:TRANSPARENT");
+    L.push("END:VEVENT");
+    cnt++;
+    d.setDate(d.getDate()+1);
+  }
+  L.push("END:VCALENDAR");
+  var blob=new Blob([L.join("\r\n")],{type:"text/calendar;charset=utf-8"});
+  var url=URL.createObjectURL(blob), a=document.createElement("a");
+  a.href=url; a.download="syucai.ics"; document.body.appendChild(a); a.click();
+  document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); },1500);
+  document.getElementById("e-note").textContent=
+    "Готово: "+cnt+" отметок. Открой скачанный файл — телефон предложит добавить их в календарь.";
+}
+function shareDay(){
+  var pd=PD(ME.bd,TY,TM,TD), cd=CD(TY,TM,TD);
+  var sp=sections(D.day[pd].in_plus), sm=sections(D.day[pd].in_minus);
+  var t=TD+" "+MNR[TM-1]+", "+WDF[wd(TY,TM,TD)]+"\n"+
+        "Личный день "+pd+" — "+word(pd)+"\n"+
+        "Общий день "+cd+" — "+word(cd)+"\n"+
+        (isEff(TY,TM,TD)?"Эффективный день\n":"")+(isZero(TD)?"День обнуления\n":"")+
+        "\nЧто даёт ресурс: "+(sp.length?sp[0].items[0]:"")+
+        "\n\nЧего избегать: "+(sm.length?sm[0].items[0]:"");
+  if(navigator.share){ navigator.share({text:t}).catch(function(){}); return; }
+  var a=document.createElement("textarea"); a.value=t; document.body.appendChild(a);
+  a.select(); try{ document.execCommand("copy"); }catch(e){}
+  document.body.removeChild(a); alert("Текст дня скопирован.");
+}
+function EBD(){
+  var i=+((document.getElementById("e-who")||{}).value||0);
+  return (people[i]||{b:ME.bd}).b;
+}
+function renderExpWho(){
+  var s=document.getElementById("e-who");
+  if(!s) return;
+  var cur=s.value, h="";
+  for(var i=0;i<people.length;i++) h+='<option value="'+i+'">'+people[i].n+"</option>";
+  s.innerHTML=h;
+  if(cur && +cur<people.length) s.value=cur;
+}
+function proPerson(bd){
+  var sn=SENSE(bd), mi=MISSION(bd), d=PRO.dis[sn], m=PRO.moral[mi];
+  return '<div class="card"><h2>Как с ним говорить</h2>'+
+    '<div class="kv"><b>Делит людей</b><span>'+PRO.divide[sn]+"</span></div>"+
+    '<div class="kv"><b>Берёт деньги</b><span>'+PRO.money[sn]+"</span></div>"+
+    '<div class="kv"><b>Выбивает</b><span>'+d.s+" · со стороны "+PRO.ego[sn]+"</span></div>"+
+    '<div class="kv"><b>Мораль</b><span>'+m.t.toLowerCase()+", "+m.s+"</span></div></div>";
+}
+function proPair(A,B){
+  var a=SENSE(A.b), b=SENSE(B.b);
+  return '<div class="card"><h2>За что могут зацепиться</h2>'+
+    '<div class="kv"><b>'+A.n+"</b><span>"+PRO.dis[a].s+" · со стороны "+PRO.ego[a]+"</span></div>"+
+    '<div class="kv"><b>'+B.n+"</b><span>"+PRO.dis[b].s+" · со стороны "+PRO.ego[b]+"</span></div></div>";
+}
+function renderAdd(){
+  var h="";
+  for(var i=0;i<people.length;i++){
+    var p=people[i], b=bparts(p.b);
+    h+='<div class="kv"><b>'+p.n+"</b><span>"+b.d+" "+MNR[b.m-1]+" "+b.y+
+       (i>1?' <button class="pb" id="db'+i+'" style="float:right;padding:5px 11px;font-size:12px" onclick="askDel(event,'+i+
+       ')">убрать</button>':"")+"</span></div>";
+  }
+  document.getElementById("a-list").innerHTML=h;
+}
+function addPerson(){
+  var n=document.getElementById("a-name").value.trim();
+  var raw=document.getElementById("a-bd").value.trim();
+  var e=document.getElementById("a-err");
+  var m=parseBD(raw);
+  if(!n){ e.textContent="Впиши имя."; return; }
+  if(!m){ e.textContent="Выбери дату рождения."; return; }
+  var dd=m.d, mm=m.m, yy=m.y;
+  if(mm<1||mm>12||dd<1||dd>dim(yy,mm)||yy<1900||yy>TY){
+    e.textContent="Такой даты нет. Год — от 1900 до нынешнего."; return; }
+  people.push({n:n, b:yy+"-"+pad(mm)+"-"+pad(dd)});
+  savePeople();
+  document.getElementById("a-name").value="";
+  document.getElementById("a-bd").value="";
+  e.textContent="Добавлен: "+n+".";
+  renderCircle(); renderPairbar(); renderAdd(); renderExpWho();
+}
+function askDel(ev,i){
+  ev.stopPropagation();
+  var b=document.getElementById("db"+i);
+  if(delAsk===i){ clearTimeout(delT); delAsk=-1; delPerson(i); return; }
+  if(delAsk>=0){ var o=document.getElementById("db"+delAsk); if(o) o.textContent="убрать"; }
+  clearTimeout(delT); delAsk=i; b.textContent="точно?";
+  delT=setTimeout(function(){ delAsk=-1; if(b) b.textContent="убрать"; },4000);
+}
+function delPerson(i){
+  people.splice(i,1); savePeople();
+  if(selA>=people.length) selA=0;
+  if(selB>=people.length) selB=people.length>1?1:0;
+  renderCircle(); renderPairbar(); renderMeet(); renderAdd(); renderExpWho();
+}
+function loadPeople(){
+  try{ var p=JSON.parse(localStorage.getItem(KEY)||"null"); if(p&&p.length) return p; }catch(e){}
+  return BASE.slice();
+}
+function savePeople(){ try{ localStorage.setItem(KEY,JSON.stringify(people)); }catch(e){} }
+var people=loadPeople();
+
+function redrawAll(){
+  renderWho(); renderCircle(); renderPairbar(); renderMeet(); renderAdd(); renderExpWho(); renderDay(); renderMonth(); renderHits(); renderLog(); renderMe();
+  document.getElementById("mebtn").textContent = "Я";
+}
+
+/* ---------- Месяц ---------- */
+var vy=TY, vm=TM;
+function renderMonth(){
+  document.getElementById("m-title").textContent=MN[vm-1]+" "+vy;
+  var hh="";
+  for(var i=0;i<7;i++) hh+='<div class="wdh">'+WD[i]+"</div>";
+  document.getElementById("m-head").innerHTML=hh;
+  var first=wd(vy,vm,1), n=dim(vy,vm), h="";
+  for(var k=0;k<first;k++) h+='<div class="cell out"></div>';
+  for(var d=1;d<=n;d++){
+    var pd=PD(ME.bd,vy,vm,d), cd=CD(vy,vm,d), cls="cell";
+    if(isEff(vy,vm,d)) cls+=" eff";
+    if(isZero(d)) cls+=" zero";
+    if(d===TD&&vm===TM&&vy===TY) cls+=" now";
+    h+='<div class="'+cls+'" onclick="openDay('+vy+","+vm+","+d+')"><div class="d">'+d+"</div>"+
+       '<div class="pair"><i class="p">'+pd+'</i> <i class="c">'+cd+"</i></div></div>";
+  }
+  document.getElementById("m-grid").innerHTML=h;
+  var pm=PM(ME.bd,vy,vm);
+  document.getElementById("m-num").textContent="число "+pm;
+  document.getElementById("m-plus").textContent=plain(D.month[pm].in_plus);
+  document.getElementById("m-minus").textContent=plain(D.month[pm].in_minus);
+}
+function shift(k){
+  vm+=k;
+  if(vm>12){ vm=1; vy++; }
+  if(vm<1){ vm=12; vy--; }
+  renderMonth();
+}
+function toToday(){ vy=TY; vm=TM; renderMonth(); }
+
+/* ---------- Я ---------- */
+function listy(v){
+  if(!v) return "";
+  if(Array.isArray(v)) return v.join(", ");
+  return String(v).replace(/[\[\]']/g,"");
+}
+function renderMe(){
+  var sn=SENSE(ME.bd), mi=MISSION(ME.bd), tp=PTYPE(ME.bd), b=bparts(ME.bd);
+  document.getElementById("p-name").textContent=ME.name;
+  document.getElementById("p-bd").textContent=b.d+" "+MNR[b.m-1]+" "+b.y;
+  document.getElementById("p-sense").textContent=sn+" — "+(D.meanings[sn]||"");
+  document.getElementById("p-type").textContent=tp+(D.ptype[tp]?" — "+D.ptype[tp].title:"");
+  document.getElementById("p-mission").textContent=mi+" — "+(D.meanings[mi]||"");
+  var py=PY(ME.bd,TY), pm=PM(ME.bd,TY,TM);
+  document.getElementById("y-year").textContent=TY;
+  document.getElementById("y-pv").textContent=py;
+  document.getElementById("y-pw").textContent=word(py);
+  document.getElementById("y-pm").textContent=pm;
+  document.getElementById("y-pmw").textContent=word(pm);
+  var yt=D.year[py];
+  document.getElementById("y-plus").innerHTML = yt
+    ? blocks(yt.in_plus,"Чему посвятить год")
+    : '<div class="card"><p class="txt dim">Для числа '+py+' в календаре текста нет.</p></div>';
+  var h="";
+  for(var m=1;m<=12;m++){
+    var v=PM(ME.bd,TY,m);
+    h+='<div class="mrow'+(m===TM?" cur":"")+'" onclick="vy='+TY+";vm="+m+
+       ';renderMonth();go(\'s-mon\')">'+
+       '<div class="mv">'+v+'</div><div class="mm">'+MN[m-1]+"</div>"+
+       '<div style="font-size:12.5px;color:var(--dim)">'+word(v).split(" · ")[0]+"</div></div>";
+  }
+  document.getElementById("y-months").innerHTML=h;
+  var c=COUNTS(ME.bd), mh="";
+  for(var r=0;r<3;r++) for(var q=0;q<3;q++){
+    var nn=D.layout[r][q], kk=c[nn];
+    mh+='<div class="'+(kk?"full":"empty")+'" onclick="digit('+nn+')">'+
+        (kk?new Array(kk+1).join(nn):nn)+"</div>";
+  }
+  document.getElementById("p-mx").innerHTML=mh;
+  var lh="";
+  for(var i=0;i<D.lines.length;i++){
+    var L=D.lines[i], sum=0, filled=0;
+    for(var j=0;j<L.digits.length;j++){ sum+=c[L.digits[j]]; if(c[L.digits[j]]) filled++; }
+    lh+='<div class="kv"><b>'+L.digits.join("–")+'</b><span>'+L.title+
+        '<br><span style="color:var(--dim);font-size:12.5px">'+
+        (filled===3?"линия закрыта":(filled?"заполнено "+filled+" из 3":"линия пустая"))+
+        " · цифр "+sum+"</span></span></div>";
+  }
+  document.getElementById("p-lines").innerHTML=lh;
+  renderPro(); renderDis();
+}
+function digit(n){
+  var r=D.reco[n]||{}, cm=null;
+  for(var i=0;i<D.comp.length;i++)
+    if(D.comp[i].digits.length===1 && D.comp[i].digits[0]===n) cm=D.comp[i];
+  document.getElementById("sh-t").textContent="Цифра "+n;
+  document.getElementById("sh-s").textContent=(D.meanings[n]||"");
+  var h="";
+  if(cm) h+='<div class="card"><h2>'+cm.title+'</h2><p class="txt">'+cm.description+"</p></div>";
+  if(r.focus) h+='<div class="card"><h2>Фокус</h2><p class="txt">'+r.focus.join(" · ")+"</p></div>";
+  if(r.do){ h+='<div class="card"><h2>Что делать</h2><ol class="pts">';
+    for(var j=0;j<r.do.length;j++) h+="<li>"+r.do[j]+"</li>"; h+="</ol></div>"; }
+  if(r.avoid){ h+='<div class="card"><h2>Чего избегать</h2><ol class="pts warn">';
+    for(var k=0;k<r.avoid.length;k++) h+="<li>"+r.avoid[k]+"</li>"; h+="</ol></div>"; }
+  document.getElementById("sh-body").innerHTML=h;
+  document.getElementById("sheet").classList.add("on");
+  document.body.style.overflow="hidden";
+}
+
+/* свайп по месяцу */
+(function(){
+  var x0=null,y0=null,el=document.getElementById("s-mon");
+  el.addEventListener("touchstart",function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+  el.addEventListener("touchend",function(e){
+    if(x0===null) return;
+    var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0;
+    if(Math.abs(dx)>55 && Math.abs(dx)>Math.abs(dy)*1.6) shift(dx<0?1:-1);
+    x0=null;
+  },{passive:true});
+})();
+
+renderGoals(); redrawAll();
+
+/* Шторка закрывается свайпом вниз — так же, как в родных приложениях телефона. */
+(function(){
+  var p=document.querySelector("#sheet .pan"), y0=null, top0=0;
+  if(!p) return;
+  p.addEventListener("touchstart",function(e){ y0=e.touches[0].clientY; top0=p.scrollTop; },{passive:true});
+  p.addEventListener("touchend",function(e){
+    if(y0===null) return;
+    var dy=e.changedTouches[0].clientY-y0;
+    if(dy>70 && top0<=0) closeSheet();
+    y0=null;
+  },{passive:true});
+})();
+
+/* Дата считается при открытии. Если приложение пролежало открытым через полночь,
+   при возврате к нему пересчитываем день заново. Недописанную заметку не трогаем. */
+(function(){
+  function newDay(){ var n=new Date();
+    return n.getFullYear()!==TY || n.getMonth()+1!==TM || n.getDate()!==TD; }
+  function busy(){ var t=document.querySelector("textarea"); return !!(t && t.value.trim()); }
+  function check(){ if(newDay() && !busy()) location.reload(); }
+  document.addEventListener("visibilitychange",function(){ if(!document.hidden) check(); });
+  window.addEventListener("focus",check);
+  setInterval(check,60000);
+})();
+
+/* Офлайн: после первого открытия приложение работает без интернета. */
+if("serviceWorker" in navigator) window.addEventListener("load",function(){
+  navigator.serviceWorker.register("sw.js").catch(function(){});
+});
+
+/* ---------- Оформление ---------- */
+var TKEY="syucai_theme_one";
+function setTheme(t){
+  document.body.classList.toggle("lt", t==="lt");
+  try{ localStorage.setItem(TKEY,t); }catch(e){}
+  var d=document.getElementById("th-dk"), l=document.getElementById("th-lt");
+  if(d) d.classList.toggle("on", t!=="lt");
+  if(l) l.classList.toggle("on", t==="lt");
+  var b=document.getElementById("thbtn");
+  if(b) b.textContent = t==="lt" ? "\u263e" : "\u2600";
+  var mt=document.querySelector('meta[name="theme-color"]');
+  if(mt) mt.setAttribute("content", t==="lt" ? "#f4efe4" : "#14161a");
+}
+function toggleTheme(){
+  setTheme(document.body.classList.contains("lt") ? "dk" : "lt");
+}
+(function(){
+  var t="dk";
+  try{ t=localStorage.getItem(TKEY)||"dk"; }catch(e){}
+  setTheme(t);
+})();
+</script>
+</body>
+</html>
